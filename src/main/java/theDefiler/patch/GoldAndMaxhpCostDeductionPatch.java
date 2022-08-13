@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theDefiler.cards.AbstractDefilerCard;
 
 @SpirePatch(clz = AbstractPlayer.class, method = "useCard")
-public class GoldCostDeductionPatch {
+public class GoldAndMaxhpCostDeductionPatch {
 
     //@SpireInsertPatch(locator = Locator.class)
     public static void Postfix(AbstractPlayer p, AbstractCard c, AbstractMonster m, int energyonuse) {
@@ -17,6 +17,11 @@ public class GoldCostDeductionPatch {
             if (card.goldCostForTurn > 0) {
                 AbstractDungeon.player.gold -= card.goldCostForTurn;
             }
+            if (card.maxhpCostForTurn > 0) {
+                AbstractDungeon.player.maxHealth -= card.maxhpCostForTurn;
+                if (AbstractDungeon.player.currentHealth > AbstractDungeon.player.maxHealth)
+                    AbstractDungeon.player.maxHealth = AbstractDungeon.player.currentHealth;
+             }
         }
     }
 

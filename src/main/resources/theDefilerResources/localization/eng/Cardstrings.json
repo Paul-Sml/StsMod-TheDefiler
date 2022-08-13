@@ -59,5 +59,9 @@
   "${ModID}:CoinToss": {
     "NAME": "Coin Toss",
     "DESCRIPTION": "Deal !D! damage."
+  },
+  "${ModID}:RightHook": {
+    "NAME": "Right Hook",
+    "DESCRIPTION": "Deal !D! damage. NL Dug : Add *Left *Hook to your hand."
   }
 }

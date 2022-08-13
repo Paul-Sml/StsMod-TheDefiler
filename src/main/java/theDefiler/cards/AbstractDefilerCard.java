@@ -25,6 +25,12 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
     public boolean isGoldCostModifiedForTurn;
     public boolean upgradedGoldCost;
 
+    public int maxhpCost;
+    public int maxhpCostForTurn;
+    public boolean isMaxhpCostModified;
+    public boolean isMaxhpCostModifiedForTurn;
+    public boolean upgradedMaxhpCost;
+
     public AbstractDefilerCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target) {
         this(cardID, cost, 0, 0, type, rarity, target);
     }
@@ -40,6 +46,12 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
         this.upgradedGoldCost = false;
         this.goldCost = goldCost;
         this.goldCostForTurn = goldCost;
+
+        this.isMaxhpCostModified = false;
+        this.isMaxhpCostModifiedForTurn = false;
+        this.upgradedMaxhpCost = false;
+        this.maxhpCost = maxhpCost;
+        this.maxhpCostForTurn = maxhpCost;
     }
 
     @Override
@@ -48,6 +60,9 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
 
         if (this.upgradedGoldCost) {
             this.isGoldCostModified = true;
+        }
+        if (this.upgradedMaxhpCost) {
+            this.isMaxhpCostModified = true;
         }
     }
 
@@ -79,8 +94,26 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
         this.upgradedGoldCost = true;
     }
 
+    protected void upgradeBaseMaxhpCost(int newBaseMaxhpCost) {
+        int diff = this.maxhpCostForTurn - this.maxhpCost;
+        this.maxhpCost = newBaseMaxhpCost;
+        if (this.maxhpCostForTurn > 0) {
+            this.maxhpCostForTurn = this.maxhpCost + diff;
+        }
+
+        if (this.maxhpCostForTurn < 0) {
+            this.maxhpCostForTurn = 0;
+        }
+
+        this.upgradedMaxhpCost = true;
+    }
+
     protected void upBgc (int newBaseGoldCost) {
         upgradeBaseGoldCost(newBaseGoldCost);
+    }
+
+    protected void upMhp (int newBaseMaxhpCost) {
+        upgradeBaseMaxhpCost(newBaseMaxhpCost);
     }
 
     @Override
@@ -122,6 +155,10 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
                                                 this.cantUseMessage = "Not enough golds NL TODO : REMOVE HARCODE";
                                                 return false;
                                             }
+                                            if (this.maxhpCostForTurn > 0 && AbstractDungeon.player.maxHealth < this.maxhpCostForTurn) {
+                                                this.cantUseMessage = "Not enough Max HP NL TODO : REMOVE HARCODE";
+                                                return false;
+                                            }
 
                                             return true;
                                         }
@@ -152,33 +189,10 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
         }
     }
 
-    private void renderGoldCost(SpriteBatch sb) {
+    /*private void renderGoldCost(SpriteBatch sb) {
         if (this.cost > -2 && !this.isLocked && this.isSeen) {
-            /*switch(this.color) {
-                case RED:
-                    this.renderHelper(sb, this.renderColor, ImageMaster.CARD_RED_ORB, this.current_x, this.current_y);
-                    break;
-                case GREEN:
-                    this.renderHelper(sb, this.renderColor, ImageMaster.CARD_GREEN_ORB, this.current_x, this.current_y);
-                    break;
-                case BLUE:
-                    this.renderHelper(sb, this.renderColor, ImageMaster.CARD_BLUE_ORB, this.current_x, this.current_y);
-                    break;
-                case PURPLE:
-                    this.renderHelper(sb, this.renderColor, ImageMaster.CARD_PURPLE_ORB, this.current_x, this.current_y);
-                    break;
-                case COLORLESS:
-                    this.renderHelper(sb, this.renderColor, ImageMaster.CARD_COLORLESS_ORB, this.current_x, this.current_y);
-                default:
-                    this.renderHelper(sb, this.renderColor, ImageMaster.CARD_COLORLESS_ORB, this.current_x, this.current_y);
-            }*/
 
             Color costColor = Color.WHITE.cpy();
-            /*if (AbstractDungeon.player != null && AbstractDungeon.player.hand.contains(this) && !this.hasEnoughEnergy()) {
-                costColor = ENERGY_COST_RESTRICTED_COLOR;
-            } else if (this.isCostModified || this.isCostModifiedForTurn || this.freeToPlay()) {
-                costColor = ENERGY_COST_MODIFIED_COLOR;
-            }*/
 
             costColor.a = this.transparency;
             String text = this.getGoldCost();
@@ -193,6 +207,10 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
         return this.freeToPlay() ? "0" : Integer.toString(this.goldCostForTurn);
     }
 
+    private String getMaxhpCost() {
+        return this.freeToPlay() ? "0" : Integer.toString(this.maxhpCostForTurn);
+    }*/
+
     private BitmapFont getEnergyFont() {
         FontHelper.cardEnergyFont_L.getData().setScale(this.drawScale);
         return FontHelper.cardEnergyFont_L;
@@ -205,8 +223,20 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
                 this.goldCostForTurn = 0;
             }
 
-            if (this.goldCostForTurn != this.cost) {
+            if (this.goldCostForTurn != this.goldCost) {
                 this.isGoldCostModifiedForTurn = true;
+            }
+        }
+    }
+    public void setMaxhpCostForTurn(int amt) {
+        if (this.maxhpCostForTurn >= 0) {
+            this.maxhpCostForTurn = amt;
+            if (this.maxhpCostForTurn < 0) {
+                this.maxhpCostForTurn = 0;
+            }
+
+            if (this.maxhpCostForTurn != this.maxhpCost) {
+                this.isMaxhpCostModifiedForTurn = true;
             }
         }
     }
