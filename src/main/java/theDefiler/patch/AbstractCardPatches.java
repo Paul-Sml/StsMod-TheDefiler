@@ -21,9 +21,9 @@ public class AbstractCardPatches {
                 FontHelper.cardEnergyFont_L.getData().setScale(__instance.drawScale);
                 //renderHelper(sb, Color.WHITE, SecondEnergyOrbOnCard, __instance.current_x, __instance.current_y, __instance);
                 if (((AbstractDefilerCard)__instance).goldCostForTurn > 0)
-                    FontHelper.renderRotatedText(sb, FontHelper.cardEnergyFont_L, Integer.toString(((AbstractDefilerCard)__instance).goldCostForTurn), __instance.current_x, __instance.current_y, -135.0F * __instance.drawScale * Settings.scale, 115.0F * __instance.drawScale * Settings.scale, __instance.angle, false, Color.WHITE);
+                    FontHelper.renderRotatedText(sb, FontHelper.cardEnergyFont_L, Integer.toString(((AbstractDefilerCard)__instance).goldCostForTurn), __instance.current_x, __instance.current_y, -135.0F * __instance.drawScale * Settings.scale, 110.0F * __instance.drawScale * Settings.scale, __instance.angle, false, Color.WHITE);
                 if (((AbstractDefilerCard)__instance).maxhpCostForTurn > 0)
-                    FontHelper.renderRotatedText(sb, FontHelper.cardEnergyFont_L, Integer.toString(((AbstractDefilerCard)__instance).maxhpCostForTurn), __instance.current_x, __instance.current_y, -135.0F * __instance.drawScale * Settings.scale, 85.0F * __instance.drawScale * Settings.scale, __instance.angle, false, Color.WHITE);
+                    FontHelper.renderRotatedText(sb, FontHelper.cardEnergyFont_L, Integer.toString(((AbstractDefilerCard)__instance).maxhpCostForTurn), __instance.current_x, __instance.current_y, -135.0F * __instance.drawScale * Settings.scale, 65.0F * __instance.drawScale * Settings.scale, __instance.angle, false, Color.WHITE);
             }
         }
         private static void renderHelper(SpriteBatch sb, Color color, TextureAtlas.AtlasRegion img, float drawX, float drawY, AbstractCard C) {

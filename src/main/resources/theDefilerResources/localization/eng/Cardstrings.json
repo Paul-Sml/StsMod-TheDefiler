@@ -60,8 +60,21 @@
     "NAME": "Coin Toss",
     "DESCRIPTION": "Deal !D! damage."
   },
+  "${ModID}:EarthDigging": {
+    "NAME": "Earth Digging",
+    "DESCRIPTION": "Dig !M! : Basic rarity. NL Removed : Add *Tomb *Digging to your deck.",
+    "UPGRADE_DESCRIPTION": "Dig !M! : Basic rarity NL Removed : Add *Tomb *Digging+ to your deck."
+  },
+  "${ModID}:TombDigging": {
+    "NAME": "Tomb Digging",
+    "DESCRIPTION": "Dig !M! : Non-Basic rarity."
+  },
   "${ModID}:RightHook": {
     "NAME": "Right Hook",
     "DESCRIPTION": "Deal !D! damage. NL Dug : Add *Left *Hook to your hand."
+  },
+  "${ModID}:LeftHook": {
+    "NAME": "Left Hook",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
   }
 }

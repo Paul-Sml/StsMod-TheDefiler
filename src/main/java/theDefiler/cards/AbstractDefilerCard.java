@@ -16,6 +16,8 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.Iterator;
+import static theDefiler.util.Wiz.atb;
+import static theDefiler.util.Wiz.att;
 
 public abstract class AbstractDefilerCard extends AbstractEasyCard {
 
@@ -33,6 +35,10 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
 
     public AbstractDefilerCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target) {
         this(cardID, cost, 0, 0, type, rarity, target);
+    }
+
+    public AbstractDefilerCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target, CardColor color) {
+        super(cardID, cost, type, rarity, target, color);
     }
 
     public AbstractDefilerCard(String cardID, int cost, int goldCost, CardType type, CardRarity rarity, CardTarget target) {
@@ -66,19 +72,19 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
         }
     }
 
+    protected void addtb(AbstractGameAction action) {
+        atb(action);
+    }
+
     protected void dmg(AbstractMonster monster) {
         dmg(monster, AbstractGameAction.AttackEffect.NONE);
     }
 
     @Override
-    public void upp() {
-
-    }
+    public void upp() {}
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-
-    }
+    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {}
 
     protected void upgradeBaseGoldCost(int newBaseGoldCost) {
         int diff = this.goldCostForTurn - this.goldCost;
@@ -262,6 +268,8 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
         this.goldCostForTurn = this.goldCost;
         this.isGoldCostModifiedForTurn = false;
     }
+
+    public void dug() {}
 
 }
 
