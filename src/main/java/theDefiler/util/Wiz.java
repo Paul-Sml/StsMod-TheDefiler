@@ -114,7 +114,7 @@ public class Wiz {
         return CardCrawlGame.isInARun() && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT;
     }
 
-    public static void atb(AbstractGameAction action) {
+    public static void addtb(AbstractGameAction action) {
         AbstractDungeon.actionManager.addToBottom(action);
     }
 
@@ -123,19 +123,19 @@ public class Wiz {
     }
 
     public static void vfx(AbstractGameEffect gameEffect) {
-        atb(new VFXAction(gameEffect));
+        addtb(new VFXAction(gameEffect));
     }
 
     public static void vfx(AbstractGameEffect gameEffect, float duration) {
-        atb(new VFXAction(gameEffect, duration));
+        addtb(new VFXAction(gameEffect, duration));
     }
 
     public static void tfx(AbstractGameEffect gameEffect) {
-        atb(new TimedVFXAction(gameEffect));
+        addtb(new TimedVFXAction(gameEffect));
     }
 
     public static void makeInHand(AbstractCard c, int i) {
-        atb(new MakeTempCardInHandAction(c, i));
+        addtb(new MakeTempCardInHandAction(c, i));
     }
 
     public static void makeInHand(AbstractCard c) {
@@ -143,7 +143,7 @@ public class Wiz {
     }
 
     public static void shuffleIn(AbstractCard c, int i) {
-        atb(new MakeTempCardInDrawPileAction(c, i, true, true));
+        addtb(new MakeTempCardInDrawPileAction(c, i, true, true));
     }
 
     public static void shuffleIn(AbstractCard c) {
@@ -159,7 +159,7 @@ public class Wiz {
     }
 
     public static void applyToEnemy(AbstractMonster m, AbstractPower po) {
-        atb(new ApplyPowerAction(m, AbstractDungeon.player, po, po.amount));
+        addtb(new ApplyPowerAction(m, AbstractDungeon.player, po, po.amount));
     }
 
     public static void applyToEnemyTop(AbstractMonster m, AbstractPower po) {
@@ -167,7 +167,7 @@ public class Wiz {
     }
 
     public static void applyToSelf(AbstractPower po) {
-        atb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, po, po.amount));
+        addtb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, po, po.amount));
     }
 
     public static void applyToSelfTop(AbstractPower po) {
@@ -175,16 +175,16 @@ public class Wiz {
     }
 
     public static void applyToSelfTemp(AbstractPower po) {
-        atb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, po, po.amount));
-        atb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LosePowerPower(AbstractDungeon.player, po, po.amount)));
+        addtb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, po, po.amount));
+        addtb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LosePowerPower(AbstractDungeon.player, po, po.amount)));
     }
 
     public static void applyToSelfNextTurn(AbstractPower po) {
-        atb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new NextTurnPowerPower(AbstractDungeon.player, po)));
+        addtb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new NextTurnPowerPower(AbstractDungeon.player, po)));
     }
 
     public static void thornDmg(AbstractCreature m, int amount, AbstractGameAction.AttackEffect AtkFX) {
-        atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, amount, DamageInfo.DamageType.THORNS), AtkFX));
+        addtb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, amount, DamageInfo.DamageType.THORNS), AtkFX));
     }
 
     public static void thornDmg(AbstractCreature m, int amount) {
@@ -192,7 +192,7 @@ public class Wiz {
     }
 
     public static void discard(int amount, boolean isRandom) {
-        atb(new DiscardAction(adp(), adp(), amount, isRandom));
+        addtb(new DiscardAction(adp(), adp(), amount, isRandom));
     }
 
     public static void discard(int amount) {

@@ -1,7 +1,6 @@
 package theDefiler.cards.defiler;
 
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theDefiler.actions.DefilerDigAction;
@@ -22,16 +21,17 @@ public class EarthDigging extends AbstractDefilerCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addtb(new DefilerDigAction(magicNumber, c -> c.rarity == CardRarity.BASIC));
+        atb(new DefilerDigAction(magicNumber, c -> c.rarity == CardRarity.BASIC));
     }
 
     @Override
     public void onRemoveFromMasterDeck() {
-        addtb(new AddCardToDeckAction(cardsToPreview));
+        atb(new AddCardToDeckAction(cardsToPreview));
     }
 
     public void upp() {
         upgradeMagicNumber(1);
         upgradeCardToPreview();
+        uDesc();
     }
 }

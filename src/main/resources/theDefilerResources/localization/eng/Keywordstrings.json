@@ -6,5 +6,33 @@
       "todos"
     ],
     "DESCRIPTION": "TODO: Make your own epic keywords"
+  },
+  {
+    "PROPER_NAME": "Dug",
+    "NAMES": [
+      "dug"
+    ],
+    "DESCRIPTION": "Activate this effect if the card is moved to your hand through a #yDig effect."
+  },
+  {
+    "PROPER_NAME": "Revival",
+    "NAMES": [
+      "revival"
+    ],
+    "DESCRIPTION": "Gain #b1 Max HP while the #yRevival value above #b0. Reduce this value by #b1."
+  },
+  {
+    "PROPER_NAME": "Drafted",
+    "NAMES": [
+      "drafted"
+    ],
+    "DESCRIPTION": "Activate this effect when you chose to add this card to your deck from card rewards."
+  },
+  {
+    "PROPER_NAME": "Removed",
+    "NAMES": [
+      "removed"
+    ],
+    "DESCRIPTION": "Activate this effect when you remove this card from your deck."
   }
 ]

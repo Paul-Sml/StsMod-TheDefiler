@@ -10,31 +10,25 @@ import theDefiler.cards.AbstractDefilerCard;
 
 import static theDefiler.DefilerMod.makeID;
 
-public class Fury extends AbstractDefilerCard {
-    public final static String ID = makeID(Fury.class.getSimpleName());
+public class TakeMyMoney extends AbstractDefilerCard {
+    public final static String ID = makeID(TakeMyMoney.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
     private static final int COST = 1;
 
-    public Fury() {
+    public TakeMyMoney() {
         super(ID, COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         magicNumber = baseMagicNumber = 4; //Dig amount
-        secondMagic = baseSecondMagic = 4; //dmg+ amount
-        baseDamage = 9;;
+        baseDamage = 8;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new DefilerDigAction(magicNumber, c -> c.cardID.equals(Fury.ID)));
+        atb(new DefilerDigAction(magicNumber, c -> c instanceof AbstractDefilerCard && ((AbstractDefilerCard)c).goldCost > 1));
         dmg(m);
-        atb(new MakeTempCardInDiscardAction(this.makeStatEquivalentCopy(), false));
-    }
-
-    @Override
-    public void dug() {
-        atb(new FuryGashAction(this, secondDamage));
     }
 
     public void upp() {
         upgradeMagicNumber(2);
+        upgradeDamage(2);
     }
 }

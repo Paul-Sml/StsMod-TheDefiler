@@ -7,22 +7,25 @@ import theDefiler.cards.AbstractDefilerCard;
 
 import static theDefiler.DefilerMod.makeID;
 
-public class TombDigging extends AbstractDefilerCard {
-    public final static String ID = makeID(TombDigging.class.getSimpleName());
+public class Meditation extends AbstractDefilerCard {
+    public final static String ID = makeID(Meditation.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
-    public TombDigging() {
+    public Meditation() {
         super(ID, COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        magicNumber = baseMagicNumber = 3;
+        baseBlock = 12;
+        revival = baseRevival = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new DefilerDigAction(magicNumber, c -> c.rarity != CardRarity.BASIC));
+        block();
+        revival();
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeRevival(1);
+        upgradeBlock(2);
     }
 }

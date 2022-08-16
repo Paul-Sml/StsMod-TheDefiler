@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import theDefiler.cards.AbstractDefilerCard;
 import theDefiler.TheDefiler;
+import theDefiler.cards.defiler.Worms;
 import theDefiler.powers.*;
 import theDefiler.util.Wiz;
 
@@ -82,7 +83,7 @@ public class DefilerDigAction  extends AbstractGameAction
 
     private void CheckRebound(AbstractCard card, boolean isConditionMet)
     {
-        if(isConditionMet)
+        if(isConditionMet || card.cardID.equals(Worms.ID))
             Rebound(card);
         else
         {

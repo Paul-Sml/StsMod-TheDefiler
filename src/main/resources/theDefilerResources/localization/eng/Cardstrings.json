@@ -56,25 +56,146 @@
 
 
 
+
+  "${ModID}:EarthDigging": {
+    "NAME": "Earth Digging",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Basic rarity. NL Removed : Add [#EFC851]Tomb [#EFC851]Digging to your deck.",
+    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Basic rarity NL Removed : Add [#EFC851]Tomb [#EFC851]Digging+ to your deck."
+  },
+  "${ModID}:TombDigging": {
+    "NAME": "Tomb Digging",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Non-Basic rarity."
+  },
   "${ModID}:CoinToss": {
     "NAME": "Coin Toss",
     "DESCRIPTION": "Deal !D! damage."
   },
-  "${ModID}:EarthDigging": {
-    "NAME": "Earth Digging",
-    "DESCRIPTION": "Dig !M! : Basic rarity. NL Removed : Add *Tomb *Digging to your deck.",
-    "UPGRADE_DESCRIPTION": "Dig !M! : Basic rarity NL Removed : Add *Tomb *Digging+ to your deck."
+  "${ModID}:Worms": {
+    "NAME": "Worms",
+    "DESCRIPTION": "Deal !D! damage. NL This card can be Dug by any Dig effect."
   },
-  "${ModID}:TombDigging": {
-    "NAME": "Tomb Digging",
-    "DESCRIPTION": "Dig !M! : Non-Basic rarity."
+  "${ModID}:Fury": {
+    "NAME": "Fury",
+    "DESCRIPTION": "[#EFC851]Dig !M! : [#EFC851]Fury cards. NL Deal !D! damage. NL Add a [#EFC851]Fury to your discard. NL theDefiler:Dug : Increase [#EFC851]Fury cards' damage by 4"
   },
   "${ModID}:RightHook": {
     "NAME": "Right Hook",
-    "DESCRIPTION": "Deal !D! damage. NL Dug : Add *Left *Hook to your hand."
+    "DESCRIPTION": "Deal !D! damage. NL theDefiler:Dug : Add *Left *Hook to your hand."
   },
   "${ModID}:LeftHook": {
     "NAME": "Left Hook",
     "DESCRIPTION": "Deal !D! damage. NL Exhaust."
+  },
+  "${ModID}:TombWall": {
+    "NAME": "Tomb Wall",
+    "DESCRIPTION": "[#EFC851]Dig !M! : 1 [E] cost. NL Gain !B! Block"
+  },
+  "${ModID}:ShinyDrain": {
+    "NAME": "Shiny Drain",
+    "DESCRIPTION": "Deal !D! damage. NL Gain Gold equal to unblocked damage."
+  },
+  "${ModID}:Parry": {
+    "NAME": "Parry",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Attacks. NL gain !B! Block."
+  },
+  "${ModID}TakeMyMoney:": {
+    "NAME": "Take My Money",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Costs Gold. NL Deal !D! damage."
+  },
+  "${ModID}:GoldenApple": {
+    "NAME": "GoldenApple",
+    "DESCRIPTION": "Gain !B! Block. Gain !M! Max HP."
+  },
+  "${ModID}:BottomlessBag": {
+    "NAME": "Bottomless Bag",
+    "DESCRIPTION": "Gain !M! Gold. NL Exhaust."
+  },
+  "${ModID}:Entomb": {
+    "NAME": "Entomb",
+    "DESCRIPTION": "Gain !B! Block. NL Chose a card to put at the bottom of your deck."
+  },
+  "${ModID}:Yoyo": {
+    "NAME": "Yoyo",
+    "DESCRIPTION": "Deal !D! damage. NL Put the next card you play this turn on top of your draw pile."
+  },
+  "${ModID}:ShovelTime": {
+    "NAME": "Shovel Time",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block."
+  },
+  "${ModID}:Meditation": {
+    "NAME": "Meditation",
+    "DESCRIPTION": "Gain !B! Block. NL theDefiler:Revival !R!."
+  },
+  "${ModID}:Diversion": {
+    "NAME": "Diversion",
+    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL theDefiler:Drafted : Gain !M! Gold."
+  },
+  "${ModID}:BarbedWhip": {
+    "NAME": "Barbed Whip",
+    "DESCRIPTION": "Take !M! damage. NL Deal !D! damage."
+  },
+  "${ModID}:MoneyDiet": {
+    "NAME": "Money Diet",
+    "DESCRIPTION": "Take !M! damage. NL Gain !B! Block."
+  },
+  "${ModID}:Daydream": {
+    "NAME": "Daydream",
+    "DESCRIPTION": "Choose a card. NL Next turn, add !M! copy of that card into your hand. NL theDefiler:Dug : this costs 0 for the turn.",
+    "UPGRADE_DESCRIPTION": "Choose a card. NL Next turn, add !M! copies of that card into your hand. NL theDefiler:Dug : this costs 0 for the turn."
+  },
+  "${ModID}:BloodBag": {
+    "NAME": "Blood Bag",
+    "DESCRIPTION": "Gain !M! Max HP."
+  },
+  "${ModID}:IntoxicantGas": {
+    "NAME": "Intoxicant Gas",
+    "DESCRIPTION": "Deal !D! damage. NL theDefiler:Dug : Deal !D! damage to ALL enemies."
+  },
+  "${ModID}:Adrenaline": {
+    "NAME": "Adrenaline",
+    "DESCRIPTION": "Draw !M! cards."
+  },
+  "${ModID}:ClingClang": {
+    "NAME": "Cling Clang",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Upgraded card. NL theDefiler:Drafted : drop an additional card.",
+    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Upgraded card. NL theDefiler:Drafted : drop an additional upgraded card."
+  },
+  "${ModID}:Pineapple": {
+    "NAME": "Pineapple",
+    "DESCRIPTION": "Gain !B! Block. NL theDefiler:Dug : Revival !R!."
+  },
+  "${ModID}:FastRunningShoes": {
+    "NAME": "Fast Running Shoes",
+    "DESCRIPTION": "If you end your turn with !M! or less Block, gain !M! Block."
+  },
+  "${ModID}:Sleeves": {
+    "NAME": "Sleeves",
+    "DESCRIPTION": "Draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Draw !M! cards."
+  },
+  "${ModID}:Starfish": {
+    "NAME": "Starfish",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust. theDefiler:Dug : draw all Starfish cards. NL theDefiler:Drafted : Add another copy of this card to your deck."
+  },
+  "${ModID}:Cooking": {
+    "NAME": "Cooking",
+    "DESCRIPTION": "Gain X Max HP. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain X+1 Max HP. NL Exhaust."
+  },
+  "${ModID}:ChocolateCoins": {
+    "NAME": "Chocolate Coins",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Gold. NL Gain !m2! Max HP. Exhaust."
+  },
+  "${ModID}:HuntingKnife": {
+    "NAME": "Hunting Knife",
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal drop an additional card reward. NL Exhaust. NL Drafted : Gain 2(3) Max HP."
+  },
+  "${ModID}:PowerBelt": {
+    "NAME": "Power Belt",
+    "DESCRIPTION": "Innate. NL [#EFC851]Dig !M! : Powers. NL Exhaust."
+  },
+  "${ModID}:Grapple": {
+    "NAME": "Grapple",
+    "DESCRIPTION": "[#EFC851]Dig !M! : 0 [E] cost. NL Deal !D! damage."
   }
 }

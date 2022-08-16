@@ -22,7 +22,7 @@ public class EasyXCostDemo extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new EasyXCostAction(this, (effect, params) -> {
+        addtb(new EasyXCostAction(this, (effect, params) -> {
             for (int i = 0; i < effect + params[0]; i++) {
                 dmgTop(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
             }

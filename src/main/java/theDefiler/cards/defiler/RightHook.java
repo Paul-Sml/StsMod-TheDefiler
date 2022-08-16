@@ -26,7 +26,7 @@ public class RightHook extends AbstractDefilerCard {
 
     @Override
     public void dug() {
-        addtb(new MakeTempCardInHandAction(cardsToPreview));
+        atb(new MakeTempCardInHandAction(cardsToPreview));
     }
 
     public void upp() {

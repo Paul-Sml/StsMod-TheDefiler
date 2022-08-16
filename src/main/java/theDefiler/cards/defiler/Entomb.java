@@ -3,26 +3,29 @@ package theDefiler.cards.defiler;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theDefiler.actions.DefilerDigAction;
+import theDefiler.actions.EntombAction;
 import theDefiler.cards.AbstractDefilerCard;
 
 import static theDefiler.DefilerMod.makeID;
 
-public class TombDigging extends AbstractDefilerCard {
-    public final static String ID = makeID(TombDigging.class.getSimpleName());
+public class Entomb extends AbstractDefilerCard {
+    public final static String ID = makeID(Entomb.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
     private static final int COST = 1;
 
-    public TombDigging() {
+    public Entomb() {
         super(ID, COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 1;
+        baseBlock = 8;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new DefilerDigAction(magicNumber, c -> c.rarity != CardRarity.BASIC));
+        block();
+        atb(new EntombAction(false));
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeBlock(3);
     }
 }

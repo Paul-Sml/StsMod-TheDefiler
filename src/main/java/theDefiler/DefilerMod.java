@@ -19,6 +19,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theDefiler.cards.AbstractDefilerCard;
 import theDefiler.cards.AbstractEasyCard;
+import theDefiler.cards.cardvars.GoldCost;
+import theDefiler.cards.cardvars.Revival;
 import theDefiler.cards.cardvars.SecondDamage;
 import theDefiler.cards.cardvars.SecondMagicNumber;
 import theDefiler.relics.AbstractEasyRelic;
@@ -120,6 +122,8 @@ public class DefilerMod implements
     public void receiveEditCards() {
         BaseMod.addDynamicVariable(new SecondMagicNumber());
         BaseMod.addDynamicVariable(new SecondDamage());
+        BaseMod.addDynamicVariable(new Revival());
+        BaseMod.addDynamicVariable(new GoldCost());
         new AutoAdd(modID)
                 .packageFilter(AbstractEasyCard.class)
                 .packageFilter(AbstractDefilerCard.class)

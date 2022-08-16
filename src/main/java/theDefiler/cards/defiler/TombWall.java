@@ -1,5 +1,6 @@
 package theDefiler.cards.defiler;
 
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theDefiler.actions.DefilerDigAction;
@@ -7,22 +8,25 @@ import theDefiler.cards.AbstractDefilerCard;
 
 import static theDefiler.DefilerMod.makeID;
 
-public class TombDigging extends AbstractDefilerCard {
-    public final static String ID = makeID(TombDigging.class.getSimpleName());
+public class TombWall extends AbstractDefilerCard {
+    public final static String ID = makeID(TombWall.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
-    public TombDigging() {
+    public TombWall() {
         super(ID, COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 2;
+        baseBlock = 14;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new DefilerDigAction(magicNumber, c -> c.rarity != CardRarity.BASIC));
+        atb(new DefilerDigAction(magicNumber, c -> c.costForTurn == 1));
+        block();
     }
 
     public void upp() {
         upgradeMagicNumber(1);
+        upgradeBlock(3);
     }
 }

@@ -19,7 +19,7 @@ public class DrawAndShiv extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new DrawCardAction(1)); // Add to the bottom of the action queue an action which draws 1 card.
+        addtb(new DrawCardAction(1)); // Add to the bottom of the action queue an action which draws 1 card.
         makeInHand(new Shiv()); // Add to the bottom of the action queue an action which adds a Shiv into your hand. (This is shorthanded by makeInHand).
     }
 

@@ -3,21 +3,20 @@ package theDefiler.cards.cardvars;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import theDefiler.cards.AbstractDefilerCard;
-import theDefiler.cards.AbstractEasyCard;
 
 import static theDefiler.DefilerMod.makeID;
 
-public class GoldCost extends DynamicVariable {
+public class Revival extends DynamicVariable {
 
     @Override
     public String key() {
-        return makeID("gc");
+        return makeID("R");
     }
 
     @Override
     public boolean isModified(AbstractCard abstractCard) {
         if (abstractCard instanceof AbstractDefilerCard) {
-            return ((AbstractDefilerCard) abstractCard).isGoldCostModified;
+            return ((AbstractDefilerCard) abstractCard).revival != ((AbstractDefilerCard) abstractCard).baseRevival;
         }
         return false;
     }
@@ -25,7 +24,7 @@ public class GoldCost extends DynamicVariable {
     @Override
     public int value(AbstractCard abstractCard) {
         if (abstractCard instanceof AbstractDefilerCard) {
-            return ((AbstractDefilerCard) abstractCard).goldCostForTurn;
+            return ((AbstractDefilerCard) abstractCard).revival;
         }
         return -1;
     }
@@ -33,7 +32,7 @@ public class GoldCost extends DynamicVariable {
     @Override
     public int baseValue(AbstractCard abstractCard) {
         if (abstractCard instanceof AbstractDefilerCard) {
-            return ((AbstractDefilerCard) abstractCard).goldCost;
+            return ((AbstractDefilerCard) abstractCard).baseRevival;
         }
         return -1;
     }
@@ -41,8 +40,9 @@ public class GoldCost extends DynamicVariable {
     @Override
     public boolean upgraded(AbstractCard abstractCard) {
         if (abstractCard instanceof AbstractDefilerCard) {
-            return ((AbstractDefilerCard) abstractCard).upgradedGoldCost;
+            return ((AbstractDefilerCard) abstractCard).upgradedRevival;
         }
         return false;
     }
+
 }

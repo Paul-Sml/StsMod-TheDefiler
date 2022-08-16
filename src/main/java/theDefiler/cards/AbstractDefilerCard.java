@@ -1,23 +1,21 @@
 package theDefiler.cards;
 
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.blights.AbstractBlight;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import theDefiler.actions.GainMaxhpAction;
 
 import java.util.Iterator;
-import static theDefiler.util.Wiz.atb;
-import static theDefiler.util.Wiz.att;
+import static theDefiler.util.Wiz.addtb;
 
 public abstract class AbstractDefilerCard extends AbstractEasyCard {
 
@@ -32,6 +30,10 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
     public boolean isMaxhpCostModified;
     public boolean isMaxhpCostModifiedForTurn;
     public boolean upgradedMaxhpCost;
+
+    public int revival = -1;
+    public int baseRevival = -1;
+    public boolean upgradedRevival;
 
     public AbstractDefilerCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target) {
         this(cardID, cost, 0, 0, type, rarity, target);
@@ -70,21 +72,47 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
         if (this.upgradedMaxhpCost) {
             this.isMaxhpCostModified = true;
         }
+        /*if (this.upgradedRevival) {
+
+        }*/
     }
 
-    protected void addtb(AbstractGameAction action) {
-        atb(action);
+    protected void atb(AbstractGameAction action) {
+        addtb(action);
     }
 
     protected void dmg(AbstractMonster monster) {
         dmg(monster, AbstractGameAction.AttackEffect.NONE);
     }
 
+    protected void draw() {
+        atb(new DrawCardAction(1));
+    }
+
+    protected void draw(int drawAmount) {
+        atb(new DrawCardAction(drawAmount));
+    }
+
     @Override
     public void upp() {}
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {}
+    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+
+    }
+
+    protected void revival() {
+        if (revival > 0) {
+            revival--;
+            atb(new GainMaxhpAction(1));
+        }
+    }
+
+    protected void upgradeRevival(int amount) {
+        baseRevival += amount;
+        revival = baseRevival;
+        upgradedRevival = true;
+    }
 
     protected void upgradeBaseGoldCost(int newBaseGoldCost) {
         int diff = this.goldCostForTurn - this.goldCost;
@@ -270,6 +298,8 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
     }
 
     public void dug() {}
+
+    public void drafted() {}
 
 }
 

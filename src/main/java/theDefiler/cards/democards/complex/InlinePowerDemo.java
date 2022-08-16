@@ -11,7 +11,7 @@ import theDefiler.powers.LambdaPower;
 
 import static theDefiler.DefilerMod.makeID;
 import static theDefiler.util.Wiz.applyToSelf;
-import static theDefiler.util.Wiz.atb;
+import static theDefiler.util.Wiz.addtb;
 
 public class InlinePowerDemo extends AbstractEasyCard {
 
@@ -39,7 +39,7 @@ public class InlinePowerDemo extends AbstractEasyCard {
             @Override
             public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
                 flash();
-                atb(new GainBlockAction(owner, amount));
+                addtb(new GainBlockAction(owner, amount));
             }
 
             @Override

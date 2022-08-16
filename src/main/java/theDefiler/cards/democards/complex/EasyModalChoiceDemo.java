@@ -28,7 +28,7 @@ public class EasyModalChoiceDemo extends AbstractEasyCard {
         ArrayList<AbstractCard> easyCardList = new ArrayList<>();
         easyCardList.add(new EasyModalChoiceCard("Draw", "Draw " + magicNumber + " cards.", () -> att(new DrawCardAction(magicNumber))));
         easyCardList.add(new EasyModalChoiceCard("Strength", "Gain " + secondMagic + " Strength.", () -> applyToSelfTop(new StrengthPower(p, secondMagic))));
-        atb(new EasyModalChoiceAction(easyCardList));
+        addtb(new EasyModalChoiceAction(easyCardList));
     }
 
     public void upp() {

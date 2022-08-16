@@ -1,6 +1,5 @@
 package theDefiler.cards.democards.complex;
 
-import basemod.AutoAdd;
 import basemod.cardmods.EtherealMod;
 import basemod.cardmods.ExhaustMod;
 import basemod.helpers.CardModifierManager;
@@ -35,7 +34,7 @@ public class SelectCardsPlusCardMods extends AbstractEasyCard {
             CardModifierManager.addModifier(eligibleCardsList.get(i), new ExhaustMod());
             myCardsList.add(eligibleCardsList.get(i));
         }
-        atb(new SelectCardsAction(myCardsList, 1, "Choose a card to add into your hand with Ethereal and Exhaust.", (cards) -> {
+        addtb(new SelectCardsAction(myCardsList, 1, "Choose a card to add into your hand with Ethereal and Exhaust.", (cards) -> {
             att(new MakeTempCardInHandAction(cards.get(0), 1, true));
         }));
     }
