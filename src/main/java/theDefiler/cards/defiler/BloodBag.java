@@ -7,25 +7,23 @@ import theDefiler.cards.AbstractDefilerCard;
 
 import static theDefiler.DefilerMod.makeID;
 
-public class GoldenApple extends AbstractDefilerCard {
-    public final static String ID = makeID(GoldenApple.class.getSimpleName());
+public class BloodBag extends AbstractDefilerCard {
+    public final static String ID = makeID(BloodBag.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
-    private static final int COST = 2;
-    private static final int GOLD_COST = 25;
+    private static final int COST = 1;
+    private static final int GOLD_COST = 20;
 
-    public GoldenApple() {
-        super(ID, COST, GOLD_COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
-        baseBlock = 16;
-        magicNumber = baseMagicNumber = 1;
+    public BloodBag() {
+        super(ID, COST, GOLD_COST, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        magicNumber = baseMagicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        block();
         atb(new GainMaxhpAction(magicNumber));
     }
 
     public void upp() {
-        upgradeBlock(7);
+        upgradeMagicNumber(1);
     }
 }

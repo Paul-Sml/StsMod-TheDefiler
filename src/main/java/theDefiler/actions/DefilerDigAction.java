@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import theDefiler.cards.AbstractDefilerCard;
 import theDefiler.TheDefiler;
+import theDefiler.cards.defiler.LivingWeapon;
 import theDefiler.cards.defiler.Worms;
 import theDefiler.powers.*;
 import theDefiler.util.Wiz;
@@ -23,28 +24,20 @@ public class DefilerDigAction  extends AbstractGameAction
     private final float startingDuration;
 //    private AbstractCard ignoredCard;
     private Predicate<AbstractCard> condition;
+    private int baseAmount;
 
     public DefilerDigAction(int numCards, Predicate<AbstractCard> digCondition)
     {
-        amount = numCards;
+        amount = baseAmount = numCards;
         actionType = ActionType.CARD_MANIPULATION;
         startingDuration = Settings.ACTION_DUR_FAST;
         duration = startingDuration;
         condition = digCondition;
     }
 
-//    public DefilerDigAction(int numCards, AbstractCard cardToIgnore)
-//    {
-//        amount = numCards;
-//        actionType = ActionType.CARD_MANIPULATION;
-//        startingDuration = Settings.ACTION_DUR_FAST;
-//        duration = startingDuration;
-//        ignoredCard = cardToIgnore;
-//    }
-
     public DefilerDigAction(int numCards, boolean block)
     {
-        amount = numCards;
+        amount = baseAmount = numCards;
         actionType = ActionType.CARD_MANIPULATION;
         startingDuration = Settings.ACTION_DUR_FAST;
         duration = startingDuration;
@@ -62,7 +55,6 @@ public class DefilerDigAction  extends AbstractGameAction
                 amount--;
             }
 //            PostMill();
-            isDone = true;
         } else {isDone = true;}
     }
 
@@ -83,6 +75,8 @@ public class DefilerDigAction  extends AbstractGameAction
 
     private void CheckRebound(AbstractCard card, boolean isConditionMet)
     {
+        if (card.cardID.equals(LivingWeapon.ID))
+            this.addToBot(new DefilerDigAction(baseAmount, condition));
         if(isConditionMet || card.cardID.equals(Worms.ID))
             Rebound(card);
         else

@@ -34,6 +34,9 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
     public int revival = -1;
     public int baseRevival = -1;
     public boolean upgradedRevival;
+    public int secondRevival = -1;
+    public int baseSecondRevival = -1;
+    public boolean upgradedSecondRevival;
 
     public AbstractDefilerCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target) {
         this(cardID, cost, 0, 0, type, rarity, target);
@@ -106,12 +109,21 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
             revival--;
             atb(new GainMaxhpAction(1));
         }
+        if (secondRevival > 0) {
+            secondRevival--;
+            atb(new GainMaxhpAction(1));
+        }
     }
 
     protected void upgradeRevival(int amount) {
         baseRevival += amount;
         revival = baseRevival;
         upgradedRevival = true;
+    }
+    protected void upgradeSecondRevival(int amount) {
+        baseSecondRevival += amount;
+        secondRevival = baseSecondRevival;
+        upgradedSecondRevival = true;
     }
 
     protected void upgradeBaseGoldCost(int newBaseGoldCost) {
