@@ -19,10 +19,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theDefiler.cards.AbstractDefilerCard;
 import theDefiler.cards.AbstractEasyCard;
-import theDefiler.cards.cardvars.GoldCost;
-import theDefiler.cards.cardvars.Revival;
-import theDefiler.cards.cardvars.SecondDamage;
-import theDefiler.cards.cardvars.SecondMagicNumber;
+import theDefiler.cards.cardvars.*;
 import theDefiler.relics.AbstractEasyRelic;
 
 import java.nio.charset.StandardCharsets;
@@ -36,7 +33,7 @@ public class DefilerMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber {
 
-    public static final String modID = "theDefiler"; //TODO: Change this.
+    public static final String modID = "thedefilermod";
 
     public static String makeID(String idText) {
         return modID + ":" + idText;
@@ -123,6 +120,7 @@ public class DefilerMod implements
         BaseMod.addDynamicVariable(new SecondMagicNumber());
         BaseMod.addDynamicVariable(new SecondDamage());
         BaseMod.addDynamicVariable(new Revival());
+        BaseMod.addDynamicVariable(new SecondRevival());
         BaseMod.addDynamicVariable(new GoldCost());
         new AutoAdd(modID)
                 .packageFilter(AbstractEasyCard.class)

@@ -2,29 +2,29 @@ package theDefiler.cards.defiler;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theDefiler.actions.BornAgainAction;
+import theDefiler.actions.EntombAction;
 import theDefiler.cards.AbstractDefilerCard;
 
 import static theDefiler.DefilerMod.makeID;
 
-public class ShovelTime extends AbstractDefilerCard {
-    public final static String ID = makeID(ShovelTime.class.getSimpleName());
+public class BornAgain extends AbstractDefilerCard {
+    public final static String ID = makeID(BornAgain.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
     private static final int COST = 1;
 
-    public ShovelTime() {
-        super(ID, COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 7;
-        baseBlock = 3;
+    public BornAgain() {
+        super(ID, COST, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        block();
-        dmg(m);
+        atb(new BornAgainAction());
     }
 
     public void upp() {
-        upgradeDamage(2);
-        upgradeBlock(1);
+        selfRetain = true;
+        uDesc();
     }
 }

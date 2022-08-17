@@ -1,5 +1,6 @@
 package theDefiler.cards.democards.complex;
 
+import basemod.AutoAdd;
 import basemod.cardmods.EtherealMod;
 import basemod.cardmods.ExhaustMod;
 import basemod.helpers.CardModifierManager;
@@ -16,6 +17,7 @@ import java.util.Collections;
 import static theDefiler.DefilerMod.makeID;
 import static theDefiler.util.Wiz.*;
 
+@AutoAdd.Ignore
 public class SelectCardsPlusCardMods extends AbstractEasyCard {
 
     public final static String ID = makeID("SelectCardsPlusCardMods");

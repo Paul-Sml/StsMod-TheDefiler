@@ -1,5 +1,6 @@
 package theDefiler.cards.democards.complex;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.NirvanaPower;
@@ -8,6 +9,7 @@ import theDefiler.cards.AbstractEasyCard;
 import static theDefiler.DefilerMod.makeID;
 import static theDefiler.util.Wiz.applyToSelfTemp;
 
+@AutoAdd.Ignore
 public class TemporaryPowerDemo extends AbstractEasyCard {
 
     public final static String ID = makeID("TemporaryPowerDemo");

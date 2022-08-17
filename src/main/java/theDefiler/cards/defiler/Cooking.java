@@ -14,7 +14,7 @@ import static theDefiler.util.Wiz.addtb;
 import static theDefiler.util.Wiz.applyToSelfTop;
 
 public class Cooking extends AbstractDefilerCard {
-    public final static String ID = makeID("EasyXCostDemo");
+    public final static String ID = makeID("Cooking");
     // intellij stuff attack, enemy, rare, , , , , 0, 1
 
     public Cooking() {

@@ -15,7 +15,7 @@ public class TombWall extends AbstractDefilerCard {
     private static final int COST = 2;
 
     public TombWall() {
-        super(ID, COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 2;
         baseBlock = 14;
     }

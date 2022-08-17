@@ -6,25 +6,23 @@ import theDefiler.cards.AbstractDefilerCard;
 
 import static theDefiler.DefilerMod.makeID;
 
-public class ShovelTime extends AbstractDefilerCard {
-    public final static String ID = makeID(ShovelTime.class.getSimpleName());
+public class ShadowDagger extends AbstractDefilerCard {
+    public final static String ID = makeID(ShadowDagger.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
     private static final int COST = 1;
 
-    public ShovelTime() {
-        super(ID, COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 7;
-        baseBlock = 3;
+    public ShadowDagger() {
+        super(ID, COST, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        baseDamage = 15;
+        magicNumber = baseMagicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        block();
         dmg(m);
     }
 
     public void upp() {
-        upgradeDamage(2);
-        upgradeBlock(1);
+        upgradeMagicNumber(2);
     }
 }

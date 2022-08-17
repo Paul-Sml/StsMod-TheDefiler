@@ -2,26 +2,27 @@ package theDefiler.cards.defiler;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theDefiler.actions.UpgradeBaseCardsAction;
 import theDefiler.cards.AbstractDefilerCard;
 
 import static theDefiler.DefilerMod.makeID;
 
-public class Worms extends AbstractDefilerCard {
-    public final static String ID = makeID(Worms.class.getSimpleName());
+public class VampireForm extends AbstractDefilerCard {
+    public final static String ID = makeID(VampireForm.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
     private static final int COST = 0;
 
-    public Worms() {
-        super(ID, COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 4;
+    public VampireForm() {
+        super(ID, COST, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m);
+        atb(new UpgradeBaseCardsAction());
     }
 
     public void upp() {
-        upgradeDamage(2);
+        isInnate = true;
+        uDesc();
     }
 }

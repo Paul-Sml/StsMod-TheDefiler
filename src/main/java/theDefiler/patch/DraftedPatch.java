@@ -8,7 +8,7 @@ import theDefiler.cards.AbstractDefilerCard;
 @SpirePatch(clz = CardRewardScreen.class, method = "acquireCard")
 public class DraftedPatch {
 
-    public static void Postfix(AbstractCard card){
+    public static void Postfix(CardRewardScreen thing, AbstractCard card){
 
         if (card instanceof AbstractDefilerCard) {
             ((AbstractDefilerCard) card).drafted();

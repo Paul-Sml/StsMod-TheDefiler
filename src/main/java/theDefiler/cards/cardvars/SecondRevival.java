@@ -10,7 +10,7 @@ public class SecondRevival extends DynamicVariable {
 
     @Override
     public String key() {
-        return makeID("R2");
+        return makeID("r2");
     }
 
     @Override

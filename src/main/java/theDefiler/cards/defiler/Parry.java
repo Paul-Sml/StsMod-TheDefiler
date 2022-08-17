@@ -14,7 +14,7 @@ public class Parry extends AbstractDefilerCard {
     private static final int COST = 1;
 
     public Parry() {
-        super(ID, COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 3;
         baseBlock = 7;
     }

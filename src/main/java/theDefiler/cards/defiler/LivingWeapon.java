@@ -13,7 +13,7 @@ public class LivingWeapon extends AbstractDefilerCard {
 
     private static final int COST = 1;
     private static final int MAXHP_COST = 1;
-    private static final int GOLD_COST = 1;
+    private static final int GOLD_COST = 25;
 
     public LivingWeapon() {
         super(ID, COST, GOLD_COST, MAXHP_COST, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);

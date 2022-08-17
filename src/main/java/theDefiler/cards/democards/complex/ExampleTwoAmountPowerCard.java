@@ -1,5 +1,6 @@
 package theDefiler.cards.democards.complex;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theDefiler.cards.AbstractEasyCard;
@@ -8,6 +9,7 @@ import theDefiler.powers.ExampleTwoAmountPower;
 import static theDefiler.DefilerMod.makeID;
 import static theDefiler.util.Wiz.applyToSelf;
 
+@AutoAdd.Ignore
 public class ExampleTwoAmountPowerCard extends AbstractEasyCard {
     public final static String ID = makeID("ExampleTwoAmountPowerCard");
     private final static int MAGIC = 1;

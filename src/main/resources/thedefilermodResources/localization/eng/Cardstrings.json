@@ -76,11 +76,11 @@
   },
   "${ModID}:Fury": {
     "NAME": "Fury",
-    "DESCRIPTION": "[#EFC851]Dig !M! : [#EFC851]Fury cards. NL Deal !D! damage. NL Add a [#EFC851]Fury to your discard. NL theDefiler:Dug : Increase [#EFC851]Fury cards' damage by 4"
+    "DESCRIPTION": "[#EFC851]Dig !M! : [#EFC851]Fury cards. NL Deal !D! damage. NL Add a [#EFC851]Fury to your discard. NL ${ModID}:Dug : Increase [#EFC851]Fury cards' damage by 4"
   },
   "${ModID}:RightHook": {
     "NAME": "Right Hook",
-    "DESCRIPTION": "Deal !D! damage. NL theDefiler:Dug : Add *Left *Hook to your hand."
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Dug : Add *Left *Hook to your hand."
   },
   "${ModID}:LeftHook": {
     "NAME": "Left Hook",
@@ -98,7 +98,7 @@
     "NAME": "Parry",
     "DESCRIPTION": "[#EFC851]Dig !M! : Attacks. NL gain !B! Block."
   },
-  "${ModID}TakeMyMoney:": {
+  "${ModID}:TakeMyMoney": {
     "NAME": "Take My Money",
     "DESCRIPTION": "[#EFC851]Dig !M! : Costs Gold. NL Deal !D! damage."
   },
@@ -124,11 +124,11 @@
   },
   "${ModID}:Meditation": {
     "NAME": "Meditation",
-    "DESCRIPTION": "Gain !B! Block. NL theDefiler:Revival !R!."
+    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Revival !${ModID}:r!."
   },
   "${ModID}:Diversion": {
     "NAME": "Diversion",
-    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL theDefiler:Drafted : Gain !M! Gold."
+    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL ${ModID}:Drafted : Gain !M! Gold."
   },
   "${ModID}:BarbedWhip": {
     "NAME": "Barbed Whip",
@@ -140,8 +140,8 @@
   },
   "${ModID}:Daydream": {
     "NAME": "Daydream",
-    "DESCRIPTION": "Choose a card. NL Next turn, add !M! copy of that card into your hand. NL theDefiler:Dug : this costs 0 for the turn.",
-    "UPGRADE_DESCRIPTION": "Choose a card. NL Next turn, add !M! copies of that card into your hand. NL theDefiler:Dug : this costs 0 for the turn."
+    "DESCRIPTION": "Choose a card. NL Next turn, add !M! copy of that card into your hand. NL ${ModID}:Dug : this costs 0 for the turn.",
+    "UPGRADE_DESCRIPTION": "Choose a card. NL Next turn, add !M! copies of that card into your hand. NL ${ModID}:Dug : this costs 0 for the turn."
   },
   "${ModID}:BloodBag": {
     "NAME": "Blood Bag",
@@ -149,7 +149,7 @@
   },
   "${ModID}:IntoxicantGas": {
     "NAME": "Intoxicant Gas",
-    "DESCRIPTION": "Deal !D! damage. NL theDefiler:Dug : Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Dug : Deal !D! damage to ALL enemies."
   },
   "${ModID}:Adrenaline": {
     "NAME": "Adrenaline",
@@ -157,12 +157,12 @@
   },
   "${ModID}:ClingClang": {
     "NAME": "Cling Clang",
-    "DESCRIPTION": "[#EFC851]Dig !M! : Upgraded card. NL theDefiler:Drafted : drop an additional card.",
-    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Upgraded card. NL theDefiler:Drafted : drop an additional upgraded card."
+    "DESCRIPTION": "[#EFC851]Dig !M! : Upgraded card. NL ${ModID}:Drafted : drop an additional card.",
+    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Upgraded card. NL ${ModID}:Drafted : drop an additional upgraded card."
   },
   "${ModID}:Pineapple": {
     "NAME": "Pineapple",
-    "DESCRIPTION": "Gain !B! Block. NL theDefiler:Dug : Revival !R!."
+    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Dug : Revival !${ModID}:r!."
   },
   "${ModID}:FastRunningShoes": {
     "NAME": "Fast Running Shoes",
@@ -175,7 +175,7 @@
   },
   "${ModID}:Starfish": {
     "NAME": "Starfish",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust. theDefiler:Dug : draw all Starfish cards. NL theDefiler:Drafted : Add another copy of this card to your deck."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust. ${ModID}:Dug : draw all Starfish cards. NL ${ModID}:Drafted : Add another copy of this card to your deck."
   },
   "${ModID}:Cooking": {
     "NAME": "Cooking",
@@ -184,7 +184,7 @@
   },
   "${ModID}:ChocolateCoins": {
     "NAME": "Chocolate Coins",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Gold. NL Gain !m2! Max HP. Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Gold. NL Gain !${ModID}:m2! Max HP. Exhaust."
   },
   "${ModID}:HuntingKnife": {
     "NAME": "Hunting Knife",
@@ -197,5 +197,9 @@
   "${ModID}:Grapple": {
     "NAME": "Grapple",
     "DESCRIPTION": "[#EFC851]Dig !M! : 0 [E] cost. NL Deal !D! damage."
+  },
+  "${ModID}:LivingWeapon": {
+    "NAME": "Living Weapon",
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Dug : Repeat the [#EFC851]Dig effect that ${ModID}:Dug this card"
   }
 }

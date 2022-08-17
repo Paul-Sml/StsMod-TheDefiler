@@ -1,5 +1,6 @@
 package theDefiler.cards.democards.simple;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,6 +10,7 @@ import theDefiler.cards.AbstractEasyCard;
 import static theDefiler.DefilerMod.makeID;
 import static theDefiler.util.Wiz.*;
 
+@AutoAdd.Ignore
 public class DrawAndShiv extends AbstractEasyCard {
     public final static String ID = makeID("DrawAndShiv");
     // intellij stuff skill, self, uncommon, , , , , , 

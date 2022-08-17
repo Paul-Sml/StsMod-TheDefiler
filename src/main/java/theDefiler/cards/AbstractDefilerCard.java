@@ -2,10 +2,12 @@ package theDefiler.cards;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.blights.AbstractBlight;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -84,6 +86,19 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
         addtb(action);
     }
 
+    protected void power(AbstractPower powerToApply) {
+        atb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, powerToApply));
+    }
+    protected void power(AbstractPower powerToApply, AbstractCreature target) {
+        atb(new ApplyPowerAction(target, AbstractDungeon.player, powerToApply));
+    }
+    protected void power(AbstractPower powerToApply, int amount) {
+        atb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, powerToApply, amount));
+    }
+    protected void power(AbstractPower powerToApply, AbstractCreature target, int amount) {
+        atb(new ApplyPowerAction(target, AbstractDungeon.player, powerToApply, amount));
+    }
+
     protected void dmg(AbstractMonster monster) {
         dmg(monster, AbstractGameAction.AttackEffect.NONE);
     }
@@ -160,6 +175,24 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
 
     protected void upMhp (int newBaseMaxhpCost) {
         upgradeBaseMaxhpCost(newBaseMaxhpCost);
+    }
+
+    public void updateGoldCost(int amt) {
+        int tmpCost = this.goldCost;
+        int diff = this.goldCost - this.goldCostForTurn;
+        tmpCost += amt;
+        if (tmpCost < 0) {
+            tmpCost = 0;
+        }
+
+        if (tmpCost != this.goldCost) {
+            this.isGoldCostModified = true;
+            this.goldCost = tmpCost;
+            this.goldCostForTurn = this.goldCost - diff;
+            if (this.goldCostForTurn < 0) {
+                this.goldCostForTurn = 0;
+            }
+        }
     }
 
     @Override

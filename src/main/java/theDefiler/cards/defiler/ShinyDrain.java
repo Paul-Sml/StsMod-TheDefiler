@@ -15,7 +15,7 @@ public class ShinyDrain extends AbstractDefilerCard {
     private static final int COST = 2;
 
     public ShinyDrain() {
-        super(ID, COST, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
+        super(ID, COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 14;
     }
 

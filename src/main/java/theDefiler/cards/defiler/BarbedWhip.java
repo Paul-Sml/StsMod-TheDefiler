@@ -16,7 +16,7 @@ public class BarbedWhip extends AbstractDefilerCard {
     private static final int COST = 1;
 
     public BarbedWhip() {
-        super(ID, COST, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
+        super(ID, COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 12;
         magicNumber=baseMagicNumber=2;
     }

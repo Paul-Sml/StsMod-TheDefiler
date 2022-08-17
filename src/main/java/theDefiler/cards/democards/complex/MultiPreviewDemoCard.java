@@ -1,5 +1,6 @@
 package theDefiler.cards.democards.complex;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.optionCards.BecomeAlmighty;
 import com.megacrit.cardcrawl.cards.optionCards.FameAndFortune;
@@ -16,6 +17,7 @@ import static theDefiler.DefilerMod.makeID;
 import static theDefiler.util.Wiz.getRandomItem;
 import static theDefiler.util.Wiz.makeInHand;
 
+@AutoAdd.Ignore
 public class MultiPreviewDemoCard extends AbstractEasyCard {
 
     public final static String ID = makeID("MultiPreviewDemoCard");

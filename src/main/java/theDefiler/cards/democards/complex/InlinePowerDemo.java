@@ -1,5 +1,6 @@
 package theDefiler.cards.democards.complex;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,6 +14,7 @@ import static theDefiler.DefilerMod.makeID;
 import static theDefiler.util.Wiz.applyToSelf;
 import static theDefiler.util.Wiz.addtb;
 
+@AutoAdd.Ignore
 public class InlinePowerDemo extends AbstractEasyCard {
 
     public final static String ID = makeID("InlinePowerDemo");

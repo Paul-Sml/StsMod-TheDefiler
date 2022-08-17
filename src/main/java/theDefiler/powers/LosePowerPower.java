@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class LosePowerPower extends AbstractEasyPower {
     private AbstractPower powerToLose;
-    //private static Texture chain = TexLoader.getTexture("theDefilerResources/images/ui/chain.png");
+    //private static Texture chain = TexLoader.getTexture("thedefilermodResources/images/ui/chain.png");
 
     public LosePowerPower(AbstractCreature owner, AbstractPower powerToLose, int amount) {
         super("Lose " + powerToLose.name, PowerType.DEBUFF, false, owner, amount);

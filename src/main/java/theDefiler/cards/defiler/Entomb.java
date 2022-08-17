@@ -15,7 +15,7 @@ public class Entomb extends AbstractDefilerCard {
     private static final int COST = 1;
 
     public Entomb() {
-        super(ID, COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 1;
         baseBlock = 8;
     }

@@ -1,5 +1,6 @@
 package theDefiler.cards.democards.complex;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -10,6 +11,7 @@ import theDefiler.cards.AbstractEasyCard;
 import static theDefiler.util.Wiz.*;
 import static theDefiler.DefilerMod.makeID;
 
+@AutoAdd.Ignore
 public class EasyXCostDemo extends AbstractEasyCard {
     public final static String ID = makeID("EasyXCostDemo");
     // intellij stuff attack, enemy, rare, , , , , 0, 1

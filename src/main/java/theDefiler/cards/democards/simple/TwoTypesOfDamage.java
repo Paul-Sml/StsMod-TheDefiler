@@ -1,5 +1,6 @@
 package theDefiler.cards.democards.simple;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
@@ -10,6 +11,7 @@ import theDefiler.cards.AbstractEasyCard;
 
 import static theDefiler.DefilerMod.makeID;
 
+@AutoAdd.Ignore
 public class TwoTypesOfDamage extends AbstractEasyCard {
     public final static String ID = makeID("TwoTypesOfDamage");
     // intellij stuff skill, self, uncommon, , , , , ,

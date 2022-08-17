@@ -1,5 +1,6 @@
 package theDefiler.cards.democards.complex;
 
+import basemod.AutoAdd;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -15,6 +16,7 @@ import static theDefiler.DefilerMod.makeID;
 import static theDefiler.util.Wiz.makeInHand;
 import static theDefiler.util.Wiz.returnTrulyRandomPrediCardInCombat;
 
+@AutoAdd.Ignore
 public class InlineCardModDemo extends AbstractEasyCard {
 
     public final static String ID = makeID("InlineCardModDemo");
