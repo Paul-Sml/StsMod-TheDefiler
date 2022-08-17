@@ -59,8 +59,8 @@
 
   "${ModID}:EarthDigging": {
     "NAME": "Earth Digging",
-    "DESCRIPTION": "[#EFC851]Dig !M! : Basic rarity. NL Removed : Add [#EFC851]Tomb [#EFC851]Digging to your deck.",
-    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Basic rarity NL Removed : Add [#EFC851]Tomb [#EFC851]Digging+ to your deck."
+    "DESCRIPTION": "[#EFC851]Dig !M! : Basic rarity. NL ${ModID}:Removed : Add [#EFC851]Tomb [#EFC851]Digging to your deck.",
+    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Basic rarity NL ${ModID}:Removed : Add [#EFC851]Tomb [#EFC851]Digging+ to your deck."
   },
   "${ModID}:TombDigging": {
     "NAME": "Tomb Digging",
@@ -104,7 +104,7 @@
   },
   "${ModID}:GoldenApple": {
     "NAME": "GoldenApple",
-    "DESCRIPTION": "Gain !B! Block. Gain !M! Max HP."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Max HP."
   },
   "${ModID}:BottomlessBag": {
     "NAME": "Bottomless Bag",
@@ -140,8 +140,8 @@
   },
   "${ModID}:Daydream": {
     "NAME": "Daydream",
-    "DESCRIPTION": "Choose a card. NL Next turn, add !M! copy of that card into your hand. NL ${ModID}:Dug : this costs 0 for the turn.",
-    "UPGRADE_DESCRIPTION": "Choose a card. NL Next turn, add !M! copies of that card into your hand. NL ${ModID}:Dug : this costs 0 for the turn."
+    "DESCRIPTION": "Choose a card. NL Next turn, add !M! copy of that card into your hand. NL ${ModID}:Dug : costs 0 for the turn.",
+    "UPGRADE_DESCRIPTION": "Choose a card. NL Next turn, add !M! copies of that card into your hand. NL ${ModID}:Dug : costs 0 for the turn."
   },
   "${ModID}:BloodBag": {
     "NAME": "Blood Bag",
@@ -162,7 +162,7 @@
   },
   "${ModID}:Pineapple": {
     "NAME": "Pineapple",
-    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Dug : Revival !${ModID}:r!."
+    "DESCRIPTION": "Gain !B! Block. NL ${ModID}:Dug : ${ModID}:Revival !${ModID}:r!."
   },
   "${ModID}:FastRunningShoes": {
     "NAME": "Fast Running Shoes",
@@ -175,7 +175,7 @@
   },
   "${ModID}:Starfish": {
     "NAME": "Starfish",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust. ${ModID}:Dug : draw all Starfish cards. NL ${ModID}:Drafted : Add another copy of this card to your deck."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust. NL ${ModID}:Dug : draw all Starfish cards. NL ${ModID}:Drafted : Add another copy of this card to your deck."
   },
   "${ModID}:Cooking": {
     "NAME": "Cooking",
@@ -188,7 +188,7 @@
   },
   "${ModID}:HuntingKnife": {
     "NAME": "Hunting Knife",
-    "DESCRIPTION": "Deal !D! damage. NL If Fatal drop an additional card reward. NL Exhaust. NL Drafted : Gain 2(3) Max HP."
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal drop an additional card reward. NL Exhaust. NL Drafted : Gain !${ModID}:r! Max HP."
   },
   "${ModID}:PowerBelt": {
     "NAME": "Power Belt",
@@ -200,6 +200,60 @@
   },
   "${ModID}:LivingWeapon": {
     "NAME": "Living Weapon",
-    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Dug : Repeat the [#EFC851]Dig effect that ${ModID}:Dug this card"
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Dug : Repeat the [#EFC851]Dig effect that ${ModID}:Dug this card."
+  },
+  "${ModID}:WildRush": {
+    "NAME": "Wild Rush",
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal gain 2 Max HP."
+  },
+  "${ModID}:Antibody": {
+    "NAME": "Antibody",
+    "DESCRIPTION": "Gain !M! Max HP. NL Exhaust. NL ${ModID}:Drafted : Obtain a relic that makes you gain 1 Max HP after each combat. NL ${ModID}:Removed : Obtain it as well."
+  },
+  "${ModID}:Drill": {
+    "NAME": "Drill",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Non Status."
+  },
+  "${ModID}:LearnYourBasics": {
+    "NAME": "Learn Your Basics",
+    "DESCRIPTION": "Upgrade ALL of your Basic cards for the rest of combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Upgrade ALL of your Basic cards for the rest of combat. NL Exhaust."
+  },
+  "${ModID}:VampireForm": {
+    "NAME": "Vampire Form",
+    "DESCRIPTION": "empty form.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Upgrade ALL of your Basic cards for the rest of combat. NL Exhaust."
+  },
+  "${ModID}:ShadowDagger": {
+    "NAME": "Shadow Dagger",
+    "DESCRIPTION": "Deal !D! damage. When you enter a [#EFC851]? Room, permanently increase this card damage by !M!."
+  },
+  "${ModID}:BornAgain": {
+    "NAME": "Born Again",
+    "DESCRIPTION": "Reset all ${ModID}:Revival values. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Reset all ${ModID}:Revival values. NL Exhaust."
+  },
+  "${ModID}:RubyTear": {
+    "NAME": "Ruby Tear",
+    "DESCRIPTION": "Gain [E]. NL Deal !D! damage. NL ${ModID}:Revival !${ModID}:r!. NL When the Revival value of this card hits 0, its costs are free for the combat",
+    "UPGRADE_DESCRIPTION": "Gain [E]. NL Deal !D! damage. NL  ${ModID}:Revival !${ModID}:r!. ${ModID}:Revival !${ModID}:r2!. NL When any Revival value of this card hits 0, its costs are free for the combat"
+  },
+  "${ModID}:FountainOfYouth": {
+    "NAME": "Fountain Of Youth",
+    "DESCRIPTION": "${ModID}:Revival !${ModID}:r!. NL ${ModID}:Removed : remove all removable Curses from your deck.",
+    "UPGRADE_DESCRIPTION": "${ModID}:Revival !${ModID}:r!. NL ${ModID}:Revival !${ModID}:r2!. NL ${ModID}:Removed : remove all removable Curses from your deck."
+  },
+  "${ModID}:OneToOne": {
+    "NAME": "One To One",
+    "DESCRIPTION": "Take damage from enemy attacks only."
+  },
+  "${ModID}:BloodLetting": {
+    "NAME": "Blood-letting",
+    "DESCRIPTION": "Gain 1 Max HP everytime you lose HP until your next turn. NL Exhaust."
+  },
+  "${ModID}:ManaCoin": {
+    "NAME": "Mana Coin",
+    "DESCRIPTION": "Gain [E].",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E]."
   }
 }

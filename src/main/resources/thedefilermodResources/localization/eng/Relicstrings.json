@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "Has no effect."
     ]
+  },
+  "${ModID}:Antibodies": {
+    "NAME": "Antibodies",
+    "FLAVOR": "TODO: make this a sweet relic.",
+    "DESCRIPTIONS": [
+      "At the end of combat, gain #b"," Max HP"
+    ]
   }
 }

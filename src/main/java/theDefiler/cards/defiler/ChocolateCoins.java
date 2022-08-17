@@ -15,7 +15,7 @@ public class ChocolateCoins extends AbstractDefilerCard {
     private static final int COST = 1;
 
     public ChocolateCoins() {
-        super(ID, COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = 5;
         magicNumber = baseMagicNumber = 25;
         secondMagic = baseSecondMagic = 1;

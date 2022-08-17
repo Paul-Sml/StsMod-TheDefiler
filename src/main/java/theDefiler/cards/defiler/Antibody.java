@@ -18,7 +18,7 @@ public class Antibody extends AbstractDefilerCard {
     private static final int COST = 1;
 
     public Antibody() {
-        super(ID, COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, COST, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         magicNumber = baseMagicNumber = 1;
         exhaust = true;
     }

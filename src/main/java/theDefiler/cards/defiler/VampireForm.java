@@ -11,7 +11,7 @@ public class VampireForm extends AbstractDefilerCard {
     public final static String ID = makeID(VampireForm.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
-    private static final int COST = 0;
+    private static final int COST = 3;
 
     public VampireForm() {
         super(ID, COST, CardType.POWER, CardRarity.RARE, CardTarget.SELF);

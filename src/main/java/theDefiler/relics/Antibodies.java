@@ -9,7 +9,7 @@ import theDefiler.actions.GainMaxhpAction;
 import static theDefiler.DefilerMod.makeID;
 
 public class Antibodies extends AbstractEasyRelic {
-    public static final String ID = makeID("Antibodies");
+    public static final String ID = makeID(Antibodies.class.getSimpleName());
 
     public Antibodies() {
         super(ID, RelicTier.SPECIAL, LandingSound.FLAT, TheDefiler.Enums.DEFILER_COLOR);
@@ -29,5 +29,4 @@ public class Antibodies extends AbstractEasyRelic {
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + counter + DESCRIPTIONS[1];
     }
-
 }

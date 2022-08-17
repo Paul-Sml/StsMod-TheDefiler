@@ -27,5 +27,6 @@ public class ManaCoin extends AbstractDefilerCard {
 
     public void upp() {
         upBgc(UPGRADED_GOLD_COST);
+        uDesc();
     }
 }
