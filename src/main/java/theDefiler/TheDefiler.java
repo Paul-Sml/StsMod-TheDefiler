@@ -20,6 +20,9 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import theDefiler.cards.Defend;
 import theDefiler.cards.Strike;
+import theDefiler.cards.defiler.CoinToss;
+import theDefiler.cards.defiler.EarthDigging;
+import theDefiler.relics.GoldenShovel;
 import theDefiler.relics.TodoItem;
 
 import java.util.ArrayList;
@@ -63,7 +66,7 @@ public class TheDefiler extends CustomPlayer {
     @Override
     public CharSelectInfo getLoadout() {
         return new CharSelectInfo(NAMES[0], TEXT[0],
-                80, 80, 0, 99, 5, this, getStartingRelics(),
+                75, 75, 0, 99, 5, this, getStartingRelics(),
                 getStartingDeck(), false);
     }
 
@@ -76,12 +79,16 @@ public class TheDefiler extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }
+
+        retVal.add(CoinToss.ID);
+        retVal.add(EarthDigging.ID);
+
         return retVal;
     }
 
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(TodoItem.ID);
+        retVal.add(GoldenShovel.ID);
         return retVal;
     }
 
@@ -99,7 +106,7 @@ public class TheDefiler extends CustomPlayer {
 
     @Override
     public int getAscensionMaxHPLoss() {
-        return 8;
+        return 7;
     }
 
     @Override
@@ -124,8 +131,7 @@ public class TheDefiler extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        System.out.println("YOU NEED TO SET getStartCardForEvent() in your " + getClass().getSimpleName() + " file!");
-        return null;
+        return new CoinToss();
     }
 
     @Override

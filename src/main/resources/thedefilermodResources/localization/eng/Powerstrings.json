@@ -6,5 +6,43 @@
       " #yStrength and #b",
       " #yDexterity."
     ]
+  },
+  "${ModID}:BloodLettingPower": {
+    "NAME": "Blood-Letting",
+    "DESCRIPTIONS": [
+      "Gain #b"," Max HP everytime you lose HP until your next turn"
+    ]
+  },
+  "${ModID}:DivineStormPower": {
+    "NAME": "Divine Storm",
+    "DESCRIPTIONS": [
+      "At the end of your turn, Deal #b"," damage to a random enemy."
+    ]
+  },
+  "${ModID}:DomisdrawsCrossPower": {
+    "NAME": "Domisdraw's Cross",
+    "DESCRIPTIONS": [
+      "Add a copy of the first card you play each turn to your hand.",
+      "Add a copy of the first #b"," cards you play each turn to your hand."
+    ]
+  },
+  "${ModID}:FastRunningShoesPower": {
+    "NAME": "Fast Running Shoes",
+    "DESCRIPTIONS": [
+      "If you end your turn with #b"," or less Block, gain #b"," Block."
+    ]
+  },
+  "${ModID}:OneToOnePower": {
+    "NAME": "One To One",
+    "DESCRIPTIONS": [
+      "Take damage from enemy attacks only."
+    ]
+  },
+  "${ModID}:PinataPower": {
+    "NAME": "Piñata",
+    "DESCRIPTIONS": [
+      "Gain Gold equal to damage blocked this turn.",
+      "Gain Gold equal to damage blocked this turn times #b","."
+    ]
   }
 }

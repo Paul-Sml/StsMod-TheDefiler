@@ -14,9 +14,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import theDefiler.actions.DefilerDigAction;
 import theDefiler.actions.GainMaxhpAction;
 
 import java.util.Iterator;
+import java.util.function.Predicate;
+
 import static theDefiler.util.Wiz.addtb;
 
 public abstract class AbstractDefilerCard extends AbstractEasyCard {
@@ -54,6 +57,21 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
 
     public AbstractDefilerCard(String cardID, int cost, int goldCost, int maxhpCost, CardType type, CardRarity rarity, CardTarget target) {
         super(cardID, cost, type, rarity, target);
+        this.isGoldCostModified = false;
+        this.isGoldCostModifiedForTurn = false;
+        this.upgradedGoldCost = false;
+        this.goldCost = goldCost;
+        this.goldCostForTurn = goldCost;
+
+        this.isMaxhpCostModified = false;
+        this.isMaxhpCostModifiedForTurn = false;
+        this.upgradedMaxhpCost = false;
+        this.maxhpCost = maxhpCost;
+        this.maxhpCostForTurn = maxhpCost;
+    }
+
+    public AbstractDefilerCard(String cardID, int cost, int goldCost, int maxhpCost, CardType type, CardRarity rarity, CardTarget target, CardColor color) {
+        super(cardID, cost, type, rarity, target, color);
         this.isGoldCostModified = false;
         this.isGoldCostModifiedForTurn = false;
         this.upgradedGoldCost = false;
@@ -109,6 +127,10 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
 
     protected void draw(int drawAmount) {
         atb(new DrawCardAction(drawAmount));
+    }
+
+    protected void dig(int numCards, Predicate<AbstractCard> digCondition) {
+        atb(new DefilerDigAction(numCards, digCondition));
     }
 
     @Override
@@ -321,18 +343,26 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
     }
 
     @Override
-    public AbstractCard makeStatEquivalentCopy() {//TODO: PATCH IT
+    public AbstractCard makeStatEquivalentCopy() {
         AbstractCard card = super.makeStatEquivalentCopy();
 
-        if (card instanceof AbstractDefilerCard) {
-            AbstractDefilerCard c = (AbstractDefilerCard)card;
-            c.goldCost = this.goldCost;
-            c.goldCostForTurn = this.goldCostForTurn;
-            c.isGoldCostModified = this.isGoldCostModified;
-            c.isGoldCostModifiedForTurn = this.isGoldCostModifiedForTurn;
-        }
 
-        return card;
+        AbstractDefilerCard c = (AbstractDefilerCard)card;
+
+        c.goldCost = this.goldCost;
+        c.goldCostForTurn = this.goldCostForTurn;
+        c.isGoldCostModified = this.isGoldCostModified;
+        c.isGoldCostModifiedForTurn = this.isGoldCostModifiedForTurn;
+
+        c.maxhpCost = this.maxhpCost;
+        c.maxhpCostForTurn = this.maxhpCostForTurn;
+        c.isMaxhpCostModified = this.isMaxhpCostModified;
+        c.isMaxhpCostModifiedForTurn = this.isMaxhpCostModifiedForTurn;
+
+        c.revival = this.revival;
+        c.secondRevival = this.secondRevival;
+
+        return c;
     }
 
     @Override

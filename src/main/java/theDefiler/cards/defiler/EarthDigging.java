@@ -2,7 +2,10 @@ package theDefiler.cards.defiler;
 
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theDefiler.actions.DefilerDigAction;
 import theDefiler.cards.AbstractDefilerCard;
 
@@ -26,7 +29,7 @@ public class EarthDigging extends AbstractDefilerCard {
 
     @Override
     public void onRemoveFromMasterDeck() {
-        atb(new AddCardToDeckAction(cardsToPreview));
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(cardToPreview.get(0).makeStatEquivalentCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
     }
 
     public void upp() {

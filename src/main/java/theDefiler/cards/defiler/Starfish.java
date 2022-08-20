@@ -5,9 +5,11 @@ import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rewards.RewardItem;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theDefiler.actions.DefilerDigAction;
 import theDefiler.actions.SpecificNonChosenDiscardPileToHandAction;
 import theDefiler.actions.SpecificNonChosenDrawPileToHandAction;
@@ -26,7 +28,7 @@ public class Starfish extends AbstractDefilerCard {
 
     public Starfish() {
         super(ID, COST, GOLD_COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = 10;
+        baseDamage = 9;
         exhaust = true;
     }
 
@@ -35,17 +37,18 @@ public class Starfish extends AbstractDefilerCard {
     }
 
     public void dug() {
+        AbstractCard t = this;
         atb(new AbstractGameAction() {
             @Override
             public void update() {
                 for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-                    if (c.cardID.equals(Starfish.ID)) {
-                        atb(new SpecificNonChosenDrawPileToHandAction(c));
+                    if (c.cardID.equals(Starfish.ID) && c != t) {
+                        addToTop(new SpecificNonChosenDrawPileToHandAction(c));
                     }
                 }
                 for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-                    if (c.cardID.equals(Starfish.ID)) {
-                        atb(new SpecificNonChosenDiscardPileToHandAction(c));
+                    if (c.cardID.equals(Starfish.ID) && c != t) {
+                        addToTop(new SpecificNonChosenDiscardPileToHandAction(c));
                     }
                 }
                 this.isDone = true;
@@ -54,10 +57,10 @@ public class Starfish extends AbstractDefilerCard {
     }
 
     public void drafted() {
-        atb(new AddCardToDeckAction(this.makeCopy()));
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.makeStatEquivalentCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
     }
 
     public void upp() {
-        upgradeDamage(2);
+        upgradeDamage(3);
     }
 }

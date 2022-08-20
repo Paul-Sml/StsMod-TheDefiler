@@ -31,7 +31,7 @@ public class Fury extends AbstractDefilerCard {
 
     @Override
     public void dug() {
-        atb(new FuryGashAction(this, secondDamage));
+        atb(new FuryGashAction(this, secondMagic));
     }
 
     public void upp() {

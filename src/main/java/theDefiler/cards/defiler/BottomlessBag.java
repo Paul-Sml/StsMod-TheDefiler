@@ -1,8 +1,8 @@
 package theDefiler.cards.defiler;
 
-import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theDefiler.actions.GainGoldDefilerAction;
 import theDefiler.cards.AbstractDefilerCard;
 
 import static theDefiler.DefilerMod.makeID;
@@ -19,7 +19,7 @@ public class BottomlessBag extends AbstractDefilerCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new GainGoldAction(magicNumber));
+        atb(new GainGoldDefilerAction(magicNumber));
     }
 
     public void upp() {

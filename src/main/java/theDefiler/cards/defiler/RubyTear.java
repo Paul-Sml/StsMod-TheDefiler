@@ -1,6 +1,8 @@
 package theDefiler.cards.defiler;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theDefiler.cards.AbstractDefilerCard;
@@ -25,8 +27,15 @@ public class RubyTear extends AbstractDefilerCard {
         dmg(m);
         revival();
         if (revival == 0 || secondRevival == 0) {
-            this.updateCost(-cost);
-            this.updateGoldCost(-goldCost);
+            atb(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    updateCost(-cost);
+                    updateGoldCost(-goldCost);
+                    isDone = true;
+                }
+            });
+
         }
     }
 

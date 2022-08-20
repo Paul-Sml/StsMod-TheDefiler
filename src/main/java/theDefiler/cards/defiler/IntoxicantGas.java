@@ -1,8 +1,12 @@
 package theDefiler.cards.defiler;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theDefiler.actions.DefilerDigAction;
 import theDefiler.actions.FuryGashAction;
@@ -28,7 +32,8 @@ public class IntoxicantGas extends AbstractDefilerCard {
     @Override
     public void dug() {
         applyPowers();
-        allDmg(AbstractGameAction.AttackEffect.NONE);
+        AbstractPlayer p = AbstractDungeon.player;
+        atb(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.damage, false), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.POISON));
     }
 
     public void upp() {

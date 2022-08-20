@@ -40,7 +40,7 @@ public class Antibody extends AbstractDefilerCard {
         if (!p.hasRelic(Antibodies.ID)) {
             AbstractDungeon.getCurrRoom().spawnRelicAndObtain(500, 500, RelicLibrary.getRelic(Antibodies.ID).makeCopy());
         } else {
-            p.getRelic(Antibodies.ID).counter++;
+            p.getRelic(Antibodies.ID).setCounter(p.getRelic(Antibodies.ID).counter + 1);
         }
     }
 

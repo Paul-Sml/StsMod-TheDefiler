@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import theDefiler.cards.AbstractDefilerCard;
 import theDefiler.TheDefiler;
+import theDefiler.cards.defiler.BowsScorch;
 import theDefiler.cards.defiler.LivingWeapon;
 import theDefiler.cards.defiler.Worms;
 import theDefiler.powers.*;
@@ -33,14 +34,6 @@ public class DefilerDigAction  extends AbstractGameAction
         startingDuration = Settings.ACTION_DUR_FAST;
         duration = startingDuration;
         condition = digCondition;
-    }
-
-    public DefilerDigAction(int numCards, boolean block)
-    {
-        amount = baseAmount = numCards;
-        actionType = ActionType.CARD_MANIPULATION;
-        startingDuration = Settings.ACTION_DUR_FAST;
-        duration = startingDuration;
     }
 
     public void update()
@@ -77,7 +70,7 @@ public class DefilerDigAction  extends AbstractGameAction
     {
         if (card.cardID.equals(LivingWeapon.ID))
             this.addToBot(new DefilerDigAction(baseAmount, condition));
-        if(isConditionMet || card.cardID.equals(Worms.ID))
+        if(isConditionMet || card.cardID.equals(Worms.ID) || card.cardID.equals(BowsScorch.ID))
             Rebound(card);
         else
         {

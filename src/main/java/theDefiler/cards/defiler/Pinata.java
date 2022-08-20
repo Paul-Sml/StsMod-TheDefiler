@@ -1,34 +1,33 @@
 package theDefiler.cards.defiler;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theDefiler.actions.GainGoldDefilerAction;
-import theDefiler.actions.GainMaxhpAction;
+import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import theDefiler.cards.AbstractDefilerCard;
+import theDefiler.powers.PinataPower;
 
 import static theDefiler.DefilerMod.makeID;
 
-public class ChocolateCoins extends AbstractDefilerCard {
-    public final static String ID = makeID(ChocolateCoins.class.getSimpleName());
+public class Pinata extends AbstractDefilerCard {
+    public final static String ID = makeID(Pinata.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
     private static final int COST = 1;
 
-    public ChocolateCoins() {
+    public Pinata() {
         super(ID, COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = 5;
-        magicNumber = baseMagicNumber = 25;
-        secondMagic = baseSecondMagic = 1;
+        baseBlock = 13;
         exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         block();
-        atb(new GainGoldDefilerAction(magicNumber));
-        atb(new GainMaxhpAction(secondMagic));
+        power(new PinataPower(p, 1), 1);
     }
 
     public void upp() {
-        upgradeBaseCost(0);
+        upgradeBlock(4);
     }
 }

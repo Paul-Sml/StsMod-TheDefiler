@@ -1,5 +1,6 @@
 package theDefiler.cards.defiler;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theDefiler.actions.UpgradeBaseCardsAction;
@@ -7,6 +8,7 @@ import theDefiler.cards.AbstractDefilerCard;
 
 import static theDefiler.DefilerMod.makeID;
 
+@AutoAdd.Ignore
 public class VampireForm extends AbstractDefilerCard {
     public final static String ID = makeID(VampireForm.class.getSimpleName());
     // intellij stuff power, self, uncommon

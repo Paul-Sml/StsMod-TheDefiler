@@ -1,5 +1,6 @@
 package theDefiler.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,12 +17,12 @@ public class SpecificNonChosenDrawPileToHandAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.p.hand.size() >= 10) {
+        if (this.p.hand.size() >= BaseMod.MAX_HAND_SIZE || p.hand.contains(cardToReturn)) {
             this.isDone = true;
         } else {
-            if (this.p.hand.size() < 10) {
+            if (this.p.hand.size() < BaseMod.MAX_HAND_SIZE) {
                 this.p.hand.addToHand(cardToReturn);
-                this.p.discardPile.removeCard(cardToReturn);
+                this.p.drawPile.removeCard(cardToReturn);
             }
 
             cardToReturn.lighten(false);

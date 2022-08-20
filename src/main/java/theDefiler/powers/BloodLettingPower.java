@@ -21,6 +21,7 @@ public class BloodLettingPower extends AbstractEasyPower {
     @Override
     public int onLoseHp(int damageAmount) {
         if (AbstractDungeon.player.currentHealth > 0) {
+            flash();
             this.addToTop(new GainMaxhpAction(amount));
         }
         return super.onLoseHp(damageAmount);

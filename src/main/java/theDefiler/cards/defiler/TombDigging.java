@@ -14,7 +14,7 @@ public class TombDigging extends AbstractDefilerCard {
     private static final int COST = 1;
 
     public TombDigging() {
-        super(ID, COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF, CardColor.COLORLESS);
         magicNumber = baseMagicNumber = 3;
     }
 

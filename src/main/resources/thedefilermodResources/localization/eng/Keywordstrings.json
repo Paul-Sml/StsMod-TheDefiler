@@ -19,7 +19,7 @@
     "NAMES": [
       "revival"
     ],
-    "DESCRIPTION": "Gain #b1 Max HP while the #yRevival value above #b0. Reduce this value by #b1."
+    "DESCRIPTION": "Gain #b1 Max HP while the #yRevival value is above #b0. Reduce this value by #b1."
   },
   {
     "PROPER_NAME": "Drafted",

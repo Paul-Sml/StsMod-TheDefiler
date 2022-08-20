@@ -76,7 +76,7 @@
   },
   "${ModID}:Fury": {
     "NAME": "Fury",
-    "DESCRIPTION": "[#EFC851]Dig !M! : [#EFC851]Fury cards. NL Deal !D! damage. NL Add a [#EFC851]Fury to your discard. NL ${ModID}:Dug : Increase [#EFC851]Fury cards' damage by 4"
+    "DESCRIPTION": "[#EFC851]Dig !M! : [#EFC851]Fury cards. NL Deal !D! damage. NL Add a copy of this card to your discard pile. NL ${ModID}:Dug : Increase [#EFC851]Fury cards' damage by 4"
   },
   "${ModID}:RightHook": {
     "NAME": "Right Hook",
@@ -88,7 +88,7 @@
   },
   "${ModID}:TombWall": {
     "NAME": "Tomb Wall",
-    "DESCRIPTION": "[#EFC851]Dig !M! : 1 [E] cost. NL Gain !B! Block"
+    "DESCRIPTION": "[#EFC851]Dig !M! : 1 [E] cost. NL Gain !B! Block."
   },
   "${ModID}:ShinyDrain": {
     "NAME": "Shiny Drain",
@@ -138,6 +138,15 @@
     "NAME": "Money Diet",
     "DESCRIPTION": "Take !M! damage. NL Gain !B! Block."
   },
+  "${ModID}:SearingMoney": {
+    "NAME": "Searing Money",
+    "DESCRIPTION": "[#EFC851]Dig !${ModID}:m2! : Costs Max HP. NL Gain !M! Golds. NL Add [#EFC851]Scorching [#EFC851]Hand and 2 [#EFC851]Burns into your draw pile.",
+    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !${ModID}:m2! : Costs Max HP. NL Gain !M! Golds. NL Add [#EFC851]Scorching [#EFC851]Hand+ and 2 [#EFC851]Burns into your draw pile."
+  },
+  "${ModID}:Scorching Hand": {
+    "NAME": "ScorchingHand",
+    "DESCRIPTION": "Deal !D! damage."
+  },
   "${ModID}:Daydream": {
     "NAME": "Daydream",
     "DESCRIPTION": "Choose a card. NL Next turn, add !M! copy of that card into your hand. NL ${ModID}:Dug : costs 0 for the turn.",
@@ -175,7 +184,7 @@
   },
   "${ModID}:Starfish": {
     "NAME": "Starfish",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust. NL ${ModID}:Dug : draw all Starfish cards. NL ${ModID}:Drafted : Add another copy of this card to your deck."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust. NL ${ModID}:Dug : draw all [#EFC851]Starfish cards. NL ${ModID}:Drafted : Add another copy of this card to your deck."
   },
   "${ModID}:Cooking": {
     "NAME": "Cooking",
@@ -188,7 +197,7 @@
   },
   "${ModID}:HuntingKnife": {
     "NAME": "Hunting Knife",
-    "DESCRIPTION": "Deal !D! damage. NL If Fatal drop an additional card reward. NL Exhaust. NL Drafted : Gain !${ModID}:r! Max HP."
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal drop an additional card reward. NL Exhaust. NL ${ModID}:Drafted : Gain !M! Max HP."
   },
   "${ModID}:PowerBelt": {
     "NAME": "Power Belt",
@@ -197,6 +206,69 @@
   "${ModID}:Grapple": {
     "NAME": "Grapple",
     "DESCRIPTION": "[#EFC851]Dig !M! : 0 [E] cost. NL Deal !D! damage."
+  },
+  "${ModID}:StoneSkin": {
+    "NAME": "Stone Skin",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${ModID}:Emergency": {
+    "NAME": "Emergency",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Block. NL Gain !B! Block. NL Your next upgrade must be wasted on this card."
+  },
+  "${ModID}:EvilShadow": {
+    "NAME": "EvilShadow",
+    "DESCRIPTION": "[#EFC851]Dig !M! : 2 [E] cost. NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : 2+ [E] cost. NL Deal !D! damage."
+  },
+  "${ModID}:CallForHelp": {
+    "NAME": "Call For Help",
+    "DESCRIPTION": "If an enemy intends to attack gain !B! Block. NL Otherwise gain as much next turn."
+  },
+  "${ModID}:Pinata": {
+    "NAME": "Piñata",
+    "DESCRIPTION": "Gain !B! Block. NL Gain Gold equal to damage blocked this turn. NL Exhaust."
+  },
+  "${ModID}:DNAExtraction": {
+    "NAME": "DNA Extraction",
+    "DESCRIPTION": "Take 1 damage. NL Deal !D! damage to all enemies. NL Gain 5 Golds for each damaged target."
+  },
+  "${ModID}:DivineStorm": {
+    "NAME": "Divine Storm",
+    "DESCRIPTION": "At the end of your turn, Deal !M! damage to a random enemy."
+  },
+  "${ModID}:DevilsPact": {
+    "NAME": "Devil's Pact",
+    "DESCRIPTION": "Unplayable. NL When you draw this card lose 1 Gold. NL ${ModID}:Drafted : Gain !M! Gold."
+  },
+  "${ModID}:DomisdrawsSpear": {
+    "NAME": "Domisdraw's Spear",
+    "DESCRIPTION": "Remove all Block from the enemy. NL Deal !D! damage. NL ${ModID}:Drafted : add [#EFC851]Spear's [#EFC851]Shaky to your deck."
+  },
+  "${ModID}:DomisdrawsBow": {
+    "NAME": "Domisdraw's Bow",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Rare rarity. NL Gain !B! Block. NL ${ModID}:Drafted : add [#EFC851]Bow's [#EFC851]Scorch to your deck."
+  },
+  "${ModID}:DomisdrawsCross": {
+    "NAME": "Domisdraw's Cross",
+    "DESCRIPTION": "Add a copy of the first card you play each turn to your hand. NL ${ModID}:Drafted : add [#EFC851]Cross' [#EFC851]Disease to your deck.",
+    "UPGRADE_DESCRIPTION": "Add a copy of the !M! first cards you play each turn to your hand. NL ${ModID}:Drafted : add [#EFC851]Cross' [#EFC851]Disease to your deck."
+  },
+  "${ModID}:DomisdrawsCrossbow": {
+    "NAME": "Domisdraw's Crossbow",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Rare rarity. NL Remove all Block from the enemy. NL Deal !D! damage. NL Gain !B! Block. NL Add a copy of this card to your discard pile.",
+    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Rare rarity. NL Remove all Block from the enemy. NL Deal !D! damage. NL Gain !B! Block. NL Add !${ModID}:m2! copies of this card to your discard pile."
+  },
+  "${ModID}:SpearsShake": {
+    "NAME": "Spear's Shake",
+    "DESCRIPTION": "Attack damage are halved while this card is in your hand. NL ${ModID}:Removed : remove [#EFC851]Domisdraw's [#EFC851]Spear from your deck."
+  },
+  "${ModID}:BowsScorch": {
+    "NAME": "Bow's Scorch",
+    "DESCRIPTION": "This card can be ${ModID}:Dug by any ${ModID}:Dig effect. NL ${ModID}:Dug : Add a 2 Burns to your hand. NL ${ModID}:Removed : remove [#EFC851]Domisdraw's [#EFC851]Bow from your deck."
+  },
+  "${ModID}:CrossDisease": {
+    "NAME": "Cross' Disease",
+    "DESCRIPTION": "When you draw this, Exhaust another random card in your hand. NL ${ModID}:Removed : remove [#EFC851]Domisdraw's [#EFC851]Spear from your deck."
   },
   "${ModID}:LivingWeapon": {
     "NAME": "Living Weapon",

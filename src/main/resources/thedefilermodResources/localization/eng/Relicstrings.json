@@ -12,5 +12,12 @@
     "DESCRIPTIONS": [
       "At the end of combat, gain #b"," Max HP"
     ]
+  },
+  "${ModID}:GoldenShovel": {
+    "NAME": "Golden Shovel",
+    "FLAVOR": "TODO: make this a sweet relic.",
+    "DESCRIPTIONS": [
+      "At the end of combat, gain #b"," Golds."
+    ]
   }
 }
