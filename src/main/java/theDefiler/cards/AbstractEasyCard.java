@@ -209,7 +209,7 @@ public abstract class AbstractEasyCard extends CustomCard {
     }
 
     protected float getRotationTimeNeeded() {
-        return 1f;
+        return 2f;
     }
 
     // These shortcuts are specifically for cards. All other shortcuts that aren't specifically for cards can go in Wiz.

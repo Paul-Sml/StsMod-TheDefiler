@@ -19,7 +19,7 @@ public class TakeMyMoney extends AbstractDefilerCard {
     public TakeMyMoney() {
         super(ID, COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         magicNumber = baseMagicNumber = 4; //Dig amount
-        baseDamage = 8;
+        baseDamage = 9;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

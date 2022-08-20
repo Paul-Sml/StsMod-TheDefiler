@@ -138,13 +138,13 @@
     "NAME": "Money Diet",
     "DESCRIPTION": "Take !M! damage. NL Gain !B! Block."
   },
-  "${ModID}:SearingMoney": {
-    "NAME": "Searing Money",
-    "DESCRIPTION": "[#EFC851]Dig !${ModID}:m2! : Costs Max HP. NL Gain !M! Golds. NL Add [#EFC851]Scorching [#EFC851]Hand and 2 [#EFC851]Burns into your draw pile.",
-    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !${ModID}:m2! : Costs Max HP. NL Gain !M! Golds. NL Add [#EFC851]Scorching [#EFC851]Hand+ and 2 [#EFC851]Burns into your draw pile."
+  "${ModID}:SearingCoins": {
+    "NAME": "Searing Coins",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Costs Max HP. NL Gain !${ModID}:m2! Golds. NL Add [#EFC851]Scorching [#EFC851]Hand and 2 [#EFC851]Burns into your draw pile.",
+    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Costs Max HP. NL Gain !${ModID}:m2! Golds. NL Add [#EFC851]Scorching [#EFC851]Hand+ and 2 [#EFC851]Burns into your draw pile."
   },
-  "${ModID}:Scorching Hand": {
-    "NAME": "ScorchingHand",
+  "${ModID}:ScorchingHand": {
+    "NAME": "Scorching Hand",
     "DESCRIPTION": "Deal !D! damage."
   },
   "${ModID}:Daydream": {
@@ -230,7 +230,7 @@
   },
   "${ModID}:DNAExtraction": {
     "NAME": "DNA Extraction",
-    "DESCRIPTION": "Take 1 damage. NL Deal !D! damage to all enemies. NL Gain 5 Golds for each damaged target."
+    "DESCRIPTION": "Take 1 damage. NL Deal !D! damage to all enemies. NL Gain 5 Gold for each damaged target."
   },
   "${ModID}:DivineStorm": {
     "NAME": "Divine Storm",
@@ -264,7 +264,7 @@
   },
   "${ModID}:BowsScorch": {
     "NAME": "Bow's Scorch",
-    "DESCRIPTION": "This card can be ${ModID}:Dug by any ${ModID}:Dig effect. NL ${ModID}:Dug : Add a 2 Burns to your hand. NL ${ModID}:Removed : remove [#EFC851]Domisdraw's [#EFC851]Bow from your deck."
+    "DESCRIPTION": "This card can be ${ModID}:Dug by any [#EFC851]:Dig effect. NL ${ModID}:Dug : Add a 2 Burns to your hand. NL ${ModID}:Removed : remove [#EFC851]Domisdraw's [#EFC851]Bow from your deck."
   },
   "${ModID}:CrossDisease": {
     "NAME": "Cross' Disease",

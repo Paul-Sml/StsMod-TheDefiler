@@ -28,7 +28,7 @@ public class DomisdrawCampfireOption extends AbstractCampfireOption {
         loseCard(BowsScorch.ID);
         loseCard(CrossDisease.ID);
         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new DomisdrawsCrossbow(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-        AbstractDungeon.effectList.add(new CampfireBurnResetEffect(this));
+        //AbstractDungeon.effectList.add(new CampfireBurnResetEffect(this));
         this.usable = false;
     }
 

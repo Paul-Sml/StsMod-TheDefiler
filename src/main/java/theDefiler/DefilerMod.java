@@ -6,10 +6,12 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -58,6 +60,8 @@ public class DefilerMod implements
     private static final String CARD_ENERGY_L = modID + "Resources/images/1024/energy.png";
     private static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
     private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
+    public static Texture burnButton;
+
 
     public DefilerMod() {
         BaseMod.subscribe(this);
@@ -91,6 +95,9 @@ public class DefilerMod implements
 
     public static void initialize() {
         DefilerMod thismod = new DefilerMod();
+
+        DefilerMod.burnButton = ImageMaster.loadImage("images/ui/DomisdrawCampfireOption.png");
+
     }
 
     @Override
