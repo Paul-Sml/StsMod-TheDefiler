@@ -1,5 +1,6 @@
 package theDefiler.cards.defiler;
 
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,13 +16,14 @@ public class SearingCoins extends AbstractDefilerCard {
     // intellij stuff power, self, uncommon
 
     private static final int COST = 1;
+    private AbstractCard c = new ScorchingHand();
 
     public SearingCoins() {
         super(ID, COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 4;
         secondMagic = baseSecondMagic = 20;
-        cardToPreview.add(new ScorchingHand());
-        cardToPreview.add(new Burn());
+        MultiCardPreview.add(c);
+        MultiCardPreview.add(new Burn());
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -36,6 +38,6 @@ public class SearingCoins extends AbstractDefilerCard {
 
     public void upp() {
         uDesc();
-        cardToPreview.get(0).upgrade();
+        c.upgrade();
     }
 }

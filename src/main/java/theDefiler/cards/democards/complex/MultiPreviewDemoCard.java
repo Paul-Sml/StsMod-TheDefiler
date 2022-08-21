@@ -51,7 +51,7 @@ public class MultiPreviewDemoCard extends AbstractEasyCard {
     public MultiPreviewDemoCard() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         isEthereal = true;
-        cardToPreview = myCardsList();
+        //cardToPreview = myCardsList();
         exhaust = true;
     }
 
@@ -60,7 +60,7 @@ public class MultiPreviewDemoCard extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeCardToPreview();
+        //upgradeCardToPreview();
         uDesc();
     }
 } 

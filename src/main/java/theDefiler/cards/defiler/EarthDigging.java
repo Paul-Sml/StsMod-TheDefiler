@@ -20,7 +20,7 @@ public class EarthDigging extends AbstractDefilerCard {
     public EarthDigging() {
         super(ID, COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
         magicNumber = baseMagicNumber = 3;
-        cardToPreview.add(new TombDigging());
+        cardsToPreview = new TombDigging();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -29,12 +29,12 @@ public class EarthDigging extends AbstractDefilerCard {
 
     @Override
     public void onRemoveFromMasterDeck() {
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(cardToPreview.get(0).makeStatEquivalentCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(cardsToPreview.makeStatEquivalentCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
     }
 
     public void upp() {
         upgradeMagicNumber(1);
-        upgradeCardToPreview();
+        cardsToPreview.upgrade();
         uDesc();
     }
 }

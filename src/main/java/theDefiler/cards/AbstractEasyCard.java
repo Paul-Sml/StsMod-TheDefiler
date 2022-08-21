@@ -40,7 +40,7 @@ public abstract class AbstractEasyCard extends CustomCard {
 
     private float rotationTimer = 0;
     private int previewIndex;
-    protected ArrayList<AbstractCard> cardToPreview = new ArrayList<>();
+    //protected ArrayList<AbstractCard> cardToPreview = new ArrayList<>();
 
     private boolean needsArtRefresh = false;
 
@@ -171,11 +171,11 @@ public abstract class AbstractEasyCard extends CustomCard {
         initializeDescription();
     }
 
-    protected void upgradeCardToPreview() {
+    /*protected void upgradeCardToPreview() {
         for (AbstractCard q : cardToPreview) {
             q.upgrade();
         }
-    }
+    }*/
 
     public void upgrade() {
         if (!upgraded) {
@@ -191,7 +191,7 @@ public abstract class AbstractEasyCard extends CustomCard {
         if (needsArtRefresh) {
             CardArtRoller.computeCard(this);
         }
-        if (!cardToPreview.isEmpty()) {
+        /*if (!cardToPreview.isEmpty()) {
             if (hb.hovered) {
                 if (rotationTimer <= 0F) {
                     rotationTimer = getRotationTimeNeeded();
@@ -205,7 +205,7 @@ public abstract class AbstractEasyCard extends CustomCard {
                     rotationTimer -= Gdx.graphics.getDeltaTime();
                 }
             }
-        }
+        }*/
     }
 
     protected float getRotationTimeNeeded() {

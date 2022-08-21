@@ -18,13 +18,12 @@ import static theDefiler.DefilerMod.makeID;
 public class CrossDisease extends AbstractDefilerCard {
     public final static String ID = makeID(CrossDisease.class.getSimpleName());
     // intellij stuff power, self, uncommon
-    private static AbstractCard c = new DomisdrawsCross();
 
     private static final int COST = -2;
 
     public CrossDisease() {
         super(ID, COST, CardType.CURSE, CardRarity.CURSE, CardTarget.NONE);
-        cardToPreview.add(c);
+        //cardsToPreview = new DomisdrawsCross();
     }
 
     @Override

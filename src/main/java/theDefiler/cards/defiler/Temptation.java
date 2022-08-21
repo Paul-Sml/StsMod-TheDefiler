@@ -19,14 +19,12 @@ public class Temptation extends AbstractDefilerCard {
 
     public Temptation() {
         super(ID, COST, GOLD_COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        cardToPreview.add(new HandOfGreed());
+        cardsToPreview = new HandOfGreed();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (AbstractDungeon.player.currentBlock == 0) {
-            AbstractCard card = new HandOfGreed();
-            if (upgraded)
-                card.upgrade();
+            AbstractCard card = cardsToPreview.makeCopy();
             card.freeToPlayOnce = true;
             card.isCostModified = true;
 
@@ -36,6 +34,6 @@ public class Temptation extends AbstractDefilerCard {
 
     public void upp() {
         uDesc();
-        upgradeCardToPreview();
+        cardsToPreview.upgrade();
     }
 }

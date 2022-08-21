@@ -24,7 +24,7 @@ public class Ghosts extends AbstractDefilerCard {
         super(ID, COST, 0, MAXHP_COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 1;
         baseBlock = 8;
-        cardToPreview.add(new Apparition());
+        cardsToPreview = new Apparition();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -47,7 +47,7 @@ public class Ghosts extends AbstractDefilerCard {
                 AbstractDungeon.player.hand.moveToExhaustPile(c);
             }
         });
-        atb(new MakeTempCardInHandAction(cardToPreview.get(0).makeCopy()));
+        atb(new MakeTempCardInHandAction(cardsToPreview.makeCopy()));
     }
 
     public void upp() {

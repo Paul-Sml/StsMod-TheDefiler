@@ -1,5 +1,6 @@
 package theDefiler.cards.defiler;
 
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Burn;
@@ -18,8 +19,7 @@ public class BowsScorch extends AbstractDefilerCard {
 
     public BowsScorch() {
         super(ID, COST, CardType.CURSE, CardRarity.CURSE, CardTarget.NONE);
-        cardToPreview.add(c);
-        cardToPreview.add(new Burn());
+        cardsToPreview = new Burn();
     }
 
     @Override

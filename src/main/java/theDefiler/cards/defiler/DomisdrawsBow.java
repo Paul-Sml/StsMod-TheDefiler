@@ -24,7 +24,7 @@ public class DomisdrawsBow extends AbstractDefilerCard implements SpawnModificat
         super(ID, COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = 12;
         magicNumber = baseMagicNumber = 5;
-        cardToPreview.add(new BowsScorch());
+        cardsToPreview = new BowsScorch();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -33,7 +33,7 @@ public class DomisdrawsBow extends AbstractDefilerCard implements SpawnModificat
     }
 
     public void drafted() {
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(cardToPreview.get(0).makeStatEquivalentCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(cardsToPreview.makeCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
     }
 
     @Override

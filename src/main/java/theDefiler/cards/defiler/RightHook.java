@@ -17,7 +17,7 @@ public class RightHook extends AbstractDefilerCard {
     public RightHook() {
         super(ID, COST, 0, MAXHP_COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 14;
-        cardToPreview.add(new LeftHook());
+        cardsToPreview = new LeftHook();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

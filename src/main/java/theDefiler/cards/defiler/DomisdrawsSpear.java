@@ -26,9 +26,7 @@ public class DomisdrawsSpear extends AbstractDefilerCard implements SpawnModific
     public DomisdrawsSpear() {
         super(ID, COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = 19;
-        AbstractCard c = new SpearsShake();
-        c.cardsToPreview = this;
-        cardsToPreview = c;
+        cardsToPreview = new SpearsShake();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -37,7 +35,7 @@ public class DomisdrawsSpear extends AbstractDefilerCard implements SpawnModific
     }
 
     public void drafted() {
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(cardsToPreview, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(cardsToPreview.makeCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
     }
 
     @Override

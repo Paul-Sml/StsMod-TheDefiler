@@ -22,8 +22,10 @@ public class SpearsShake extends AbstractDefilerCard {
 
     @Override
     public void onRemoveFromMasterDeck() {
-        if (cardsToPreview != null) {
-            AbstractDungeon.player.masterDeck.removeCard(cardsToPreview);
+        AbstractPlayer p = AbstractDungeon.player;
+        for(AbstractCard c : p.masterDeck.group) {
+            p.masterDeck.removeCard(DomisdrawsSpear.ID);
+            break;
         }
     }
 

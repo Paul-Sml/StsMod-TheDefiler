@@ -23,7 +23,7 @@ public class DomisdrawsCross extends AbstractDefilerCard implements SpawnModific
     public DomisdrawsCross() {
         super(ID, COST, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 1;
-        cardToPreview.add(new CrossDisease());
+        cardsToPreview = new CrossDisease();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -31,7 +31,7 @@ public class DomisdrawsCross extends AbstractDefilerCard implements SpawnModific
     }
 
     public void drafted() {
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(cardToPreview.get(0).makeStatEquivalentCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(cardsToPreview.makeCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
     }
 
     @Override
