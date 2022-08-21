@@ -42,7 +42,7 @@ public class DomisdrawCampfireOption extends AbstractCampfireOption {
     }
 
     static {
-        uiStrings = CardCrawlGame.languagePack.getUIString("Burn Branch Option");
+        uiStrings = CardCrawlGame.languagePack.getUIString(DefilerMod.makeID(DomisdrawCampfireOption.class.getSimpleName()));
         TEXT = DomisdrawCampfireOption.uiStrings.TEXT;
     }
 }

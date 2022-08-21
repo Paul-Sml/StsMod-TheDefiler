@@ -8,6 +8,13 @@
     "DESCRIPTION": "TODO: Make your own epic keywords"
   },
   {
+    "PROPER_NAME": "Dig",
+    "NAMES": [
+      "dig"
+    ],
+    "DESCRIPTION": "Move the top X cards of your deck meeting the condition to your hand, move the other cards to your discard pile."
+  },
+  {
     "PROPER_NAME": "Dug",
     "NAMES": [
       "dug"

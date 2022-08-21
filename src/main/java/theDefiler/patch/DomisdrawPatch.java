@@ -41,7 +41,7 @@ public class DomisdrawPatch
             final CampfireUI campfire = (CampfireUI)meObj;
             try {
                 final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>)ReflectionHacks.getPrivate((Object)campfire, (Class)CampfireUI.class, "buttons");
-                final DomisdrawCampfireOption button = new DomisdrawCampfireOption();
+                final AbstractCampfireOption button = new DomisdrawCampfireOption();
                 campfireButtons.add(button);
                 float x = 950.f;
                 float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));

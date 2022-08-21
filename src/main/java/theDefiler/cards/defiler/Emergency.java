@@ -14,13 +14,13 @@ public class Emergency extends AbstractDefilerCard {
     private static final int COST = 1;
 
     public Emergency() {
-        super(ID, COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 4;
         baseBlock = 9;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new DefilerDigAction(magicNumber, c -> c.baseBlock > -1));
+        dig(magicNumber, c -> c.baseBlock > -1);
         block();
     }
 

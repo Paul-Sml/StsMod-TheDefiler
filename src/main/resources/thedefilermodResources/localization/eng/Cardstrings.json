@@ -72,7 +72,7 @@
   },
   "${ModID}:Worms": {
     "NAME": "Worms",
-    "DESCRIPTION": "Deal !D! damage. NL This card can be Dug by any Dig effect."
+    "DESCRIPTION": "Deal !D! damage. NL This card can be Dug by any ${ModID}:Dig effect."
   },
   "${ModID}:Fury": {
     "NAME": "Fury",
@@ -264,15 +264,36 @@
   },
   "${ModID}:BowsScorch": {
     "NAME": "Bow's Scorch",
-    "DESCRIPTION": "This card can be ${ModID}:Dug by any [#EFC851]:Dig effect. NL ${ModID}:Dug : Add a 2 Burns to your hand. NL ${ModID}:Removed : remove [#EFC851]Domisdraw's [#EFC851]Bow from your deck."
+    "DESCRIPTION": "This card can be ${ModID}:Dug by any ${ModID}:Dig effect. NL ${ModID}:Dug : Add a 2 Burns to your hand. NL ${ModID}:Removed : remove [#EFC851]Domisdraw's [#EFC851]Bow from your deck."
   },
   "${ModID}:CrossDisease": {
     "NAME": "Cross' Disease",
     "DESCRIPTION": "When you draw this, Exhaust another random card in your hand. NL ${ModID}:Removed : remove [#EFC851]Domisdraw's [#EFC851]Spear from your deck."
   },
+  "${ModID}:Sharpen": {
+    "NAME": "Sharpen",
+    "DESCRIPTION": "${ModID}:Dig effects ${ModID}:Dig !M! extra card."
+  },
+  "${ModID}:Relentless": {
+    "NAME": "Relentless",
+    "DESCRIPTION": "If you have less than !${ModID}:m2! Block, Draw !M! cards and gain !B! Block. You cannot gain Block from cards or draw additional cards for the turn."
+  },
+  "${ModID}:Temptation": {
+    "NAME": "Temptation",
+    "DESCRIPTION": "If you have no Block, add a [#EFC851]Hand [#EFC851]of [#EFC851]Greed to your deck, it costs 0 until played.",
+    "UPGRADE_DESCRIPTION": "If you have no Block, add a [#EFC851]Hand [#EFC851]of [#EFC851]Greed+ to your deck, it costs 0 until played."
+  },
+  "${ModID}:Ghosts": {
+    "NAME": "Ghosts",
+    "DESCRIPTION": "Exhaust the top card of your draw pile. NL Gain !B! Block. Gain 1 [#EFC851]Blur. NL ${ModID}:Dug : Exhaust this card and add [#EFC851]Apparition to your hand."
+  },
+  "${ModID}:ForeignKnowledge": {
+    "NAME": "Foreign Knowledge",
+    "DESCRIPTION": "Deal !D! damage. NL If you have a card from another color in your hand, gain 1 [E] and draw 1 card."
+  },
   "${ModID}:LivingWeapon": {
     "NAME": "Living Weapon",
-    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Dug : Repeat the [#EFC851]Dig effect that ${ModID}:Dug this card."
+    "DESCRIPTION": "Deal !D! damage. NL ${ModID}:Dug : Repeat the ${ModID}:Dig effect that ${ModID}:Dug this card."
   },
   "${ModID}:WildRush": {
     "NAME": "Wild Rush",
@@ -285,6 +306,10 @@
   "${ModID}:Drill": {
     "NAME": "Drill",
     "DESCRIPTION": "[#EFC851]Dig !M! : Non Status."
+  },
+  "${ModID}:ZombieHand": {
+    "NAME": "ZombieHand",
+    "DESCRIPTION": "Chose a card from your draw pile. NL [#EFC851]Dig !M! : chosen card."
   },
   "${ModID}:LearnYourBasics": {
     "NAME": "Learn Your Basics",

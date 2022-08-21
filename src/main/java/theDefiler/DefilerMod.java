@@ -12,16 +12,14 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theDefiler.cards.AbstractDefilerCard;
 import theDefiler.cards.AbstractEasyCard;
 import theDefiler.cards.cardvars.*;
+import theDefiler.potions.LiquidGold;
 import theDefiler.relics.AbstractEasyRelic;
 
 import java.nio.charset.StandardCharsets;
@@ -104,6 +102,11 @@ public class DefilerMod implements
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new TheDefiler(TheDefiler.characterStrings.NAMES[1], TheDefiler.Enums.THE_DEFILER),
                 CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, TheDefiler.Enums.THE_DEFILER);
+        receiveEditPotions();
+    }
+
+    public void receiveEditPotions() {
+        BaseMod.addPotion(LiquidGold.class, Color.GOLD.cpy(), Color.YELLOW.cpy(), null, LiquidGold.POTION_ID, TheDefiler.Enums.THE_DEFILER);
     }
 
     @Override
@@ -139,13 +142,17 @@ public class DefilerMod implements
 
     @Override
     public void receiveEditStrings() {
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, modID + "Resources/localization/eng/Charstrings.json");
+
         BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/Cardstrings.json");
+
+        BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/eng/Potionstrings.json");
+
+        BaseMod.loadCustomStringsFile(PowerStrings.class, modID + "Resources/localization/eng/Powerstrings.json");
 
         BaseMod.loadCustomStringsFile(RelicStrings.class, modID + "Resources/localization/eng/Relicstrings.json");
 
-        BaseMod.loadCustomStringsFile(CharacterStrings.class, modID + "Resources/localization/eng/Charstrings.json");
-
-        BaseMod.loadCustomStringsFile(PowerStrings.class, modID + "Resources/localization/eng/Powerstrings.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class, modID + "Resources/localization/eng/UIstrings.json");
     }
 
     @Override

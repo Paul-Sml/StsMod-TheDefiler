@@ -44,5 +44,17 @@
       "Gain Gold equal to damage blocked this turn.",
       "Gain Gold equal to damage blocked this turn times #b","."
     ]
+  },
+  "${ModID}:SharpenPower": {
+    "NAME": "Sharpen",
+    "DESCRIPTIONS": [
+      "Dig effects Dig !M! extra card."
+    ]
+  },
+  "${ModID}:NoBlockDefilerPower": {
+    "NAME": "No Block",
+    "DESCRIPTIONS": [
+      "You cannot gain Block from cards for the turn."
+    ]
   }
 }

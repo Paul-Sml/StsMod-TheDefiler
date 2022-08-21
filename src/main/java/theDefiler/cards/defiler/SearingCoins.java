@@ -20,8 +20,8 @@ public class SearingCoins extends AbstractDefilerCard {
         super(ID, COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 4;
         secondMagic = baseSecondMagic = 20;
-        cardToPreview.add(new Burn());
         cardToPreview.add(new ScorchingHand());
+        cardToPreview.add(new Burn());
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -36,5 +36,6 @@ public class SearingCoins extends AbstractDefilerCard {
 
     public void upp() {
         uDesc();
+        cardToPreview.get(0).upgrade();
     }
 }

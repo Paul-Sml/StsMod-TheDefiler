@@ -346,7 +346,6 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
     public AbstractCard makeStatEquivalentCopy() {
         AbstractCard card = super.makeStatEquivalentCopy();
 
-
         AbstractDefilerCard c = (AbstractDefilerCard)card;
 
         c.goldCost = this.goldCost;
@@ -366,10 +365,14 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
     }
 
     @Override
-    public void resetAttributes() {//TODO: PATCH IT
+    public void resetAttributes() {
         super.resetAttributes();
         this.goldCostForTurn = this.goldCost;
         this.isGoldCostModifiedForTurn = false;
+        this.maxhpCostForTurn = this.maxhpCost;
+        this.isMaxhpCostModifiedForTurn = false;
+        revival = baseRevival;
+        secondRevival = baseSecondRevival;
     }
 
     public void dug() {}

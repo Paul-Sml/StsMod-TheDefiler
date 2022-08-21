@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import theDefiler.cards.AbstractDefilerCard;
 import theDefiler.TheDefiler;
@@ -26,10 +27,15 @@ public class DefilerDigAction  extends AbstractGameAction
 //    private AbstractCard ignoredCard;
     private Predicate<AbstractCard> condition;
     private int baseAmount;
+    private final AbstractPlayer p = AbstractDungeon.player;
 
     public DefilerDigAction(int numCards, Predicate<AbstractCard> digCondition)
     {
         amount = baseAmount = numCards;
+        AbstractPower pow = p.getPower(SharpenPower.POWER_ID);
+        if (pow != null) {
+            amount += pow.amount;
+        }
         actionType = ActionType.CARD_MANIPULATION;
         startingDuration = Settings.ACTION_DUR_FAST;
         duration = startingDuration;
@@ -43,7 +49,7 @@ public class DefilerDigAction  extends AbstractGameAction
             PreMill();
             while (amount > 0)
             {
-                if (AbstractDungeon.player.drawPile.size() > 0)
+                if (p.drawPile.size() > 0)
                     ProcessMill();
                 amount--;
             }
@@ -58,7 +64,7 @@ public class DefilerDigAction  extends AbstractGameAction
 
     private void ProcessMill()
     {
-        AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
+        AbstractCard card = p.drawPile.getTopCard();
         if(card != null)
         {
             CheckRebound(card, condition.test(card));
@@ -82,7 +88,7 @@ public class DefilerDigAction  extends AbstractGameAction
 
     private void Rebound(AbstractCard card)
     {
-        if(AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE)
+        if(p.hand.size() >= BaseMod.MAX_HAND_SIZE)
         {
 //            if((card instanceof AbstractDefilerCard && ((AbstractDefilerCard)card).postMillAction))
 //                ((AbstractDefilerCard)card).PostMillAction();
@@ -90,8 +96,8 @@ public class DefilerDigAction  extends AbstractGameAction
             return;
         }
 
-        AbstractDungeon.player.drawPile.removeCard(card);
-        addToTop(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card, AbstractDungeon.player.hand), Settings.ACTION_DUR_XFAST, true));
+        p.drawPile.removeCard(card);
+        addToTop(new VFXAction(p, new ShowCardAndMillEffect(card, p.hand), Settings.ACTION_DUR_XFAST, true));
 
 //        if((card instanceof AbstractDefilerCard && ((AbstractDefilerCard)card).postMillAction))
 //            ((AbstractDefilerCard)card).PostMillAction();
@@ -100,9 +106,9 @@ public class DefilerDigAction  extends AbstractGameAction
 
     private void MoveToDiscard(AbstractCard card)
     {
-        AbstractDungeon.player.drawPile.removeCard(card);
-        addToTop(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card, AbstractDungeon.player.discardPile), Settings.ACTION_DUR_XFAST, true));
-        AbstractDungeon.player.discardPile.addToTop(card);
+        p.drawPile.removeCard(card);
+        addToTop(new VFXAction(p, new ShowCardAndMillEffect(card, p.discardPile), Settings.ACTION_DUR_XFAST, true));
+        p.discardPile.addToTop(card);
 //        AbstractDungeon.player.drawPile.moveToDiscardPile(AbstractDungeon.player.drawPile.getTopCard());
 //        ProcessPostMill(card, false);
     }
