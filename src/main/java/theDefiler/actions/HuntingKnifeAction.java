@@ -25,7 +25,7 @@ public class HuntingKnifeAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.duration == 0.1F && this.target != null) {
+        if (this.target != null) {
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.NONE));
             this.target.damage(this.info);
             if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0) && !this.target.halfDead && !this.target.hasPower("Minion")) {
@@ -37,6 +37,7 @@ public class HuntingKnifeAction extends AbstractGameAction {
             }
         }
 
+        this.isDone = true;
         this.tickDuration();
     }
 }

@@ -8,14 +8,14 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.GetAllInBattleInstances;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import theDefiler.DefilerMod;
+import theDefiler.DomisdrawCampfireOption;
 import theDefiler.cards.AbstractDefilerCard;
 
 import java.util.Iterator;
 
 public class BornAgainAction extends AbstractGameAction {
     private AbstractPlayer p;
-    private static final UIStrings uiStrings;
-    public static final String[] TEXT;
     private boolean chooseAny;
 
     public BornAgainAction() {
@@ -55,10 +55,5 @@ public class BornAgainAction extends AbstractGameAction {
 
             this.tickDuration();
         }
-    }
-
-    static {
-        uiStrings = CardCrawlGame.languagePack.getUIString("BornAgainAction");
-        TEXT = uiStrings.TEXT;
     }
 }

@@ -4,5 +4,15 @@
       "Domisdraw",
       "Mix your three Domisdraw's weapons to craft the one true weapon and get rid of the curses."
     ]
+  },
+  "${ModID}:ZombieHandAction": {
+    "TEXT": [
+      "Chose a card to Dig."
+    ]
+  },
+  "${ModID}:EntombAction": {
+    "TEXT": [
+      "Chose a card to put at the bottom of your draw pile."
+    ]
   }
 }

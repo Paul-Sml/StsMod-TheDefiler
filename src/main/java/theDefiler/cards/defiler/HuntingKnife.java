@@ -33,7 +33,7 @@ public class HuntingKnife extends AbstractDefilerCard {
     }
 
     public void drafted() {
-        atb(new GainMaxhpAction(magicNumber));
+        AbstractDungeon.player.increaseMaxHp(magicNumber, true);
     }
 
     public void upp() {

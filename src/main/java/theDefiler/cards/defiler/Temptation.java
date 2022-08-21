@@ -26,7 +26,6 @@ public class Temptation extends AbstractDefilerCard {
         if (AbstractDungeon.player.currentBlock == 0) {
             AbstractCard card = cardsToPreview.makeCopy();
             card.freeToPlayOnce = true;
-            card.isCostModified = true;
 
             this.addToBot(new MakeTempCardInDrawPileAction(card, 1, true, true));
         }

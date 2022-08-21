@@ -48,7 +48,7 @@
   "${ModID}:SharpenPower": {
     "NAME": "Sharpen",
     "DESCRIPTIONS": [
-      "Dig effects Dig !M! extra card."
+      "Dig effects Dig "," extra card."
     ]
   },
   "${ModID}:NoBlockDefilerPower": {

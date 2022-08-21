@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import theDefiler.DefilerMod;
 
 import java.util.Iterator;
 
@@ -58,7 +59,7 @@ public class EntombAction extends AbstractGameAction {
     }
 
     static {
-        uiStrings = CardCrawlGame.languagePack.getUIString("EntombAction");
+        uiStrings = CardCrawlGame.languagePack.getUIString(DefilerMod.makeID(EntombAction.class.getSimpleName()));
         TEXT = uiStrings.TEXT;
     }
 }

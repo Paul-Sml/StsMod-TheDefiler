@@ -18,8 +18,6 @@ public class FuryGashAction extends AbstractGameAction {
     }
 
     public void update() {
-        AbstractCard var10000 = this.card;
-        var10000.baseDamage += this.amount;
         this.card.applyPowers();
         ArrayList<AbstractCard> cardsToBuff = new ArrayList<AbstractCard>();
         Iterator var1 = AbstractDungeon.player.discardPile.group.iterator();
