@@ -1,6 +1,7 @@
 package theDefiler.cards.defiler;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theDefiler.actions.GainGoldDefilerAction;
 import theDefiler.cards.AbstractDefilerCard;
@@ -16,7 +17,7 @@ public class Diversion extends AbstractDefilerCard {
 
     public Diversion() {
         super(ID, COST, GOLD_COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        baseBlock = 10;
+        baseBlock = 9;
         magicNumber = baseMagicNumber = 30;
     }
 
@@ -27,7 +28,7 @@ public class Diversion extends AbstractDefilerCard {
 
     @Override
     public void drafted() {
-        atb(new GainGoldDefilerAction(magicNumber));
+        AbstractDungeon.player.gainGold(magicNumber);
     }
 
     public void upp() {

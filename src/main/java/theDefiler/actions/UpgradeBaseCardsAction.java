@@ -51,7 +51,6 @@ public class UpgradeBaseCardsAction extends AbstractGameAction {
                 if (c.baseBlock > -1)
                     c.upgradedBlock = true;
                 CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(c.cardID);
-                c.timesUpgraded++;
                 c.upgraded=true;
                 if (c.timesUpgraded>1)
                     c.name = cardStrings.NAME + "+" + c.timesUpgraded;

@@ -37,7 +37,7 @@ public class HuntingKnife extends AbstractDefilerCard {
     }
 
     public void upp() {
-        upgradeDamage(6);
+        upgradeDamage(5);
         upgradeMagicNumber(1);
     }
 }

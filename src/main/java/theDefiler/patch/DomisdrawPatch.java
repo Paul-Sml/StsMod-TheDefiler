@@ -36,7 +36,6 @@ public class DomisdrawPatch
     }
 
     public static void Postfix(final Object meObj) {
-
         if (checkDeck(DomisdrawsSpear.ID) && checkDeck(DomisdrawsBow.ID) && checkDeck(DomisdrawsCross.ID)) {
             final CampfireUI campfire = (CampfireUI)meObj;
             try {

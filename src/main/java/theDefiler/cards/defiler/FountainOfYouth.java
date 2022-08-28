@@ -36,6 +36,7 @@ public class FountainOfYouth extends AbstractDefilerCard {
         }
     }
 
+
     public void upp() {
         secondRevival = baseSecondRevival = 2;
         uDesc();

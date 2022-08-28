@@ -18,7 +18,7 @@ public class Ghosts extends AbstractDefilerCard {
     // intellij stuff power, self, uncommon
 
     private static final int COST = 0;
-    private static final int MAXHP_COST = 0;
+    private static final int MAXHP_COST = 1;
 
     public Ghosts() {
         super(ID, COST, 0, MAXHP_COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);

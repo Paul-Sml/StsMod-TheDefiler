@@ -4,10 +4,13 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theDefiler.cards.defiler.*;
+
+import static theDefiler.DefilerMod.makeImagePath;
 
 public class DomisdrawCampfireOption extends AbstractCampfireOption {
     private static final UIStrings uiStrings;
@@ -16,7 +19,7 @@ public class DomisdrawCampfireOption extends AbstractCampfireOption {
     public DomisdrawCampfireOption() {
         this.label = DomisdrawCampfireOption.TEXT[0];
         this.description = DomisdrawCampfireOption.TEXT[1];
-        this.img = DefilerMod.burnButton;
+        this.img = ImageMaster.loadImage(makeImagePath("ui/DomisdrawCampfireOption.png"));
     }
 
     @Override

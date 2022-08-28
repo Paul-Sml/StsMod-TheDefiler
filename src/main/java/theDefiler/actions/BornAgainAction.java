@@ -25,7 +25,6 @@ public class BornAgainAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST) {
             AbstractPlayer p = AbstractDungeon.player;
 
             for (AbstractCard c : p.drawPile.group) {
@@ -52,8 +51,7 @@ public class BornAgainAction extends AbstractGameAction {
                     ((AbstractDefilerCard) c).secondRevival = ((AbstractDefilerCard) c).baseSecondRevival;
                 }
             }
-
+            this.isDone = true;
             this.tickDuration();
-        }
     }
 }

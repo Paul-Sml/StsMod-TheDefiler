@@ -16,11 +16,13 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.util.JsonUtils;
 import theDefiler.cards.AbstractDefilerCard;
 import theDefiler.cards.AbstractEasyCard;
 import theDefiler.cards.cardvars.*;
 import theDefiler.potions.LiquidGold;
 import theDefiler.relics.AbstractEasyRelic;
+import theDefiler.util.TexLoader;
 
 import java.nio.charset.StandardCharsets;
 
@@ -58,8 +60,8 @@ public class DefilerMod implements
     private static final String CARD_ENERGY_L = modID + "Resources/images/1024/energy.png";
     private static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
     private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
-    public static Texture burnButton;
-
+//    public static Texture burnButton;
+    //public static Texture burnButton = ImageMaster.loadImage("thedefilermodResources/images/ui/DomisdrawCampfireOption.png");;
 
     public DefilerMod() {
         BaseMod.subscribe(this);
@@ -93,9 +95,9 @@ public class DefilerMod implements
 
     public static void initialize() {
         DefilerMod thismod = new DefilerMod();
-
-        DefilerMod.burnButton = ImageMaster.loadImage("images/ui/DomisdrawCampfireOption.png");
-
+        System.out.println(makeImagePath("ui/DomisdrawCampfireOption.png"));
+        System.out.println("thedefilermodResources/images/ui/DomisdrawCampfireOption.png");
+//        burnButton = TexLoader.getTexture(makeImagePath("ui/DomisdrawCampfireOption.png"));
     }
 
     @Override

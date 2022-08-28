@@ -103,7 +103,7 @@
     "DESCRIPTION": "[#EFC851]Dig !M! : Costs Gold. NL Deal !D! damage."
   },
   "${ModID}:GoldenApple": {
-    "NAME": "GoldenApple",
+    "NAME": "Golden Apple",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! Max HP."
   },
   "${ModID}:BottomlessBag": {
@@ -140,8 +140,8 @@
   },
   "${ModID}:SearingCoins": {
     "NAME": "Searing Coins",
-    "DESCRIPTION": "[#EFC851]Dig !M! : Costs Max HP. NL Gain !${ModID}:m2! Golds. NL Add [#EFC851]Scorching [#EFC851]Hand and 2 [#EFC851]Burns into your draw pile.",
-    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Costs Max HP. NL Gain !${ModID}:m2! Golds. NL Add [#EFC851]Scorching [#EFC851]Hand+ and 2 [#EFC851]Burns into your draw pile."
+    "DESCRIPTION": "[#EFC851]Dig !M! : Costs Max HP. NL Gain !${ModID}:m2! Golds. NL Add [#EFC851]Scorching [#EFC851]Hand and a [#EFC851]Burn into your draw pile.",
+    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Costs Max HP. NL Gain !${ModID}:m2! Golds. NL Add [#EFC851]Scorching [#EFC851]Hand+ and a [#EFC851]Burn into your draw pile."
   },
   "${ModID}:ScorchingHand": {
     "NAME": "Scorching Hand",
@@ -323,7 +323,7 @@
   },
   "${ModID}:ShadowDagger": {
     "NAME": "Shadow Dagger",
-    "DESCRIPTION": "Deal !D! damage. When you enter a [#EFC851]? Room, permanently increase this card damage by !M!."
+    "DESCRIPTION": "Deal !D! damage. When you enter a [#EFC851]? Room, permanently increase this card damage by !M!. NL Exhaust."
   },
   "${ModID}:BornAgain": {
     "NAME": "Born Again",

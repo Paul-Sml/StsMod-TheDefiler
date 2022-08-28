@@ -32,10 +32,6 @@ public class DefilerDigAction  extends AbstractGameAction
     public DefilerDigAction(int numCards, Predicate<AbstractCard> digCondition)
     {
         amount = baseAmount = numCards;
-        AbstractPower pow = p.getPower(SharpenPower.POWER_ID);
-        if (pow != null) {
-            amount += pow.amount;
-        }
         actionType = ActionType.CARD_MANIPULATION;
         startingDuration = Settings.ACTION_DUR_FAST;
         duration = startingDuration;
@@ -75,6 +71,7 @@ public class DefilerDigAction  extends AbstractGameAction
     private void CheckRebound(AbstractCard card, boolean isConditionMet)
     {
         if (card.cardID.equals(LivingWeapon.ID))
+            
             this.addToBot(new DefilerDigAction(baseAmount, condition));
         if(isConditionMet || card.cardID.equals(Worms.ID) || card.cardID.equals(BowsScorch.ID))
             Rebound(card);

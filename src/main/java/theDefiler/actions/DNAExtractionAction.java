@@ -56,9 +56,6 @@ public class DNAExtractionAction extends AbstractGameAction {
         }
         if (paintAmount > 0){
             AbstractDungeon.player.gainGold(paintAmount * 5);
-            for(int j = 0; j < paintAmount * 5; ++j) {
-                AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.target.hb.cX, this.target.hb.cY, this.source.hb.cX, this.source.hb.cY, true));
-            }
         }
 
 

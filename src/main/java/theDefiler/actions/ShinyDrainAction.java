@@ -34,9 +34,10 @@ public class ShinyDrainAction extends AbstractGameAction {
                 AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.BLUNT_HEAVY, false));
                 this.target.damage(this.info);
                 if (this.target.lastDamageTaken > 0) {
-                    AbstractDungeon.player.gainGold(this.target.lastDamageTaken);
-                    for(int j = 0; j < this.target.lastDamageTaken; ++j) {
-                        AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.target.hb.cX, this.target.hb.cY, this.source.hb.cX, this.source.hb.cY, true));
+                    if (target.isDeadOrEscaped()) {
+                        AbstractDungeon.player.gainGold(this.target.lastDamageTaken);
+                    } else {
+                        addToTop(new GainGoldDefilerAction(this.target.lastDamageTaken, this.target));
                     }
                 }
 

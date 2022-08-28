@@ -16,6 +16,7 @@ public class ShadowDagger extends AbstractDefilerCard {
         super(ID, COST, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 15;
         magicNumber = baseMagicNumber = 3;
+        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

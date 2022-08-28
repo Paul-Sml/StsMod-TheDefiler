@@ -19,5 +19,12 @@
     "DESCRIPTIONS": [
       "At the end of combat, gain #b"," Golds."
     ]
+  },
+  "${ModID}:IroncladsBlood": {
+    "NAME": "IroncladsBlood",
+    "FLAVOR": "TODO: make this a sweet relic.",
+    "DESCRIPTIONS": [
+      "Double Healing out of gaining Max HP."
+    ]
   }
 }

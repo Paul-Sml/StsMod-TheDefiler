@@ -44,7 +44,7 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
     public boolean upgradedSecondRevival;
 
     public AbstractDefilerCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target) {
-        this(cardID, cost, 0, 0, type, rarity, target);
+        this(cardID, cost, -1, -1, type, rarity, target);
     }
 
     public AbstractDefilerCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target, CardColor color) {
@@ -52,7 +52,7 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
     }
 
     public AbstractDefilerCard(String cardID, int cost, int goldCost, CardType type, CardRarity rarity, CardTarget target) {
-        this(cardID, cost, goldCost, 0, type, rarity, target);
+        this(cardID, cost, goldCost, -1, type, rarity, target);
     }
 
     public AbstractDefilerCard(String cardID, int cost, int goldCost, int maxhpCost, CardType type, CardRarity rarity, CardTarget target) {
@@ -213,6 +213,24 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
             this.goldCostForTurn = this.goldCost - diff;
             if (this.goldCostForTurn < 0) {
                 this.goldCostForTurn = 0;
+            }
+        }
+    }
+
+    public void updateMaxhpCost(int amt) {
+        int tmpCost = this.maxhpCost;
+        int diff = this.maxhpCost - this.maxhpCostForTurn;
+        tmpCost += amt;
+        if (tmpCost < 0) {
+            tmpCost = 0;
+        }
+
+        if (tmpCost != this.maxhpCost) {
+            this.isMaxhpCostModified = true;
+            this.maxhpCost = tmpCost;
+            this.maxhpCostForTurn = this.maxhpCost - diff;
+            if (this.maxhpCostForTurn < 0) {
+                this.maxhpCostForTurn = 0;
             }
         }
     }

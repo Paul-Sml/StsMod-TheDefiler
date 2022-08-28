@@ -14,14 +14,15 @@ public class GoldAndMaxhpCostDeductionPatch {
     public static void Postfix(AbstractPlayer p, AbstractCard c, AbstractMonster m, int energyonuse) {
         if (!c.freeToPlayOnce && c instanceof AbstractDefilerCard) {
             AbstractDefilerCard card = (AbstractDefilerCard)c;
+
             if (card.goldCostForTurn > 0) {
-                AbstractDungeon.player.gold -= card.goldCostForTurn;
+                AbstractDungeon.player.loseGold(card.goldCostForTurn);;
             }
             if (card.maxhpCostForTurn > 0) {
-                AbstractDungeon.player.maxHealth -= card.maxhpCostForTurn;
+                AbstractDungeon.player.decreaseMaxHealth(card.maxhpCostForTurn);
                 if (AbstractDungeon.player.currentHealth > AbstractDungeon.player.maxHealth)
                     AbstractDungeon.player.maxHealth = AbstractDungeon.player.currentHealth;
-             }
+            }
         }
     }
 

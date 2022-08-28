@@ -21,17 +21,16 @@ public class AbstractCardPatches {
     public static class SecondEnergyRenderPatch {
         @SpirePostfixPatch
         public static void patch(AbstractCard __instance, SpriteBatch sb) {
-            if(__instance instanceof AbstractDefilerCard)
-            {
+            if(__instance instanceof AbstractDefilerCard) {
                 FontHelper.cardEnergyFont_L.getData().setScale(__instance.drawScale);
 
-                if (((AbstractDefilerCard)__instance).goldCost > 0) {
+                if (((AbstractDefilerCard)__instance).goldCost > -1) {
 //                    renderElementHelper(sb, GoldOrb, (__instance.current_x - 190.0F )* __instance.drawScale * Settings.scale,
 //                            __instance.current_y * __instance.drawScale * Settings.scale);
                     FontHelper.renderRotatedText(sb, FontHelper.cardEnergyFont_L, Integer.toString(((AbstractDefilerCard) __instance).goldCostForTurn), __instance.current_x, __instance.current_y, -135.0F * __instance.drawScale * Settings.scale, 120.0F * __instance.drawScale * Settings.scale, __instance.angle, false, Color.WHITE);
                 }
-                if (((AbstractDefilerCard)__instance).maxhpCost > 0) {
-                    if (((AbstractDefilerCard)__instance).goldCost > 0) {
+                if (((AbstractDefilerCard)__instance).maxhpCost > -1) {
+                    if (((AbstractDefilerCard)__instance).goldCost > -1) {
 //                        renderElementHelper(sb, MHPOrb, (__instance.current_x - 185.0F )* __instance.drawScale * Settings.scale,
 //                                (__instance.current_y - 65.0F)* __instance.drawScale * Settings.scale);
                         FontHelper.renderRotatedText(sb, FontHelper.cardEnergyFont_L, Integer.toString(((AbstractDefilerCard) __instance).maxhpCostForTurn), __instance.current_x, __instance.current_y, -135.0F * __instance.drawScale * Settings.scale, 55.0F * __instance.drawScale * Settings.scale, __instance.angle, false, Color.WHITE);
@@ -43,17 +42,17 @@ public class AbstractCardPatches {
                 }
             }
         }
-        private static void renderHelper(SpriteBatch sb, Color color, TextureAtlas.AtlasRegion img, float drawX, float drawY, AbstractCard C) {
-            sb.setColor(color);
-            sb.draw(img, drawX + img.offsetX - (float)img.originalWidth / 2.0F, drawY + img.offsetY - (float)img.originalHeight / 2.0F, (float)img.originalWidth / 2.0F - img.offsetX, (float)img.originalHeight / 2.0F - img.offsetY, (float)img.packedWidth, (float)img.packedHeight, C.drawScale * Settings.scale, C.drawScale * Settings.scale, C.angle);
-        }
-        private static void renderElementHelper(SpriteBatch sb, Texture img, float drawX, float drawY) {
-            sb.draw(img, drawX, drawY,
-                    0, 0, 125.0F, 125.0F,
-                    Settings.scale,  Settings.scale,
-                    0, 0, 0, 125, 125, false, false);
-
-        }
+//        private static void renderHelper(SpriteBatch sb, Color color, TextureAtlas.AtlasRegion img, float drawX, float drawY, AbstractCard C) {
+//            sb.setColor(color);
+//            sb.draw(img, drawX + img.offsetX - (float)img.originalWidth / 2.0F, drawY + img.offsetY - (float)img.originalHeight / 2.0F, (float)img.originalWidth / 2.0F - img.offsetX, (float)img.originalHeight / 2.0F - img.offsetY, (float)img.packedWidth, (float)img.packedHeight, C.drawScale * Settings.scale, C.drawScale * Settings.scale, C.angle);
+//        }
+//        private static void renderElementHelper(SpriteBatch sb, Texture img, float drawX, float drawY) {
+//            sb.draw(img, drawX, drawY,
+//                    0, 0, 125.0F, 125.0F,
+//                    Settings.scale,  Settings.scale,
+//                    0, 0, 0, 125, 125, false, false);
+//
+//        }
 
     }
 }

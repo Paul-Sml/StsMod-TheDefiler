@@ -15,7 +15,7 @@ public class Temptation extends AbstractDefilerCard {
     // intellij stuff power, self, uncommon
 
     private static final int COST = 1;
-    private static final int GOLD_COST = 5;
+    private static final int GOLD_COST = 10;
 
     public Temptation() {
         super(ID, COST, GOLD_COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);

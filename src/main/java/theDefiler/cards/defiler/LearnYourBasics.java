@@ -15,6 +15,7 @@ public class LearnYourBasics extends AbstractDefilerCard {
 
     public LearnYourBasics() {
         super(ID, COST, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

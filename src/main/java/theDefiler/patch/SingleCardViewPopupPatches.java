@@ -16,6 +16,7 @@ public class SingleCardViewPopupPatches {
     //private static TextureAtlas.AtlasRegion SecondLargeEnergyOrbOnCard = theextravagant.UIAtlas.findRegion("LargeOtherEnergyCard");
 
     @SpirePatch(clz = SingleCardViewPopup.class, method = "renderCost")
+
     public static class RenderSecondCostPatch {
         private static void renderHelper(SpriteBatch sb, float x, float y, TextureAtlas.AtlasRegion img) {
             if (img != null) {

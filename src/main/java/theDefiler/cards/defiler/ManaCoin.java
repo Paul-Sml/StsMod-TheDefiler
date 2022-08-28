@@ -16,7 +16,7 @@ public class ManaCoin extends AbstractDefilerCard {
     private static final int UPGRADED_GOLD_COST = 10;
 
     public ManaCoin() {
-        super(ID, COST, GOLD_COST, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, COST, GOLD_COST, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

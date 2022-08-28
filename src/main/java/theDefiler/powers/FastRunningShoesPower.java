@@ -16,7 +16,7 @@ import static theDefiler.util.Wiz.applyToSelf;
 
 public class FastRunningShoesPower extends AbstractEasyPower implements OnReceivePowerPower {
     // intellij stuff Example, buff, false
-    private static final String SIMPLE_NAME = "ExampleTwoAmount";
+    private static final String SIMPLE_NAME = FastRunningShoesPower.class.getSimpleName();
     public static final String POWER_ID = DefilerMod.makeID(SIMPLE_NAME);
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String LOC_NAME = powerStrings.NAME;
@@ -46,9 +46,10 @@ public class FastRunningShoesPower extends AbstractEasyPower implements OnReceiv
     }
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
-        this.flash();
-        if (AbstractDungeon.player.currentBlock <= amount)
+        if (AbstractDungeon.player.currentBlock <= amount) {
+            this.flash();
             this.addToBot(new GainBlockAction(this.owner, this.owner, this.amount2));
+        }
     }
 
     @Override
