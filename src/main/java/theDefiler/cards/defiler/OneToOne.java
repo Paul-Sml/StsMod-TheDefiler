@@ -17,7 +17,7 @@ public class OneToOne extends AbstractDefilerCard {
     private static final int MAXHP_COST = 2;
 
     public OneToOne() {
-        super(ID, COST,0 , MAXHP_COST, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
+        super(ID, COST,-1 , MAXHP_COST, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

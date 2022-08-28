@@ -15,7 +15,7 @@ public class Adrenaline extends AbstractDefilerCard {
     private static final int MAXHP_COST = 1;
 
     public Adrenaline() {
-        super(ID, COST, 0, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, COST, -1, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 4;
     }
 

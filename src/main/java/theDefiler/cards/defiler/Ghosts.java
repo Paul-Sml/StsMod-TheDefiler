@@ -21,7 +21,7 @@ public class Ghosts extends AbstractDefilerCard {
     private static final int MAXHP_COST = 1;
 
     public Ghosts() {
-        super(ID, COST, 0, MAXHP_COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, COST, -1, MAXHP_COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 1;
         baseBlock = 8;
         cardsToPreview = new Apparition();

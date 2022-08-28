@@ -17,7 +17,7 @@ public class PowerBelt extends AbstractDefilerCard {
     private static final int MAXHP_COST = 1;
 
     public PowerBelt() {
-        super(ID, COST, 0, MAXHP_COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, COST, -1, MAXHP_COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 5;
         isInnate = true;
         exhaust = true;

@@ -21,7 +21,7 @@ public class WildRush extends AbstractDefilerCard {
     private static final int MAXHP_COST = 2;
 
     public WildRush() {
-        super(ID, COST, 0, MAXHP_COST, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, COST, -1, MAXHP_COST, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 24;
         magicNumber = baseMagicNumber = 2;
     }

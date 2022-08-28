@@ -16,7 +16,7 @@ public class DivineStorm extends AbstractDefilerCard {
     private static final int MAXHP_COST = 1;
 
     public DivineStorm() {
-        super(ID, COST, 0, MAXHP_COST, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, COST, -1, MAXHP_COST, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         magicNumber = baseMagicNumber = 4;
     }
 

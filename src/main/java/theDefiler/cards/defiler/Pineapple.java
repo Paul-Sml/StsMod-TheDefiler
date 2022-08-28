@@ -14,7 +14,7 @@ public class Pineapple extends AbstractDefilerCard {
     private static final int MAXHP_COST = 1;
 
     public Pineapple() {
-        super(ID, COST, 0, MAXHP_COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, COST, -1, MAXHP_COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = 13;
         revival = baseRevival = 1;
     }

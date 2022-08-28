@@ -15,7 +15,7 @@ public class RightHook extends AbstractDefilerCard {
     private static final int MAXHP_COST = 1;
 
     public RightHook() {
-        super(ID, COST, 0, MAXHP_COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, COST, -1, MAXHP_COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 14;
         cardsToPreview = new LeftHook();
     }

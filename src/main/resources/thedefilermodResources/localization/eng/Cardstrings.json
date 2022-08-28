@@ -323,7 +323,7 @@
   },
   "${ModID}:ShadowDagger": {
     "NAME": "Shadow Dagger",
-    "DESCRIPTION": "Deal !D! damage. When you enter a [#EFC851]? Room, permanently increase this card damage by !M!. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL When you enter a [#EFC851]? Room, permanently increase this card damage by !M!. NL Exhaust."
   },
   "${ModID}:BornAgain": {
     "NAME": "Born Again",

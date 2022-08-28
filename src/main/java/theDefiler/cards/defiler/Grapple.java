@@ -15,7 +15,7 @@ public class Grapple extends AbstractDefilerCard {
     private static final int MAXHP_COST = 1;
 
     public Grapple() {
-        super(ID, COST, 0, MAXHP_COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, COST, -1, MAXHP_COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = 11;
         magicNumber = baseMagicNumber = 5;
     }
