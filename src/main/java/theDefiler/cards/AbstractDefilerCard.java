@@ -24,14 +24,14 @@ import static theDefiler.util.Wiz.addtb;
 
 public abstract class AbstractDefilerCard extends AbstractEasyCard {
 
-    public int goldCost;
-    public int goldCostForTurn;
+    public int goldCost = -1;
+    public int goldCostForTurn = -1;
     public boolean isGoldCostModified;
     public boolean isGoldCostModifiedForTurn;
     public boolean upgradedGoldCost;
 
-    public int maxhpCost;
-    public int maxhpCostForTurn;
+    public int maxhpCost = -1;
+    public int maxhpCostForTurn = -1;
     public boolean isMaxhpCostModified;
     public boolean isMaxhpCostModifiedForTurn;
     public boolean upgradedMaxhpCost;
