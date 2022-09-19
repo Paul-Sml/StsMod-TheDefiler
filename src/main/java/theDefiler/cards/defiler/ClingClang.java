@@ -18,8 +18,8 @@ public class ClingClang extends AbstractDefilerCard {
     private static final int GOLD_COST = 5;
 
     public ClingClang() {
-        super(ID, COST, GOLD_COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        magicNumber = baseMagicNumber = 4;
+        super(ID, COST, GOLD_COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        magicNumber = baseMagicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

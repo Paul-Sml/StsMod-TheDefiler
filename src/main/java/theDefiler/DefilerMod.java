@@ -41,6 +41,11 @@ public class DefilerMod implements
         return modID + ":" + idText;
     }
 
+
+    public static boolean canIgnorePath = false;
+
+
+
     // This makes debugging so much easier
     public static Logger logger = LogManager.getLogger(DefilerMod.class.getName());
 

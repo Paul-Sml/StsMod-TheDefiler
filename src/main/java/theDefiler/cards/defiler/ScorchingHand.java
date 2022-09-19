@@ -13,7 +13,7 @@ public class ScorchingHand extends AbstractDefilerCard {
     private static final int MAXHP_COST = 1;
 
     public ScorchingHand() {
-        super(ID, COST, 0, MAXHP_COST, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
+        super(ID, COST, -1, MAXHP_COST, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
         baseDamage = 23;
     }
 

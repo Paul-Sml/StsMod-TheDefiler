@@ -28,10 +28,6 @@ public class DomisdrawsCrossPower extends AbstractEasyPower {
         }
 
     }
-    @Override
-    public void atStartOfTurn() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
-    }
 
     public void updateDescription() {
         if (amount <= 1)

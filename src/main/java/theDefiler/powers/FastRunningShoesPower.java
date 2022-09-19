@@ -21,17 +21,21 @@ public class FastRunningShoesPower extends AbstractEasyPower implements OnReceiv
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String LOC_NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private static boolean upg = false;
 
     public FastRunningShoesPower(AbstractCreature owner, int amount, boolean upgraded) {
         super(SIMPLE_NAME, PowerType.BUFF, false, owner, amount);
         name = LOC_NAME;
         isTwoAmount = true;
-        if (this.amount != 5 && upgraded)
-            this.amount = 5;
+        if (this.amount2 != 5 && upgraded)
+            this.amount2 = 5;
         else
-            this.amount = 4;
+            this.amount2 = 4;
 
-        this.amount2 = amount;
+        if (upgraded)
+            upg = true;
+
+//        this.amount2 = amount;
         canGoNegative2 = true;
         updateDescription();
     }
@@ -40,20 +44,24 @@ public class FastRunningShoesPower extends AbstractEasyPower implements OnReceiv
     // You need to have this for it to stack the second amount properly
     @Override
     public boolean onReceivePower(AbstractPower pow, AbstractCreature target, AbstractCreature source) {
-        if (pow instanceof FastRunningShoesPower && target == owner)
-            amount2 += ((FastRunningShoesPower)pow).amount2;
+//        if (pow instanceof FastRunningShoesPower && target == owner)
+//            amount += ((FastRunningShoesPower)pow).amount;
+
+        if (this.amount2 != 5 && upg)
+            this.amount2 = 5;
+
         return true;
     }
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
-        if (AbstractDungeon.player.currentBlock <= amount) {
+        if (AbstractDungeon.player.currentBlock <= amount2) {
             this.flash();
-            this.addToBot(new GainBlockAction(this.owner, this.owner, this.amount2));
+            this.addToBot(new GainBlockAction(this.owner, this.owner, this.amount));
         }
     }
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + amount2 + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 }

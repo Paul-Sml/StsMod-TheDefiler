@@ -1,37 +1,35 @@
 package theDefiler.powers;
 
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import theDefiler.DefilerMod;
-import theDefiler.actions.GainMaxhpAction;
 
-public class BloodLettingPower extends AbstractEasyPower {
+public class GoldSkinPower extends AbstractEasyPower {
 
-    public static final String POWER_ID = DefilerMod.makeID(BloodLettingPower.class.getSimpleName());
+    public static final String POWER_ID = DefilerMod.makeID(GoldSkinPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public BloodLettingPower(AbstractCreature owner, int amount) {
+    public GoldSkinPower(AbstractCreature owner, int amount) {
         super(NAME, PowerType.BUFF, false, owner, amount);
     }
 
-    @Override
-    public int onLoseHp(int damageAmount) {
-        if (AbstractDungeon.player.currentHealth > 0) {
-            flash();
-            this.addToTop(new GainMaxhpAction(amount));
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (!card.purgeOnUse && this.amount > 0 && AbstractDungeon.actionManager.cardsPlayedThisTurn.size() <= this.amount) {
+            this.flash();
+            this.addToTop(new MakeTempCardInHandAction(card.makeStatEquivalentCopy()));
         }
-        return super.onLoseHp(damageAmount);
+
     }
-    
-    @Override
-    public void atStartOfTurn() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
-    }
+
+
 
     public void updateDescription() {
         description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];

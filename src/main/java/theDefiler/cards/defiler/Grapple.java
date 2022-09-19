@@ -22,6 +22,7 @@ public class Grapple extends AbstractDefilerCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new DefilerDigAction(magicNumber, c -> c.costForTurn == 0 || c.freeToPlayOnce));
+        dmg(m);
     }
 
     public void upp() {

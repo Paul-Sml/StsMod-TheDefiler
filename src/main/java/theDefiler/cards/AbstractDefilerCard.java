@@ -270,11 +270,11 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
                                                 this.cantUseMessage = TEXT[11];
                                                 return false;
                                             }
-                                            if (this.goldCostForTurn > 0 && AbstractDungeon.player.gold < this.goldCostForTurn) {
+                                            if (this.goldCostForTurn > 0 && AbstractDungeon.player.gold < this.goldCostForTurn && !this.freeToPlay() && !this.isInAutoplay) {
                                                 this.cantUseMessage = "Not enough golds NL TODO : REMOVE HARCODE";
                                                 return false;
                                             }
-                                            if (this.maxhpCostForTurn > 0 && AbstractDungeon.player.maxHealth < this.maxhpCostForTurn) {
+                                            if (this.maxhpCostForTurn > 0 && AbstractDungeon.player.maxHealth < this.maxhpCostForTurn && !this.freeToPlay() && !this.isInAutoplay) {
                                                 this.cantUseMessage = "Not enough Max HP NL TODO : REMOVE HARCODE";
                                                 return false;
                                             }

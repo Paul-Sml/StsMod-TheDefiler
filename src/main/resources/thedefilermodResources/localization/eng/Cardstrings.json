@@ -352,5 +352,28 @@
     "NAME": "Mana Coin",
     "DESCRIPTION": "Gain [E].",
     "UPGRADE_DESCRIPTION": "Gain [E] [E]."
+  },
+  "${ModID}:KeyRing": {
+    "NAME": "Key Ring",
+    "DESCRIPTION": "Deal !D! damage. NL Draw a card for each [#EFC851]Key you have."
+  },
+  "${ModID}:BlankTombstone": {
+    "NAME": "Blank Tombstone",
+    "DESCRIPTION": "Dig !M! : Colorless. NL Exhaust Status cards in your hand. NL Gain !B! Block."
+  },
+  "${ModID}:Sorrow": {
+    "NAME": "Sorrow",
+    "DESCRIPTION": "Deal damage equal to the number of cards in your discard pile.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to the number of cards in your discard pile + 3.",
+    "EXTENDED_DESCRIPTION": [" NL (deals !D! damage.)"]
+  },
+  "${ModID}:SouvenirShop": {
+    "NAME": "Souvenir Shop",
+    "DESCRIPTION": "Whenever you draw a card from another color, draw !M! card. NL When you play a card from another color gain !${ModID}:m2! Block.",
+    "UPGRADE_DESCRIPTION": "Whenever you draw a card from another color, draw !M! cards. NL When you play a card from another color gain !${ModID}:m2! Block."
+  },
+  "${ModID}:Tunnel": {
+    "NAME": "Tunnel",
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal ignore path for the next room. NL ${ModID}:Drafted : Ignore path for the next room."
   }
 }

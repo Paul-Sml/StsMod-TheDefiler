@@ -28,7 +28,7 @@ public class FastRunningShoes extends AbstractDefilerCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new FastRunningShoesPower(p, 4, upgraded));
+        applyToSelf(new FastRunningShoesPower(p, magicNumber, upgraded));
     }
 
     public void upp() {

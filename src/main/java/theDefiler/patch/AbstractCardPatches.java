@@ -15,9 +15,9 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import theDefiler.cards.AbstractDefilerCard;
 
 public class AbstractCardPatches {
-    private static Texture GoldOrb = ImageMaster.loadImage("thedefilermodResources/images/512/panelGoldBagFull.png");
-    private static Texture MHPOrb = ImageMaster.loadImage("thedefilermodResources/images/512/panelHeartFull.png");
-    private static Texture GMHPOrb = ImageMaster.loadImage("thedefilermodResources/images/512/panelGoldBagHeartFull.png");
+//    private static Texture GoldOrb = ImageMaster.loadImage("thedefilermodResources/images/512/panelGoldBagFull.png");
+//    private static Texture MHPOrb = ImageMaster.loadImage("thedefilermodResources/images/512/panelHeartFull.png");
+//    private static Texture GMHPOrb = ImageMaster.loadImage("thedefilermodResources/images/512/panelGoldBagHeartFull.png");
     @SpirePatch(clz = AbstractCard.class, method = "renderEnergy")
     public static class SecondEnergyRenderPatch {
         @SpirePostfixPatch
@@ -31,29 +31,29 @@ public class AbstractCardPatches {
                 offset.rotate(__instance.angle);
 
                 if (((AbstractDefilerCard)__instance).goldCost > -1 && ((AbstractDefilerCard)__instance).maxhpCost > -1) {
-                    renderElementHelper(sb, GMHPOrb,
-                            (__instance.current_x ) + offset.x,
-                            (__instance.current_y) + offset.y,
-                            __instance.drawScale * Settings.scale,
-                            __instance.drawScale * Settings.scale,
-                            __instance.angle);
+//                    renderElementHelper(sb, GMHPOrb,
+//                            (__instance.current_x ) + offset.x,
+//                            (__instance.current_y) + offset.y,
+//                            __instance.drawScale * Settings.scale,
+//                            __instance.drawScale * Settings.scale,
+//                            __instance.angle);
                     FontHelper.renderRotatedText(sb, FontHelper.cardEnergyFont_L, Integer.toString(((AbstractDefilerCard) __instance).goldCostForTurn), __instance.current_x, __instance.current_y, -135.0F * __instance.drawScale * Settings.scale, 120.0F * __instance.drawScale * Settings.scale, __instance.angle, false, Color.WHITE);
                     FontHelper.renderRotatedText(sb, FontHelper.cardEnergyFont_L, Integer.toString(((AbstractDefilerCard) __instance).maxhpCostForTurn), __instance.current_x, __instance.current_y, -135.0F * __instance.drawScale * Settings.scale, 55.0F * __instance.drawScale * Settings.scale, __instance.angle, false, Color.WHITE);
                 } else if (((AbstractDefilerCard)__instance).goldCost > -1) {
-                    renderElementHelper(sb, GoldOrb,
-                            (__instance.current_x ) + offset.x,
-                            (__instance.current_y) + offset.y,
-                            __instance.drawScale * Settings.scale,
-                            __instance.drawScale * Settings.scale,
-                            __instance.angle);
+//                    renderElementHelper(sb, GoldOrb,
+//                            (__instance.current_x ) + offset.x,
+//                            (__instance.current_y) + offset.y,
+//                            __instance.drawScale * Settings.scale,
+//                            __instance.drawScale * Settings.scale,
+//                            __instance.angle);
                     FontHelper.renderRotatedText(sb, FontHelper.cardEnergyFont_L, Integer.toString(((AbstractDefilerCard) __instance).goldCostForTurn), __instance.current_x, __instance.current_y, -135.0F * __instance.drawScale * Settings.scale, 120.0F * __instance.drawScale * Settings.scale, __instance.angle, false, Color.WHITE);
                 } else if (((AbstractDefilerCard)__instance).maxhpCost > -1) {
-                    renderElementHelper(sb, MHPOrb,
-                            (__instance.current_x ) + offset.x,
-                            (__instance.current_y) + offset.y,
-                            __instance.drawScale * Settings.scale,
-                            __instance.drawScale * Settings.scale,
-                            __instance.angle);
+//                    renderElementHelper(sb, MHPOrb,
+//                            (__instance.current_x ) + offset.x,
+//                            (__instance.current_y) + offset.y,
+//                            __instance.drawScale * Settings.scale,
+//                            __instance.drawScale * Settings.scale,
+//                            __instance.angle);
                     FontHelper.renderRotatedText(sb, FontHelper.cardEnergyFont_L, Integer.toString(((AbstractDefilerCard) __instance).maxhpCostForTurn), __instance.current_x, __instance.current_y, -135.0F * __instance.drawScale * Settings.scale, 120.0F * __instance.drawScale * Settings.scale, __instance.angle, false, Color.WHITE);
                 }
             counter++;

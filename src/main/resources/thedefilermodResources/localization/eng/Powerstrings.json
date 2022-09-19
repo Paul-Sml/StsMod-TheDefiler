@@ -48,13 +48,19 @@
   "${ModID}:SharpenPower": {
     "NAME": "Sharpen",
     "DESCRIPTIONS": [
-      "Dig effects Dig "," extra card."
+      "Dig effects Dig #b"," extra card."
     ]
   },
   "${ModID}:NoBlockDefilerPower": {
     "NAME": "No Block",
     "DESCRIPTIONS": [
-      "You cannot gain Block from cards for the turn."
+      "You cannot gain #yBlock from cards for the turn."
+    ]
+  },
+  "${ModID}:SouvenirShopPower": {
+    "NAME": "Souvenir Shop",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card from another color, draw #b"," card","s",". NL When you play a card from another color gain #b"," #yBlock."
     ]
   }
 }

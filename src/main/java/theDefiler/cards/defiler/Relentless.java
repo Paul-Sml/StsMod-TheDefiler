@@ -35,5 +35,6 @@ public class Relentless extends AbstractDefilerCard {
 
     public void upp() {
         upMagic(1);
+        upgradeBlock(3);
     }
 }

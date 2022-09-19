@@ -28,5 +28,6 @@ public class Daydream extends AbstractDefilerCard {
 
     public void upp() {
         upgradeMagicNumber(1);
+        uDesc();
     }
 }

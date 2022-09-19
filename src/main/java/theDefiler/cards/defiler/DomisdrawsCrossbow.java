@@ -17,7 +17,6 @@ import java.util.ArrayList;
 
 import static theDefiler.DefilerMod.makeID;
 
-@NoCompendium
 public class DomisdrawsCrossbow extends AbstractDefilerCard implements SpawnModificationCard {
     public final static String ID = makeID(DomisdrawsCrossbow.class.getSimpleName());
     // intellij stuff power, self, uncommon
@@ -25,11 +24,12 @@ public class DomisdrawsCrossbow extends AbstractDefilerCard implements SpawnModi
     private static final int COST = 1;
 
     public DomisdrawsCrossbow() {
-        super(ID, COST, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY, CardColor.COLORLESS);
+        super(ID, COST, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 19;
         baseBlock = 12;
         magicNumber = baseMagicNumber = 5;
         secondMagic = baseSecondDamage = 1;
+        setLocked();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
