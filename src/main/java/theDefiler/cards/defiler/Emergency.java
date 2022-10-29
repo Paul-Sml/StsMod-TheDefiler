@@ -24,5 +24,7 @@ public class Emergency extends AbstractDefilerCard {
         block();
     }
 
-    public void upp() {}
+    public void upp() {
+        uDesc();
+    }
 }

@@ -213,7 +213,8 @@
   },
   "${ModID}:Emergency": {
     "NAME": "Emergency",
-    "DESCRIPTION": "[#EFC851]Dig !M! : Block. NL Gain !B! Block. NL Your next upgrade must be wasted on this card."
+    "DESCRIPTION": "[#EFC851]Dig !M! : Block. NL Gain !B! Block. NL Your next upgrade must be wasted on this card.",
+    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Block. NL Gain !B! Block."
   },
   "${ModID}:EvilShadow": {
     "NAME": "EvilShadow",
