@@ -1,6 +1,11 @@
 package theDefiler.cards;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.OnObtainCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -8,8 +13,10 @@ import com.megacrit.cardcrawl.blights.AbstractBlight;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -22,7 +29,7 @@ import java.util.function.Predicate;
 
 import static theDefiler.util.Wiz.addtb;
 
-public abstract class AbstractDefilerCard extends AbstractEasyCard {
+public abstract class AbstractDefilerCard extends AbstractEasyCard implements OnObtainCard {
 
     public int goldCost = -1;
     public int goldCostForTurn = -1;
@@ -42,6 +49,10 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
     public int secondRevival = -1;
     public int baseSecondRevival = -1;
     public boolean upgradedSecondRevival;
+
+    private Color renderColor = Color.WHITE.cpy();
+    public static final Texture GOLD_ICON = ImageMaster.loadImage("thedefilermodResources/images/512/panelGoldBag.png");
+    public static final Texture HP_ICON = ImageMaster.loadImage("thedefilermodResources/images/512/panelHeart.png");
 
     public AbstractDefilerCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target) {
         this(cardID, cost, -1, -1, type, rarity, target);
@@ -397,5 +408,80 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard {
 
     public void drafted() {}
 
+    public void displayCost(SpriteBatch sb) {
+
+        if (this.goldCost < 0 && this.maxhpCost < 0) {return;}
+
+        float drawX = this.current_x - 256.0F;
+        float drawY = this.current_y - 256.0F;
+
+        if(!this.isLocked && this.isSeen) {
+
+            //INIT VALUES
+            float yOffset = 94.0F * Settings.scale * this.drawScale;
+            Vector2 offset = new Vector2(89.0F * this.drawScale * Settings.scale, -yOffset);
+            offset.rotate(this.angle);
+            float textOffset = 129.0F;
+
+            //GOLD COSTING
+            if (this.goldCost >= 0) {
+                this.renderHelper(sb, this.renderColor, GOLD_ICON, drawX + offset.x, drawY + offset.y);
+
+                String msg = this.goldCostForTurn + "";
+                Color weightColor = Color.WHITE;
+                if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.CARD_REWARD && (this.goldCostForTurn + AbstractDungeon.player.gold < this.goldCostForTurn)) {
+                    weightColor = Color.RED;
+                }
+                FontHelper.renderRotatedText(sb, getWeightFont(this), msg, this.current_x,
+                        this.current_y, -132.0F * this.drawScale * Settings.scale,
+                        textOffset * this.drawScale * Settings.scale, this.angle,
+                        true, weightColor);
+            }
+
+            //GOLD & HP COST
+            if (this.goldCost >= 0 && this.maxhpCost >= 0) {
+                yOffset = 141.0F * Settings.scale * this.drawScale;
+                offset = new Vector2(89.0F * this.drawScale * Settings.scale, -yOffset);
+                textOffset -= 47.0F;
+            }
+
+            //HP COST
+            if (this.maxhpCost >= 0) {
+                offset.rotate(this.angle);
+                this.renderHelper(sb, this.renderColor, HP_ICON, drawX + offset.x, drawY + offset.y);
+
+                String msg = this.maxhpCostForTurn + "";
+                Color weightColor = Color.WHITE;
+                if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.CARD_REWARD && (this.maxhpCostForTurn + AbstractDungeon.player.maxHealth < this.maxhpCostForTurn)) {
+                    weightColor = Color.RED;
+                }
+                FontHelper.renderRotatedText(sb, getWeightFont(this), msg, this.current_x,
+                        this.current_y, -132.0F * this.drawScale * Settings.scale,
+                        textOffset * this.drawScale * Settings.scale, this.angle,
+                        true, weightColor);
+            }
+
+        }
+    }
+
+    private void renderHelper(SpriteBatch sb, Color color, Texture img, float drawX, float drawY) {
+        sb.setColor(color);
+        sb.draw(img, drawX, drawY,
+                256.0F, 256.0F, 512.0F, 512.0F,
+                this.drawScale * Settings.scale, this.drawScale * Settings.scale,
+                this.angle, 0, 0, 512, 512, false, false);
+
+
+    }
+
+    private static BitmapFont getWeightFont(AbstractCard card) {
+        FontHelper.cardEnergyFont_L.getData().setScale(card.drawScale * 0.75f);
+        return FontHelper.cardEnergyFont_L;
+    }
+
+    @Override
+    public void onObtainCard() {
+        drafted();
+    }
 }
 

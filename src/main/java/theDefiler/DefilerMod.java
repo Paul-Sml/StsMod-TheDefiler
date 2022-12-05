@@ -7,13 +7,20 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.mod.stslib.patches.CenterGridCardSelectScreen;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.util.JsonUtils;
@@ -33,7 +40,9 @@ public class DefilerMod implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
-        EditCharactersSubscriber {
+        EditCharactersSubscriber,
+        PostUpdateSubscriber
+        {
 
     public static final String modID = "thedefilermod";
 
@@ -43,6 +52,7 @@ public class DefilerMod implements
 
 
     public static boolean canIgnorePath = false;
+    public static boolean choosingRemoveCard = false;
 
 
 
@@ -172,6 +182,22 @@ public class DefilerMod implements
             for (Keyword keyword : keywords) {
                 BaseMod.addKeyword(modID, keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
+        }
+    }
+
+
+    @Override
+    public void receivePostUpdate() {
+        if (choosingRemoveCard && AbstractDungeon.gridSelectScreen.selectedCards.size() == 1) {
+            AbstractCard card = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
+            card.untip();// 73
+            card.unhover();// 74
+            AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(card, (float) Settings.WIDTH / 2, (float) Settings.HEIGHT / 2.0F));// 75
+            AbstractDungeon.player.masterDeck.removeCard(card);// 78
+            choosingRemoveCard = false;
+            CenterGridCardSelectScreen.centerGridSelect = false;
+            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
         }
     }
 }

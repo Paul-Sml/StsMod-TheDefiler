@@ -27,7 +27,7 @@ public class ShadowDaggerPatch {
             if (c.cardID.equals(ShadowDagger.ID)) {
                 c.misc += c.magicNumber;
                 c.applyPowers();
-                c.baseDamage = c.misc;
+                c.baseDamage += c.misc;
                 c.isDamageModified = false;
             }
         }

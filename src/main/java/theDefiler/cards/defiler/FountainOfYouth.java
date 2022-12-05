@@ -1,5 +1,6 @@
 package theDefiler.cards.defiler;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -28,11 +29,9 @@ public class FountainOfYouth extends AbstractDefilerCard {
 
     @Override
     public void onRemoveFromMasterDeck() {
-        CardGroup removeableCurses = AbstractDungeon.player.masterDeck.getPurgeableCards();
-        removeableCurses = removeableCurses.getCardsOfType(CardType.CURSE);
-
+        CardGroup removeableCurses = AbstractDungeon.player.masterDeck.getPurgeableCards().getCardsOfType(CardType.CURSE);
         for (int i = 0; i < removeableCurses.size(); i++) {
-            AbstractDungeon.player.masterDeck.removeCard(removeableCurses.getTopCard());
+            AbstractDungeon.player.masterDeck.removeCard(removeableCurses.getNCardFromTop(i));
         }
     }
 

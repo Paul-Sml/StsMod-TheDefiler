@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theDefiler.cards.defiler.*;
 
@@ -30,6 +31,7 @@ public class DomisdrawCampfireOption extends AbstractCampfireOption {
         loseCard(SpearsShake.ID);
         loseCard(BowsScorch.ID);
         loseCard(CrossDisease.ID);
+        UnlockTracker.markCardAsSeen(DomisdrawsCrossbow.ID);
         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new DomisdrawsCrossbow(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
         //AbstractDungeon.effectList.add(new CampfireBurnResetEffect(this));
         this.usable = false;

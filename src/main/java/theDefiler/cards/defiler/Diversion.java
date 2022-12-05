@@ -31,6 +31,8 @@ public class Diversion extends AbstractDefilerCard {
         AbstractDungeon.player.gainGold(magicNumber);
     }
 
+
+
     public void upp() {
         upgradeBlock(3);
         upgradeMagicNumber(10);

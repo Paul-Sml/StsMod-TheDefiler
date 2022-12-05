@@ -72,7 +72,7 @@ public class DefilerDigAction  extends AbstractGameAction
     {
         if (card.cardID.equals(LivingWeapon.ID))
             
-            this.addToBot(new DefilerDigAction(baseAmount, condition));
+            this.addToTop(new DefilerDigAction(baseAmount, condition));
         if(isConditionMet || card.cardID.equals(Worms.ID) || card.cardID.equals(BowsScorch.ID))
             Rebound(card);
         else

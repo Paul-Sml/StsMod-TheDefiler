@@ -1,6 +1,7 @@
 package theDefiler.cards.defiler;
 
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Burn;
@@ -9,9 +10,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theDefiler.cards.AbstractDefilerCard;
 
+import java.util.ArrayList;
+
 import static theDefiler.DefilerMod.makeID;
 
-public class BowsScorch extends AbstractDefilerCard {
+public class BowsScorch extends AbstractDefilerCard implements SpawnModificationCard {
     public final static String ID = makeID(BowsScorch.class.getSimpleName());
     // intellij stuff power, self, uncommon
     private static AbstractCard c = new DomisdrawsBow();
@@ -29,6 +32,11 @@ public class BowsScorch extends AbstractDefilerCard {
             p.masterDeck.removeCard(DomisdrawsBow.ID);
             break;
         }
+    }
+
+    @Override
+    public boolean canSpawn(ArrayList<AbstractCard> currentRewardCards) {
+        return false;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {}

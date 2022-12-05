@@ -42,6 +42,7 @@ public class IgnorePathPatch
                     wingBoots.counter++;
                 }
             }
+            DefilerMod.canIgnorePath = false;
         }
     }
 

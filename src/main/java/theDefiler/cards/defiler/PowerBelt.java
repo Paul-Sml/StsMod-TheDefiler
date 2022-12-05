@@ -1,11 +1,17 @@
 package theDefiler.cards.defiler;
 
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import theDefiler.actions.DefilerDigAction;
 import theDefiler.cards.AbstractDefilerCard;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static theDefiler.DefilerMod.makeID;
 
@@ -29,5 +35,11 @@ public class PowerBelt extends AbstractDefilerCard {
 
     public void upp() {
         upgradeMagicNumber(3);
+    }
+
+    public List<TooltipInfo> getCustomTooltips() {
+        UIStrings strings = CardCrawlGame.languagePack.getUIString("thedefilermod:Dig");
+        return Arrays.asList(new TooltipInfo(strings.TEXT[0], strings.TEXT[1] + magicNumber + strings.TEXT[2] + cardStrings.EXTENDED_DESCRIPTION[0] + strings.TEXT[3]
+        ));
     }
 }

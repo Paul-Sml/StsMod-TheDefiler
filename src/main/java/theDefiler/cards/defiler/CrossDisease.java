@@ -1,5 +1,6 @@
 package theDefiler.cards.defiler;
 
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 
 import static theDefiler.DefilerMod.makeID;
 
-public class CrossDisease extends AbstractDefilerCard {
+public class CrossDisease extends AbstractDefilerCard implements SpawnModificationCard {
     public final static String ID = makeID(CrossDisease.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
@@ -39,6 +40,11 @@ public class CrossDisease extends AbstractDefilerCard {
 
     public static <T> T getRandomItem(ArrayList<T> list, Random rng) {
         return list.isEmpty() ? null : list.get(rng.random(list.size() - 1));
+    }
+
+    @Override
+    public boolean canSpawn(ArrayList<AbstractCard> currentRewardCards) {
+        return false;
     }
 
     public void triggerWhenDrawn() {

@@ -14,5 +14,11 @@
     "TEXT": [
       "Chose a card to put at the bottom of your draw pile."
     ]
+  },
+  "${ModID}:Dig": {
+    "TEXT": [
+      "Dig X : Something",
+      "Put the top #b"," cards of your draw pile into your discard pile. NL "," go to your hand instead."
+    ]
   }
 }

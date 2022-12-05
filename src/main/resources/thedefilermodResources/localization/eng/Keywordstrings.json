@@ -33,7 +33,14 @@
     "NAMES": [
       "drafted"
     ],
-    "DESCRIPTION": "Activate this effect when you chose to add this card to your deck from card rewards."
+    "DESCRIPTION": "Activate this effect when you chose to add the card to your deck from card rewards."
+  },
+  {
+    "PROPER_NAME": "Obtained",
+    "NAMES": [
+      "obtained"
+    ],
+    "DESCRIPTION": "Activate this effect when the card is added to your deck."
   },
   {
     "PROPER_NAME": "Removed",

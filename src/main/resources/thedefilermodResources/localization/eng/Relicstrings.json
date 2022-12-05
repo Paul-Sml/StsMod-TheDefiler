@@ -21,10 +21,10 @@
     ]
   },
   "${ModID}:IroncladsBlood": {
-    "NAME": "IroncladsBlood",
+    "NAME": "Ironclad's Blood",
     "FLAVOR": "TODO: make this a sweet relic.",
     "DESCRIPTIONS": [
-      "Double Healing out of gaining Max HP."
+      "Double Healing received from gaining Max HP."
     ]
   }
 }

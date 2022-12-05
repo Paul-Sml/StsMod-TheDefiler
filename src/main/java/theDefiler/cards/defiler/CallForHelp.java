@@ -1,5 +1,6 @@
 package theDefiler.cards.defiler;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,17 +24,24 @@ public class CallForHelp extends AbstractDefilerCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        boolean thisTurn = false;
-        for (AbstractMonster q : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (q.getIntentBaseDmg() >= 0) {
-                thisTurn = true;
-                break;
+        atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                boolean thisTurn = false;
+                for (AbstractMonster q : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    if (q.getIntentBaseDmg() >= 0) {
+                        thisTurn = true;
+                        break;
+                    }
+                }
+                if (thisTurn)
+                    block();
+                else
+                    atb(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, block), block));
+                isDone = true;
             }
-        }
-        if (thisTurn)
-            block();
-        else
-            atb(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, this.block), this.block));
+        });
+
     }
 
     public void upp() {
