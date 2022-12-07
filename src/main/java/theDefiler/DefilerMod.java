@@ -2,6 +2,7 @@ package theDefiler;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -41,8 +42,9 @@ public class DefilerMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostUpdateSubscriber
-        {
+        PostUpdateSubscriber,
+        CustomSavable<Boolean>
+{
 
     public static final String modID = "thedefilermod";
 
@@ -53,8 +55,6 @@ public class DefilerMod implements
 
     public static boolean canIgnorePath = false;
     public static boolean choosingRemoveCard = false;
-
-
 
     // This makes debugging so much easier
     public static Logger logger = LogManager.getLogger(DefilerMod.class.getName());
@@ -199,5 +199,16 @@ public class DefilerMod implements
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
         }
+    }
+
+    @Override
+    public Boolean onSave() {
+        return canIgnorePath;
+    }
+
+    @Override
+    public void onLoad(Boolean aBoolean) {
+        canIgnorePath = aBoolean;
+
     }
 }

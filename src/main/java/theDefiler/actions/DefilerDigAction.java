@@ -73,8 +73,12 @@ public class DefilerDigAction  extends AbstractGameAction
         if (card.cardID.equals(LivingWeapon.ID))
             
             this.addToTop(new DefilerDigAction(baseAmount, condition));
-        if(isConditionMet || card.cardID.equals(Worms.ID) || card.cardID.equals(BowsScorch.ID))
+
+        if(isConditionMet || card.cardID.equals(Worms.ID) || card.cardID.equals(BowsScorch.ID)) {
             Rebound(card);
+            if (p.hasPower(MudCannonPower.POWER_ID))
+                p.getPower(MudCannonPower.POWER_ID).onSpecificTrigger();
+        }
         else
         {
 //            if((card instanceof AbstractDefilerCard && ((AbstractDefilerCard)card).postMillAction))

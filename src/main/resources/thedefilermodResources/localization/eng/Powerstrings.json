@@ -62,5 +62,11 @@
     "DESCRIPTIONS": [
       "Whenever you draw a card from another color, draw #b"," card","s",". NL When you play a card from another color gain #b"," #yBlock."
     ]
+  },
+  "${ModID}:MudCannonPower": {
+    "NAME": "Mud Cannon",
+    "DESCRIPTIONS": [
+      "When you successfully #yDig a card, deal #b"," damage to a random enemy."
+    ]
   }
 }

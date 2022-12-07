@@ -37,7 +37,6 @@ public class ClingClang extends AbstractDefilerCard implements OnObtainCard {
     }
 
     public void onObtainCard() {
-        System.out.println("yo");
         InputHelper.justClickedLeft = false;
         AbstractDungeon.combatRewardScreen.rewards = new ArrayList(AbstractDungeon.getCurrRoom().rewards);
         if ((AbstractDungeon.getCurrRoom().event == null || AbstractDungeon.getCurrRoom().event != null && !AbstractDungeon.getCurrRoom().event.noCardsInRewards) && !(AbstractDungeon.getCurrRoom() instanceof TreasureRoom) && !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
@@ -57,19 +56,6 @@ public class ClingClang extends AbstractDefilerCard implements OnObtainCard {
             }
         }
     }
-
-    /*public void drafted() {
-        RewardItem cardReward = new RewardItem();
-        if (upgraded) {
-            if (cardReward.cards.size() > 0) {
-                for (int i = 0; i < cardReward.cards.size(); i++) {
-                    if (!cardReward.cards.get(i).upgraded)
-                        cardReward.cards.get(i).upgrade();
-                }
-            }
-        }
-        AbstractDungeon.getCurrRoom().rewards.add(cardReward);
-    }*/
 
     public void upp() {
         upgradeMagicNumber(2);

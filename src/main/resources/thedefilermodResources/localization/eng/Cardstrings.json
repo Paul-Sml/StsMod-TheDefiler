@@ -255,8 +255,9 @@
   },
   "${ModID}:DomisdrawsBow": {
     "NAME": "Domisdraw's Bow",
-    "DESCRIPTION": "[#EFC851]Dig !M! : Rare rarity. NL Gain !B! Block. NL ${ModID}:Obtained : add [#EFC851]Bow's [#EFC851]Scorch to your deck.",
-    "EXTENDED_DESCRIPTION" : ["Cards that give Block"]},
+    "DESCRIPTION": "[#EFC851]Dig !M! : Non-Defiler. NL Gain !B! Block. NL ${ModID}:Obtained : add [#EFC851]Bow's [#EFC851]Scorch to your deck.",
+    "EXTENDED_DESCRIPTION" : ["Non-Defiler color cards"]
+  },
   "${ModID}:DomisdrawsCross": {
     "NAME": "Domisdraw's Cross",
     "DESCRIPTION": "Add a copy of the first card you play each turn to your hand. NL ${ModID}:Obtained : add [#EFC851]Cross' [#EFC851]Disease to your deck.",
@@ -264,9 +265,10 @@
   },
   "${ModID}:DomisdrawsCrossbow": {
     "NAME": "Domisdraw's Crossbow",
-    "DESCRIPTION": "[#EFC851]Dig !M! : Rare rarity. NL Remove all Block from the enemy. NL Deal !D! damage. NL Gain !B! Block. NL Add a copy of this card to your discard pile.",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Non-Defiler. NL Remove all Block from the enemy. NL Deal !D! damage. NL Gain !B! Block. NL Add a copy of this card to your discard pile.",
     "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Rare rarity. NL Remove all Block from the enemy. NL Deal !D! damage. NL Gain !B! Block. NL Add !${ModID}:m2! copies of this card to your discard pile.",
-    "EXTENDED_DESCRIPTION" : ["Rare rarity cards"]},
+    "EXTENDED_DESCRIPTION" : ["Non-Defiler color cards"]
+  },
   "${ModID}:SpearsShake": {
     "NAME": "Spear's Shake",
     "DESCRIPTION": "Attack damage are halved while this card is in your hand. NL ${ModID}:Removed : remove [#EFC851]Domisdraw's [#EFC851]Spear from your deck."
@@ -370,7 +372,7 @@
   },
   "${ModID}:BlankTombstone": {
     "NAME": "Blank Tombstone",
-    "DESCRIPTION": "Dig !M! : Colorless. NL Exhaust Status cards in your hand. NL Gain !B! Block.",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Colorless. NL Exhaust Status cards in your hand. NL Gain !B! Block.",
     "EXTENDED_DESCRIPTION" : ["Colorless cards"]
   },
   "${ModID}:Sorrow": {
@@ -404,5 +406,15 @@
   "${ModID}:BarbedWires": {
     "NAME": "Barbed Wires",
     "DESCRIPTION": "Apply 2 Thorns to the enemy. NL The enemy loses !M! HP every turn."
+  },
+  "${ModID}:GoldHoarding": {
+    "NAME": "Gold Hoarding",
+    "DESCRIPTION": "[#EFC851]Dig !M! : Rare rarity. NL Gain !${ModID}:m2! Gold. Exhaust. NL ${ModID}:Removed : Add a random rare card to your deck.",
+    "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Rare rarity. NL Gain !${ModID}:m2! Gold. Exhaust. NL ${ModID}:Removed : Add a random upgraded rare card to your deck.",
+    "EXTENDED_DESCRIPTION" : ["Rare rarity cards"]
+  },
+  "${ModID}:MudCannon": {
+    "NAME": "Mud Cannon",
+    "DESCRIPTION": "When you successfully [#EFC851]Dig a card, deal !M! damage to a random enemy. NL ${ModID}:Dug : Play this card for free."
   }
 }

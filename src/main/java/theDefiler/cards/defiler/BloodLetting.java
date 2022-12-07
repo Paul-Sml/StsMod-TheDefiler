@@ -19,6 +19,7 @@ public class BloodLetting extends AbstractDefilerCard {
     public BloodLetting() {
         super(ID, COST, GOLD_COST, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
         exhaust = true;
+        tags.add(CardTags.HEALING);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
