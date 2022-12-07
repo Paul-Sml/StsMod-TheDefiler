@@ -39,10 +39,10 @@ public class GoldHoarding extends AbstractDefilerCard {
 
     @Override
     public void onRemoveFromMasterDeck() {
-        AbstractCard c = rareCardPool.getRandomCard(false);
+        AbstractCard c = rareCardPool.getRandomCard(false).makeCopy();
         if (upgraded)
             c.upgrade();
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+        AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(c, (float) Settings.WIDTH / 1.5F, (float)Settings.HEIGHT / 2.0F));
     }
 
     public void upp() {

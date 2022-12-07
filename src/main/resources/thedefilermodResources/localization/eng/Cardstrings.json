@@ -57,12 +57,12 @@
     "NAME": "Earth Digging",
     "DESCRIPTION": "[#EFC851]Dig !M! : Basic rarity. NL ${ModID}:Removed : Add [#EFC851]Tomb [#EFC851]Digging to your deck.",
     "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Basic rarity NL ${ModID}:Removed : Add [#EFC851]Tomb [#EFC851]Digging+ to your deck.",
-    "EXTENDED_DESCRIPTION" : ["Basic rarity cards"]
+    "EXTENDED_DESCRIPTION" : ["#gBasic#grarity #gcards"]
   },
   "${ModID}:TombDigging": {
     "NAME": "Tomb Digging",
     "DESCRIPTION": "[#EFC851]Dig !M! : Non-Basic rarity.",
-    "EXTENDED_DESCRIPTION" : ["Non-Basic rarity cards"]
+    "EXTENDED_DESCRIPTION" : ["#gNon-Basic #grarity #gcards"]
   },
   "${ModID}:CoinToss": {
     "NAME": "Coin Toss",
@@ -88,7 +88,7 @@
   "${ModID}:TombWall": {
     "NAME": "Tomb Wall",
     "DESCRIPTION": "[#EFC851]Dig !M! : 1 [E] cost. NL Gain !B! Block.",
-    "EXTENDED_DESCRIPTION" : ["Cards that cost #b1 [E]"]
+    "EXTENDED_DESCRIPTION" : ["#gCards #gthat #gcost #b1 [E]"]
   },
   "${ModID}:ShinyDrain": {
     "NAME": "Shiny Drain",
@@ -97,12 +97,12 @@
   "${ModID}:Parry": {
     "NAME": "Parry",
     "DESCRIPTION": "[#EFC851]Dig !M! : Attacks. NL gain !B! Block.",
-    "EXTENDED_DESCRIPTION" : ["Attack cards"]
+    "EXTENDED_DESCRIPTION" : ["#gAttack #gcards"]
   },
   "${ModID}:TakeMyMoney": {
     "NAME": "Take My Money",
     "DESCRIPTION": "[#EFC851]Dig !M! : Costs Gold. NL Deal !D! damage.",
-    "EXTENDED_DESCRIPTION" : ["Cards that cost Gold"]
+    "EXTENDED_DESCRIPTION" : ["#gCards #gthat #gcost #gGold"]
   },
   "${ModID}:GoldenApple": {
     "NAME": "Golden Apple",
@@ -144,7 +144,7 @@
     "NAME": "Searing Coins",
     "DESCRIPTION": "[#EFC851]Dig !M! : Costs Max HP. NL Gain !${ModID}:m2! Golds. NL Add [#EFC851]Scorching [#EFC851]Hand and a [#EFC851]Burn into your draw pile.",
     "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Costs Max HP. NL Gain !${ModID}:m2! Golds. NL Add [#EFC851]Scorching [#EFC851]Hand+ and a [#EFC851]Burn into your draw pile.",
-    "EXTENDED_DESCRIPTION" : ["Cards that cost Max HP"]
+    "EXTENDED_DESCRIPTION" : ["#gCards #gthat #gcost #gMax #gHP"]
   },
   "${ModID}:ScorchingHand": {
     "NAME": "Scorching Hand",
@@ -171,7 +171,7 @@
     "NAME": "Cling Clang",
     "DESCRIPTION": "[#EFC851]Dig !M! : Upgraded card. NL ${ModID}:Obtained : drop an additional card.",
     "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Upgraded card. NL ${ModID}:Obtained : drop an additional upgraded card.",
-    "EXTENDED_DESCRIPTION" : ["Upgraded cards"]
+    "EXTENDED_DESCRIPTION" : ["#gUpgraded #gcards"]
   },
   "${ModID}:Pineapple": {
     "NAME": "Pineapple",
@@ -188,7 +188,7 @@
   },
   "${ModID}:Starfish": {
     "NAME": "Starfish",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust. NL ${ModID}:Dug : draw all [#EFC851]Starfish cards. NL ${ModID}:Obtained : Add another copy of this card to your deck."
+    "DESCRIPTION": "Deal !D! damage. Exhaust. NL ${ModID}:Dug : draw all [#EFC851]Starfish cards. NL ${ModID}:Obtained : Add another copy of this card to your deck."
   },
   "${ModID}:Cooking": {
     "NAME": "Cooking",
@@ -206,12 +206,12 @@
   "${ModID}:PowerBelt": {
     "NAME": "Power Belt",
     "DESCRIPTION": "Innate. NL [#EFC851]Dig !M! : Powers. NL Exhaust.",
-    "EXTENDED_DESCRIPTION" : ["Power cards"]
+    "EXTENDED_DESCRIPTION" : ["#gPower #gcards"]
   },
   "${ModID}:Grapple": {
     "NAME": "Grapple",
     "DESCRIPTION": "[#EFC851]Dig !M! : 0 [E] cost. NL Deal !D! damage.",
-    "EXTENDED_DESCRIPTION" : ["Cards that cost #b0 [E]"]
+    "EXTENDED_DESCRIPTION" : ["#gCards #gthat #gcost #b0 [E]"]
   },
   "${ModID}:StoneSkin": {
     "NAME": "Stone Skin",
@@ -221,13 +221,13 @@
     "NAME": "Emergency",
     "DESCRIPTION": "[#EFC851]Dig !M! : Block. NL Gain !B! Block. NL Your next upgrade must be wasted on this card.",
     "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Block. NL Gain !B! Block.",
-    "EXTENDED_DESCRIPTION" : ["Cards that give Block"]
+    "EXTENDED_DESCRIPTION" : ["#gCards #gthat #ggive #gBlock"]
   },
   "${ModID}:EvilShadow": {
     "NAME": "EvilShadow",
     "DESCRIPTION": "[#EFC851]Dig !M! : 2 [E] cost. NL Deal !D! damage.",
     "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : 2+ [E] cost. NL Deal !D! damage.",
-    "EXTENDED_DESCRIPTION" : ["Cards that cost #b2 [E]","Cards that cost at least #b2 [E]"]
+    "EXTENDED_DESCRIPTION" : ["#gCards #gthat #gcost #b2 [E]","#gCards #gthat #gcost #gat #gleast #b2 [E]"]
   },
   "${ModID}:CallForHelp": {
     "NAME": "Call For Help",
@@ -256,7 +256,7 @@
   "${ModID}:DomisdrawsBow": {
     "NAME": "Domisdraw's Bow",
     "DESCRIPTION": "[#EFC851]Dig !M! : Non-Defiler. NL Gain !B! Block. NL ${ModID}:Obtained : add [#EFC851]Bow's [#EFC851]Scorch to your deck.",
-    "EXTENDED_DESCRIPTION" : ["Non-Defiler color cards"]
+    "EXTENDED_DESCRIPTION" : ["#gNon-Defiler #gcolor #gcards"]
   },
   "${ModID}:DomisdrawsCross": {
     "NAME": "Domisdraw's Cross",
@@ -267,7 +267,7 @@
     "NAME": "Domisdraw's Crossbow",
     "DESCRIPTION": "[#EFC851]Dig !M! : Non-Defiler. NL Remove all Block from the enemy. NL Deal !D! damage. NL Gain !B! Block. NL Add a copy of this card to your discard pile.",
     "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Rare rarity. NL Remove all Block from the enemy. NL Deal !D! damage. NL Gain !B! Block. NL Add !${ModID}:m2! copies of this card to your discard pile.",
-    "EXTENDED_DESCRIPTION" : ["Non-Defiler color cards"]
+    "EXTENDED_DESCRIPTION" : ["#gNon-Defiler #gcolor #gcards"]
   },
   "${ModID}:SpearsShake": {
     "NAME": "Spear's Shake",
@@ -317,12 +317,12 @@
   "${ModID}:Drill": {
     "NAME": "Drill",
     "DESCRIPTION": "[#EFC851]Dig !M! : Non Status.",
-    "EXTENDED_DESCRIPTION" : ["Cards that are not status"]
+    "EXTENDED_DESCRIPTION" : ["#gCards #gthat #gare #gnot #gstatus"]
   },
   "${ModID}:ZombieHand": {
     "NAME": "ZombieHand",
     "DESCRIPTION": "Chose a card from your draw pile. NL [#EFC851]Dig !M! : chosen card.",
-    "EXTENDED_DESCRIPTION" : ["Cards corresponding to the card you chose"]
+    "EXTENDED_DESCRIPTION" : ["#gCards #gcorresponding #gto #gthe #gcard #gyou #gchose"]
   },
   "${ModID}:LearnYourBasics": {
     "NAME": "Learn Your Basics",
@@ -373,7 +373,7 @@
   "${ModID}:BlankTombstone": {
     "NAME": "Blank Tombstone",
     "DESCRIPTION": "[#EFC851]Dig !M! : Colorless. NL Exhaust Status cards in your hand. NL Gain !B! Block.",
-    "EXTENDED_DESCRIPTION" : ["Colorless cards"]
+    "EXTENDED_DESCRIPTION" : ["#gColorless #gcards"]
   },
   "${ModID}:Sorrow": {
     "NAME": "Sorrow",
@@ -411,7 +411,7 @@
     "NAME": "Gold Hoarding",
     "DESCRIPTION": "[#EFC851]Dig !M! : Rare rarity. NL Gain !${ModID}:m2! Gold. Exhaust. NL ${ModID}:Removed : Add a random rare card to your deck.",
     "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Rare rarity. NL Gain !${ModID}:m2! Gold. Exhaust. NL ${ModID}:Removed : Add a random upgraded rare card to your deck.",
-    "EXTENDED_DESCRIPTION" : ["Rare rarity cards"]
+    "EXTENDED_DESCRIPTION" : ["#gRare #grarity #gcards"]
   },
   "${ModID}:MudCannon": {
     "NAME": "Mud Cannon",

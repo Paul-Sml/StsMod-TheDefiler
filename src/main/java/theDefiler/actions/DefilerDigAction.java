@@ -76,6 +76,7 @@ public class DefilerDigAction  extends AbstractGameAction
 
         if(isConditionMet || card.cardID.equals(Worms.ID) || card.cardID.equals(BowsScorch.ID)) {
             Rebound(card);
+            System.out.println(p.hasPower(MudCannonPower.POWER_ID));
             if (p.hasPower(MudCannonPower.POWER_ID))
                 p.getPower(MudCannonPower.POWER_ID).onSpecificTrigger();
         }

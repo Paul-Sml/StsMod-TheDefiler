@@ -203,12 +203,13 @@ public class DefilerMod implements
 
     @Override
     public Boolean onSave() {
+        System.out.println(canIgnorePath);
         return canIgnorePath;
     }
 
     @Override
     public void onLoad(Boolean aBoolean) {
         canIgnorePath = aBoolean;
-
+        System.out.println(aBoolean);
     }
 }

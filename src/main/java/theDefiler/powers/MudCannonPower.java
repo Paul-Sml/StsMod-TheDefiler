@@ -25,6 +25,7 @@ public class MudCannonPower extends AbstractEasyPower {
 
     @Override
     public void onSpecificTrigger() {
+        System.out.println("yo");
         AbstractCreature m = AbstractDungeon.getRandomMonster();
         if (m != null) {
             flash();
