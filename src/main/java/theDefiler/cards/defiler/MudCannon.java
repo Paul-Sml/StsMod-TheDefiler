@@ -26,8 +26,7 @@ public class MudCannon extends AbstractDefilerCard {
 
     @Override
     public void dug() {
-        AbstractPlayer p = AbstractDungeon.player;
-        power(new MudCannonPower(p, magicNumber), magicNumber);
+        costForTurn = 0;
     }
 
     public void upp() {

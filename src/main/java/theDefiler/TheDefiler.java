@@ -23,7 +23,6 @@ import theDefiler.cards.Strike;
 import theDefiler.cards.defiler.CoinToss;
 import theDefiler.cards.defiler.EarthDigging;
 import theDefiler.relics.GoldenShovel;
-import theDefiler.relics.TodoItem;
 
 import java.util.ArrayList;
 

@@ -24,7 +24,7 @@ public class Fury extends AbstractDefilerCard {
 
     public Fury() {
         super(ID, COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        magicNumber = baseMagicNumber = 4; //Dig amount
+        magicNumber = baseMagicNumber = 3; //Dig amount
         secondMagic = baseSecondMagic = 4; //dmg+ amount
         baseDamage = 9;;
     }

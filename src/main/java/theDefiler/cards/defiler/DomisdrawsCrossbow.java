@@ -23,7 +23,7 @@ import java.util.List;
 import static theDefiler.DefilerMod.makeID;
 import static theDefiler.TheDefiler.Enums.DEFILER_COLOR;
 
-@NoCompendium
+@AutoAdd.NotSeen
 public class DomisdrawsCrossbow extends AbstractDefilerCard implements SpawnModificationCard {
     public final static String ID = makeID(DomisdrawsCrossbow.class.getSimpleName());
     // intellij stuff power, self, uncommon

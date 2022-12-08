@@ -1,6 +1,8 @@
 package theDefiler.powers;
 
+import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.unique.PoisonLoseHpAction;
@@ -13,7 +15,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theDefiler.DefilerMod;
 import theDefiler.actions.GainMaxhpAction;
 
-public class BarbedWiresPower extends AbstractEasyPower {
+public class BarbedWiresPower extends AbstractEasyPower implements HealthBarRenderPower {
 
     public static final String POWER_ID = DefilerMod.makeID(BarbedWiresPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -39,5 +41,15 @@ public class BarbedWiresPower extends AbstractEasyPower {
     }
     public void updateDescription() {
         description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
+
+    @Override
+    public int getHealthBarAmount() {
+        return amount;
+    }
+
+    @Override
+    public Color getColor() {
+        return Color.valueOf("2596be");
     }
 }

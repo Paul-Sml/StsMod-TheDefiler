@@ -400,8 +400,8 @@ public abstract class AbstractDefilerCard extends AbstractEasyCard implements On
         this.isGoldCostModifiedForTurn = false;
         this.maxhpCostForTurn = this.maxhpCost;
         this.isMaxhpCostModifiedForTurn = false;
-        revival = baseRevival;
-        secondRevival = baseSecondRevival;
+//        revival = baseRevival;
+//        secondRevival = baseSecondRevival;
     }
 
     public void dug() {}

@@ -21,6 +21,7 @@ public class MudCannonPower extends AbstractEasyPower {
 
     public MudCannonPower(AbstractCreature owner, int amount) {
         super(NAME, PowerType.BUFF, false, owner, amount);
+        ID = POWER_ID;
     }
 
     @Override

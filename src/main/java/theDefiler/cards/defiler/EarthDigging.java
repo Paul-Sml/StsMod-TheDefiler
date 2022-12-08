@@ -36,7 +36,7 @@ public class EarthDigging extends AbstractDefilerCard {
 
     @Override
     public void onRemoveFromMasterDeck() {
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(cardsToPreview.makeStatEquivalentCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+        AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(cardsToPreview.makeStatEquivalentCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
     }
 
     public void upp() {

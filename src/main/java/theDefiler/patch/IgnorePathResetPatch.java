@@ -9,14 +9,18 @@ import theDefiler.DefilerMod;
 
 import java.util.ArrayList;
 
+import static theDefiler.DefilerMod.canIgnorePathLoadIgnore;
+
 @SpirePatch2(clz = AbstractDungeon.class, method = "nextRoomTransition", paramtypez = {SaveFile.class})
 public class IgnorePathResetPatch {
     @SpirePostfixPatch
     public static void spireLocationsOnEnterRoom() {
-        if (AbstractDungeon.nextRoom != null) {
-            AbstractRoom room = AbstractDungeon.nextRoom.getRoom();
-            if (room != null) {
-                DefilerMod.canIgnorePath = false;
+        if (canIgnorePathLoadIgnore) {canIgnorePathLoadIgnore = false;} else {
+            if (AbstractDungeon.nextRoom != null) {
+                AbstractRoom room = AbstractDungeon.nextRoom.getRoom();
+                if (room != null) {
+                    DefilerMod.canIgnorePath = false;
+                }
             }
         }
     }

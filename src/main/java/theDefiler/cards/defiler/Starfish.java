@@ -57,7 +57,7 @@ public class Starfish extends AbstractDefilerCard {
     }
 
     public void drafted() {
-        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.makeStatEquivalentCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+        AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(this.makeStatEquivalentCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
     }
 
     public void upp() {

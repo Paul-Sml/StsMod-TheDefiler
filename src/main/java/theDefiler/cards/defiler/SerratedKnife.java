@@ -1,27 +1,21 @@
 package theDefiler.cards.defiler;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theDefiler.actions.GainMaxhpAction;
 import theDefiler.actions.HuntingKnifeAction;
-import theDefiler.actions.SpecificNonChosenDiscardPileToHandAction;
-import theDefiler.actions.SpecificNonChosenDrawPileToHandAction;
 import theDefiler.cards.AbstractDefilerCard;
 
 import static theDefiler.DefilerMod.makeID;
 
-public class HuntingKnife extends AbstractDefilerCard {
-    public final static String ID = makeID(HuntingKnife.class.getSimpleName());
+public class SerratedKnife extends AbstractDefilerCard {
+    public final static String ID = makeID(SerratedKnife.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
     private static final int COST = 2;
 
-    public HuntingKnife() {
+    public SerratedKnife() {
         super(ID, COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         magicNumber = baseMagicNumber = 2;
         baseDamage = 13;

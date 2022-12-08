@@ -30,6 +30,7 @@ import theDefiler.cards.AbstractEasyCard;
 import theDefiler.cards.cardvars.*;
 import theDefiler.potions.LiquidGold;
 import theDefiler.relics.AbstractEasyRelic;
+import theDefiler.util.CIP;
 import theDefiler.util.TexLoader;
 
 import java.nio.charset.StandardCharsets;
@@ -42,8 +43,7 @@ public class DefilerMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostUpdateSubscriber,
-        CustomSavable<Boolean>
+        PostUpdateSubscriber
 {
 
     public static final String modID = "thedefilermod";
@@ -54,6 +54,7 @@ public class DefilerMod implements
 
 
     public static boolean canIgnorePath = false;
+    public static boolean canIgnorePathLoadIgnore = false;
     public static boolean choosingRemoveCard = false;
 
     // This makes debugging so much easier
@@ -80,6 +81,7 @@ public class DefilerMod implements
 
     public DefilerMod() {
         BaseMod.subscribe(this);
+        BaseMod.addSaveField(CIP.SaveKey, new CIP());
 
         BaseMod.addColor(TheDefiler.Enums.DEFILER_COLOR, characterColor, characterColor, characterColor,
                 characterColor, characterColor, characterColor, characterColor,
@@ -201,15 +203,5 @@ public class DefilerMod implements
         }
     }
 
-    @Override
-    public Boolean onSave() {
-        System.out.println(canIgnorePath);
-        return canIgnorePath;
-    }
 
-    @Override
-    public void onLoad(Boolean aBoolean) {
-        canIgnorePath = aBoolean;
-        System.out.println(aBoolean);
-    }
 }

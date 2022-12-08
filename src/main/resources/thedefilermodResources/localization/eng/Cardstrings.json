@@ -57,7 +57,7 @@
     "NAME": "Earth Digging",
     "DESCRIPTION": "[#EFC851]Dig !M! : Basic rarity. NL ${ModID}:Removed : Add [#EFC851]Tomb [#EFC851]Digging to your deck.",
     "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : Basic rarity NL ${ModID}:Removed : Add [#EFC851]Tomb [#EFC851]Digging+ to your deck.",
-    "EXTENDED_DESCRIPTION" : ["#gBasic#grarity #gcards"]
+    "EXTENDED_DESCRIPTION" : ["#gBasic #grarity #gcards"]
   },
   "${ModID}:TombDigging": {
     "NAME": "Tomb Digging",
@@ -199,7 +199,7 @@
     "NAME": "Chocolate Coins",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! Gold. NL Gain !${ModID}:m2! Max HP. Exhaust."
   },
-  "${ModID}:HuntingKnife": {
+  "${ModID}:SerratedKnife": {
     "NAME": "Hunting Knife",
     "DESCRIPTION": "Deal !D! damage. NL If Fatal drop an additional card reward. NL Exhaust. NL ${ModID}:Obtained : Gain !M! Max HP."
   },
@@ -415,6 +415,6 @@
   },
   "${ModID}:MudCannon": {
     "NAME": "Mud Cannon",
-    "DESCRIPTION": "When you successfully [#EFC851]Dig a card, deal !M! damage to a random enemy. NL ${ModID}:Dug : Play this card for free."
+    "DESCRIPTION": "When you successfully [#EFC851]Dig a card, deal !M! damage to a random enemy. NL ${ModID}:Dug : this card costs 0 for the turn."
   }
 }

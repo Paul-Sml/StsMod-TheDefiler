@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import theDefiler.cards.AbstractDefilerCard;
 import theDefiler.TheDefiler;
@@ -17,6 +18,7 @@ import theDefiler.cards.defiler.BowsScorch;
 import theDefiler.cards.defiler.LivingWeapon;
 import theDefiler.cards.defiler.Worms;
 import theDefiler.powers.*;
+import theDefiler.relics.GoldenShovel;
 import theDefiler.util.Wiz;
 
 import java.util.function.Predicate;
@@ -76,7 +78,7 @@ public class DefilerDigAction  extends AbstractGameAction
 
         if(isConditionMet || card.cardID.equals(Worms.ID) || card.cardID.equals(BowsScorch.ID)) {
             Rebound(card);
-            System.out.println(p.hasPower(MudCannonPower.POWER_ID));
+            System.out.println(AbstractDungeon.player.hasPower(MudCannonPower.POWER_ID));
             if (p.hasPower(MudCannonPower.POWER_ID))
                 p.getPower(MudCannonPower.POWER_ID).onSpecificTrigger();
         }
