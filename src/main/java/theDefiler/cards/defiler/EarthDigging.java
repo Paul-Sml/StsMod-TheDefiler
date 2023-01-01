@@ -22,11 +22,11 @@ public class EarthDigging extends AbstractDefilerCard {
     public final static String ID = makeID(EarthDigging.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public EarthDigging() {
         super(ID, COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 2;
         cardsToPreview = new TombDigging();
     }
 

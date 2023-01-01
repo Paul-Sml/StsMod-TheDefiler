@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 import theDefiler.actions.DefilerDigAction;
 import theDefiler.actions.SpecificNonChosenDiscardPileToHandAction;
 import theDefiler.actions.SpecificNonChosenDrawPileToHandAction;
@@ -25,11 +26,20 @@ public class Starfish extends AbstractDefilerCard {
 
     private static final int COST = 0;
     private static final int GOLD_COST = 5;
+    private static boolean DUP = true;
 
     public Starfish() {
         super(ID, COST, GOLD_COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = 9;
         exhaust = true;
+        DUP = true;
+    }
+
+    public Starfish(boolean dup) {
+        super(ID, COST, GOLD_COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        baseDamage = 9;
+        exhaust = true;
+        DUP = dup;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -57,7 +67,8 @@ public class Starfish extends AbstractDefilerCard {
     }
 
     public void drafted() {
-        AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(this.makeStatEquivalentCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+        if (DUP)
+            AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(new Starfish(false), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
     }
 
     public void upp() {

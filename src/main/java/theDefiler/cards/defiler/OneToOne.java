@@ -14,7 +14,7 @@ public class OneToOne extends AbstractDefilerCard {
     // intellij stuff power, self, uncommon
 
     private static final int COST = 1;
-    private static final int MAXHP_COST = 2;
+    private static final int MAXHP_COST = 1;
 
     public OneToOne() {
         super(ID, COST,-1 , MAXHP_COST, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
@@ -25,6 +25,6 @@ public class OneToOne extends AbstractDefilerCard {
     }
 
     public void upp() {
-        upMhp(1);
+        upMhp(-1);
     }
 }

@@ -1,11 +1,14 @@
 package theDefiler.cards.defiler;
 
+import basemod.AutoAdd;
+import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.NoCompendium;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theDefiler.cards.AbstractDefilerCard;
 
 import static theDefiler.DefilerMod.makeID;
 
+@AutoAdd.Ignore
 public class ShadowDagger extends AbstractDefilerCard {
     public final static String ID = makeID(ShadowDagger.class.getSimpleName());
     // intellij stuff power, self, uncommon

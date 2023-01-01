@@ -224,7 +224,7 @@
     "EXTENDED_DESCRIPTION" : ["#gCards #gthat #ggive #gBlock"]
   },
   "${ModID}:EvilShadow": {
-    "NAME": "EvilShadow",
+    "NAME": "Evil Shadow",
     "DESCRIPTION": "[#EFC851]Dig !M! : 2 [E] cost. NL Deal !D! damage.",
     "UPGRADE_DESCRIPTION": "[#EFC851]Dig !M! : 2+ [E] cost. NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION" : ["#gCards #gthat #gcost #b2 [E]","#gCards #gthat #gcost #gat #gleast #b2 [E]"]
@@ -416,5 +416,9 @@
   "${ModID}:MudCannon": {
     "NAME": "Mud Cannon",
     "DESCRIPTION": "When you successfully [#EFC851]Dig a card, deal !M! damage to a random enemy. NL ${ModID}:Dug : this card costs 0 for the turn."
+  },
+  "${ModID}:HeavySlam": {
+    "NAME": "Heavy Slam",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
   }
 }

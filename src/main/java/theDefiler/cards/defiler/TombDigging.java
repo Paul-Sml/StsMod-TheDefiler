@@ -17,11 +17,11 @@ public class TombDigging extends AbstractDefilerCard {
     public final static String ID = makeID(TombDigging.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public TombDigging() {
         super(ID, COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF, CardColor.COLORLESS);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

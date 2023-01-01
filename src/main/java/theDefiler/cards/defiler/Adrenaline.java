@@ -20,9 +20,6 @@ public class Adrenaline extends AbstractDefilerCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        System.out.println(this.maxhpCost);
-        System.out.println(this.maxhpCostForTurn);
-
         draw(magicNumber);
     }
 

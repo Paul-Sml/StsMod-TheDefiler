@@ -33,7 +33,6 @@ public class SpearsShakePatch {
             }
         }
     }
-
 }
 @SpirePatch (clz = AbstractCard.class, method = "applyPowers")
 class SpearsShakePatchTwo {
